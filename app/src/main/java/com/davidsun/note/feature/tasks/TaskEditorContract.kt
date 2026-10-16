@@ -1,0 +1,51 @@
+package com.davidsun.note.feature.tasks
+
+data class TaskEditorUiState(
+    val isLoading: Boolean = true,
+    val isNew: Boolean = true,
+    val missing: Boolean = false,
+    val title: String = "",
+    val description: String = "",
+    val reminderLabel: String? = null,
+    val hasReminder: Boolean = false,
+    val showReminderOptions: Boolean = false,
+    val showDatePicker: Boolean = false,
+    val showTimePicker: Boolean = false,
+    val timePickerForInterval: Boolean = false,
+    val showIntervalDialog: Boolean = false,
+    val timePickerHour: Int = DEFAULT_REMINDER_HOUR,
+    val timePickerMinute: Int = 0,
+    val pendingDateMillis: Long? = null,
+    val intervalDaysInput: String = "1",
+    val intervalDaysError: Boolean = false,
+    val reminderPastError: Boolean = false,
+    val datePickerInitialMillis: Long? = null,
+    val titleError: Boolean = false,
+    val showDiscardDialog: Boolean = false,
+    val isSaving: Boolean = false,
+    val saveFailed: Boolean = false,
+)
+
+data class TaskEditorActions(
+    val onTitleChange: (String) -> Unit,
+    val onDescriptionChange: (String) -> Unit,
+    val onOpenReminder: () -> Unit,
+    val onDismissReminderOptions: () -> Unit,
+    val onChooseOnce: () -> Unit,
+    val onChooseInterval: () -> Unit,
+    val onDismissDatePicker: () -> Unit,
+    val onDatePicked: (Long) -> Unit,
+    val onDismissTimePicker: () -> Unit,
+    val onTimePicked: (Int, Int) -> Unit,
+    val onIntervalDaysChange: (String) -> Unit,
+    val onOpenIntervalTime: () -> Unit,
+    val onConfirmInterval: () -> Unit,
+    val onDismissInterval: () -> Unit,
+    val onClearReminder: () -> Unit,
+    val onSave: () -> Unit,
+    val onBack: () -> Unit,
+    val onConfirmDiscard: () -> Unit,
+    val onDismissDiscard: () -> Unit,
+)
+
+const val DEFAULT_REMINDER_HOUR = 9
