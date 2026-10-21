@@ -2,6 +2,7 @@ package com.davidsun.note.domain.usecase
 
 import com.davidsun.note.core.common.AppClock
 import com.davidsun.note.core.common.isValidIntervalDays
+import com.davidsun.note.core.common.isValidWeekdays
 import com.davidsun.note.domain.model.ReminderType
 import com.davidsun.note.domain.model.SyncStatus
 import com.davidsun.note.domain.model.Task
@@ -26,10 +27,11 @@ class TaskUseCase @Inject constructor(
         reminderType: ReminderType,
         reminderAt: Long?,
         intervalDays: Int?,
+        weekdays: Int? = null,
     ): SaveTaskResult {
         val trimmedTitle = title.trim()
         if (trimmedTitle.isEmpty()) return SaveTaskResult.InvalidTitle
-        val reminder = normalizeReminder(reminderType, reminderAt, intervalDays)
+        val reminder = normalizeReminder(reminderType, reminderAt, intervalDays, weekdays)
             ?: return SaveTaskResult.InvalidReminder
         val trimmedDescription = description.trim().ifBlank { null }
         val existing = repository.getTask(id)
@@ -39,7 +41,8 @@ class TaskUseCase @Inject constructor(
             existing.description == trimmedDescription &&
             existing.reminderType == reminder.type &&
             existing.reminderAt == reminder.triggerAt &&
-            existing.intervalDays == reminder.intervalDays
+            existing.intervalDays == reminder.intervalDays &&
+            existing.weekdays == reminder.weekdays
         ) {
             return SaveTaskResult.Saved
         }
@@ -51,6 +54,7 @@ class TaskUseCase @Inject constructor(
             reminderType = reminder.type,
             reminderAt = reminder.triggerAt,
             intervalDays = reminder.intervalDays,
+            weekdays = reminder.weekdays,
             isCompleted = existing?.isCompleted ?: false,
             completedAt = existing?.completedAt,
             isHidden = existing?.isHidden ?: false,
@@ -111,14 +115,22 @@ class TaskUseCase @Inject constructor(
         type: ReminderType,
         reminderAt: Long?,
         intervalDays: Int?,
+        weekdays: Int?,
     ): NormalizedReminder? = when (type) {
-        ReminderType.NONE -> NormalizedReminder(ReminderType.NONE, null, null)
-        ReminderType.ONCE -> reminderAt?.let { NormalizedReminder(ReminderType.ONCE, it, null) }
+        ReminderType.NONE -> NormalizedReminder(ReminderType.NONE, null, null, null)
+        ReminderType.ONCE -> reminderAt?.let { NormalizedReminder(ReminderType.ONCE, it, null, null) }
         ReminderType.INTERVAL -> {
             if (reminderAt == null || intervalDays == null || !isValidIntervalDays(intervalDays)) {
                 null
             } else {
-                NormalizedReminder(ReminderType.INTERVAL, reminderAt, intervalDays)
+                NormalizedReminder(ReminderType.INTERVAL, reminderAt, intervalDays, null)
+            }
+        }
+        ReminderType.WEEKLY -> {
+            if (reminderAt == null || weekdays == null || !isValidWeekdays(weekdays)) {
+                null
+            } else {
+                NormalizedReminder(ReminderType.WEEKLY, reminderAt, null, weekdays)
             }
         }
     }
@@ -127,6 +139,7 @@ class TaskUseCase @Inject constructor(
         val type: ReminderType,
         val triggerAt: Long?,
         val intervalDays: Int?,
+        val weekdays: Int?,
     )
 }
 

@@ -7,6 +7,7 @@ data class Task(
     val reminderType: ReminderType,
     val reminderAt: Long?,
     val intervalDays: Int?,
+    val weekdays: Int? = null,
     val isCompleted: Boolean,
     val completedAt: Long?,
     val isHidden: Boolean,

@@ -4,4 +4,5 @@ enum class ReminderType {
     NONE,
     ONCE,
     INTERVAL,
+    WEEKLY,
 }

@@ -1,0 +1,134 @@
+rules_version = '2';
+
+// ===============================================================
+// Assumed Data Model
+// ===============================================================
+//
+// Collection: users/{userId}/notes/{noteId}
+//   title: string (0..2000)
+//   content: string (0..200000)
+//   createdAt: number >= 0, immutable after create
+//   updatedAt: number >= 0
+//   deletedAt: null or number >= 0
+//   revision: number >= 0
+//
+// Collection: users/{userId}/tasks/{taskId}
+//   title: string (1..2000)
+//   description: null or string (0..20000)
+//   reminderType: NONE | ONCE | INTERVAL | WEEKLY
+//   reminderAt: null or number
+//   intervalDays: null, or 1..365 for INTERVAL
+//   weekdays: null, or 1..127 for WEEKLY
+//   isCompleted: bool
+//   completedAt: null, or number when completed
+//   isHidden: bool
+//   createdAt: number >= 0, immutable after create
+//   updatedAt: number >= 0
+//   deletedAt: null or number >= 0
+//   revision: number >= 0
+//
+// Access is limited to the signed-in owner of {userId}.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    function hasExactFields(fields) {
+      return request.resource.data.keys().hasOnly(fields)
+        && request.resource.data.keys().hasAll(fields);
+    }
+
+    function isNonNegativeNumber(value) {
+      return value is number && value >= 0;
+    }
+
+    function isOptionalNonNegativeNumber(value) {
+      return value == null || isNonNegativeNumber(value);
+    }
+
+    function isValidNote(data) {
+      return hasExactFields(['title', 'content', 'createdAt', 'updatedAt', 'deletedAt', 'revision'])
+        && data.title is string
+        && data.title.size() <= 2000
+        && data.content is string
+        && data.content.size() <= 200000
+        && isNonNegativeNumber(data.createdAt)
+        && isNonNegativeNumber(data.updatedAt)
+        && isOptionalNonNegativeNumber(data.deletedAt)
+        && isNonNegativeNumber(data.revision);
+    }
+
+    function isValidReminder(data) {
+      return (data.reminderType == 'NONE'
+          && data.reminderAt == null
+          && data.intervalDays == null
+          && data.weekdays == null)
+        || (data.reminderType == 'ONCE'
+          && data.reminderAt is number
+          && data.intervalDays == null
+          && data.weekdays == null)
+        || (data.reminderType == 'INTERVAL'
+          && data.reminderAt is number
+          && data.intervalDays is number
+          && data.intervalDays >= 1
+          && data.intervalDays <= 365
+          && data.weekdays == null)
+        || (data.reminderType == 'WEEKLY'
+          && data.reminderAt is number
+          && data.intervalDays == null
+          && data.weekdays is number
+          && data.weekdays >= 1
+          && data.weekdays <= 127);
+    }
+
+    function isValidTask(data) {
+      return hasExactFields([
+          'title', 'description', 'reminderType', 'reminderAt', 'intervalDays', 'weekdays',
+          'isCompleted', 'completedAt', 'isHidden', 'createdAt', 'updatedAt', 'deletedAt', 'revision'
+        ])
+        && data.title is string
+        && data.title.size() >= 1
+        && data.title.size() <= 2000
+        && (data.description == null || (data.description is string && data.description.size() <= 20000))
+        && data.reminderType is string
+        && isValidReminder(data)
+        && data.isCompleted is bool
+        && data.isHidden is bool
+        && ((data.isCompleted == true && data.completedAt is number) || (data.isCompleted == false && data.completedAt == null))
+        && isNonNegativeNumber(data.createdAt)
+        && isNonNegativeNumber(data.updatedAt)
+        && isOptionalNonNegativeNumber(data.deletedAt)
+        && isNonNegativeNumber(data.revision);
+    }
+
+    match /users/{userId}/notes/{noteId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId)
+        && noteId.size() > 0
+        && noteId.size() <= 128
+        && isValidNote(request.resource.data);
+      allow update: if isOwner(userId)
+        && isValidNote(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if false;
+    }
+
+    match /users/{userId}/tasks/{taskId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId)
+        && taskId.size() > 0
+        && taskId.size() <= 128
+        && isValidTask(request.resource.data);
+      allow update: if isOwner(userId)
+        && isValidTask(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

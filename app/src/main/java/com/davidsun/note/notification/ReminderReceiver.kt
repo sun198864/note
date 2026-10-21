@@ -5,7 +5,9 @@ import android.content.Context
 import android.content.Intent
 import com.davidsun.note.core.common.AppClock
 import com.davidsun.note.core.common.isValidIntervalDays
+import com.davidsun.note.core.common.isValidWeekdays
 import com.davidsun.note.core.common.nextIntervalTriggerAt
+import com.davidsun.note.core.common.nextWeeklyTriggerAt
 import com.davidsun.note.domain.model.ReminderType
 import com.davidsun.note.domain.model.SyncStatus
 import com.davidsun.note.domain.model.Task
@@ -43,10 +45,7 @@ class ReminderReceiver : BroadcastReceiver() {
         val task = taskRepository.getTask(taskId) ?: return
         if (!task.shouldNotify(triggerAt)) return
         TaskNotifications.show(context, task)
-        if (task.reminderType != ReminderType.INTERVAL) return
-        val intervalDays = task.intervalDays ?: return
-        if (!isValidIntervalDays(intervalDays)) return
-        val nextAt = nextIntervalTriggerAt(task.reminderAt ?: triggerAt, intervalDays, ZoneId.systemDefault())
+        val nextAt = nextTriggerAt(task, triggerAt) ?: return
         val updated = task.copy(
             reminderAt = nextAt,
             updatedAt = clock.nowMillis(),
@@ -55,6 +54,26 @@ class ReminderReceiver : BroadcastReceiver() {
         )
         taskRepository.upsert(updated)
         reminderScheduler.sync(updated)
+    }
+
+    private fun nextTriggerAt(task: Task, triggerAt: Long): Long? {
+        val zone = ZoneId.systemDefault()
+        val scheduled = task.reminderAt ?: triggerAt
+        return when (task.reminderType) {
+            ReminderType.INTERVAL -> {
+                val intervalDays = task.intervalDays ?: return null
+                if (!isValidIntervalDays(intervalDays)) return null
+                nextIntervalTriggerAt(scheduled, intervalDays, zone)
+            }
+            ReminderType.WEEKLY -> {
+                val weekdays = task.weekdays ?: return null
+                if (!isValidWeekdays(weekdays)) return null
+                nextWeeklyTriggerAt(scheduled, weekdays, zone)
+            }
+            ReminderType.NONE,
+            ReminderType.ONCE,
+            -> null
+        }
     }
 
     private fun Task.shouldNotify(triggerAt: Long): Boolean {

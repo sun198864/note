@@ -17,6 +17,7 @@ class AppDateFormatter @Inject constructor() {
         type: ReminderType,
         reminderAt: Long?,
         intervalDays: Int?,
+        weekdays: Int? = null,
         zone: ZoneId = ZoneId.systemDefault(),
     ): String? = when (type) {
         ReminderType.NONE -> null
@@ -25,6 +26,15 @@ class AppDateFormatter @Inject constructor() {
             val at = reminderAt ?: return null
             val days = intervalDays ?: return null
             "每 $days 天 · ${formatReminderDateTime(at, zone)}"
+        }
+        ReminderType.WEEKLY -> {
+            val at = reminderAt
+            val days = weekdays
+            if (at == null || days == null || !isValidWeekdays(days)) {
+                null
+            } else {
+                "每週${formatWeekdaySelection(days)} · ${formatReminderDateTime(at, zone)}"
+            }
         }
     }
 

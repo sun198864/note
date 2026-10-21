@@ -6,7 +6,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import com.davidsun.note.core.common.isValidIntervalDays
+import com.davidsun.note.core.common.isValidWeekdays
 import com.davidsun.note.core.common.nextFutureIntervalTriggerAt
+import com.davidsun.note.core.common.nextFutureWeeklyTriggerAt
 import com.davidsun.note.domain.model.ReminderType
 import com.davidsun.note.domain.model.SyncStatus
 import com.davidsun.note.domain.model.Task
@@ -52,6 +54,7 @@ class AlarmReminderScheduler @Inject constructor(
                 if (triggerAt > clock.nowMillis()) schedule(task.id, triggerAt)
             }
             ReminderType.INTERVAL -> scheduleInterval(task)
+            ReminderType.WEEKLY -> scheduleWeekly(task)
         }
     }
 
@@ -64,6 +67,29 @@ class AlarmReminderScheduler @Inject constructor(
             reminderAt
         } else {
             nextFutureIntervalTriggerAt(reminderAt, intervalDays, now)
+        }
+        if (triggerAt != reminderAt) {
+            taskRepository.upsert(
+                task.copy(
+                    reminderAt = triggerAt,
+                    updatedAt = now,
+                    revision = task.revision + 1L,
+                    syncStatus = SyncStatus.PENDING,
+                ),
+            )
+        }
+        schedule(task.id, triggerAt)
+    }
+
+    private suspend fun scheduleWeekly(task: Task) {
+        val reminderAt = task.reminderAt ?: return
+        val weekdays = task.weekdays ?: return
+        if (!isValidWeekdays(weekdays)) return
+        val now = clock.nowMillis()
+        val triggerAt = if (reminderAt > now) {
+            reminderAt
+        } else {
+            nextFutureWeeklyTriggerAt(reminderAt, weekdays, now)
         }
         if (triggerAt != reminderAt) {
             taskRepository.upsert(

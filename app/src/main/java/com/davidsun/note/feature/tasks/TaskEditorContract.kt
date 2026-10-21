@@ -11,13 +11,16 @@ data class TaskEditorUiState(
     val showReminderOptions: Boolean = false,
     val showDatePicker: Boolean = false,
     val showTimePicker: Boolean = false,
-    val timePickerForInterval: Boolean = false,
+    val timePickerTarget: ReminderTimeTarget = ReminderTimeTarget.ONCE,
     val showIntervalDialog: Boolean = false,
+    val showWeeklyDialog: Boolean = false,
     val timePickerHour: Int = DEFAULT_REMINDER_HOUR,
     val timePickerMinute: Int = 0,
     val pendingDateMillis: Long? = null,
     val intervalDaysInput: String = "1",
     val intervalDaysError: Boolean = false,
+    val weekdaysMask: Int = 0,
+    val weekdaysError: Boolean = false,
     val reminderPastError: Boolean = false,
     val datePickerInitialMillis: Long? = null,
     val titleError: Boolean = false,
@@ -33,6 +36,7 @@ data class TaskEditorActions(
     val onDismissReminderOptions: () -> Unit,
     val onChooseOnce: () -> Unit,
     val onChooseInterval: () -> Unit,
+    val onChooseWeekly: () -> Unit,
     val onDismissDatePicker: () -> Unit,
     val onDatePicked: (Long) -> Unit,
     val onDismissTimePicker: () -> Unit,
@@ -41,6 +45,10 @@ data class TaskEditorActions(
     val onOpenIntervalTime: () -> Unit,
     val onConfirmInterval: () -> Unit,
     val onDismissInterval: () -> Unit,
+    val onToggleWeekday: (Int) -> Unit,
+    val onOpenWeeklyTime: () -> Unit,
+    val onConfirmWeekly: () -> Unit,
+    val onDismissWeekly: () -> Unit,
     val onClearReminder: () -> Unit,
     val onSave: () -> Unit,
     val onBack: () -> Unit,
@@ -49,3 +57,9 @@ data class TaskEditorActions(
 )
 
 const val DEFAULT_REMINDER_HOUR = 9
+
+enum class ReminderTimeTarget {
+    ONCE,
+    INTERVAL,
+    WEEKLY,
+}

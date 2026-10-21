@@ -16,7 +16,7 @@ fun Task.toTaskItemUi(formatter: AppDateFormatter, isOverdue: Boolean): TaskItem
     id = id,
     title = title,
     description = description?.takeIf { it.isNotBlank() },
-    reminderLabel = formatter.formatTaskReminder(reminderType, reminderAt, intervalDays),
+    reminderLabel = formatter.formatTaskReminder(reminderType, reminderAt, intervalDays, weekdays),
     isOverdue = isOverdue,
     isCompleted = isCompleted,
 )

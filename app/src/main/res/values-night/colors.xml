@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="note_window_background">#FF141311</color>
+    <color name="note_on_background">#FFE8E2D9</color>
 </resources>

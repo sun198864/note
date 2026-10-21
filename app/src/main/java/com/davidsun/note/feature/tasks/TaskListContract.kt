@@ -33,3 +33,14 @@ data class TaskListActions(
     val onDismissDelete: () -> Unit,
     val onOpenHidden: () -> Unit,
 )
+
+fun taskScrollIndex(sections: List<TaskSectionUi>, taskId: String): Int? {
+    var index = 1
+    sections.forEach { section ->
+        index += 1
+        val offset = section.tasks.indexOfFirst { task -> task.id == taskId }
+        if (offset >= 0) return index + offset
+        index += section.tasks.size
+    }
+    return null
+}

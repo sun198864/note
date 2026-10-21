@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -31,6 +32,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.davidsun.note.R
+import com.davidsun.note.domain.model.CloudSyncIssue
 import com.davidsun.note.domain.model.FontScale
 import com.davidsun.note.navigation.AppTab
 import com.davidsun.note.navigation.NoteBottomBar
@@ -105,19 +107,83 @@ fun SettingsScreen(
                 }
             }
             SettingsCard(title = stringResource(R.string.settings_cloud)) {
-                Text(
-                    text = stringResource(R.string.settings_cloud_body),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-                Text(
-                    text = stringResource(R.string.settings_cloud_sync_time),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
+                CloudBackupContent(state = state, actions = actions)
             }
         }
     }
+}
+
+@Composable
+private fun CloudBackupContent(
+    state: SettingsUiState,
+    actions: SettingsActions,
+    modifier: Modifier = Modifier,
+) {
+    if (state.isSignedIn) {
+        Text(
+            text = state.accountLabel?.let { stringResource(R.string.settings_cloud_signed_in, it) }
+                ?: stringResource(R.string.settings_cloud_signed_in_no_email),
+            style = MaterialTheme.typography.bodyLarge,
+        )
+        Text(
+            text = stringResource(R.string.settings_cloud_sync_body),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Text(
+            text = when {
+                state.isSyncing -> stringResource(R.string.settings_cloud_syncing)
+                state.lastSyncedLabel != null -> stringResource(R.string.settings_cloud_last_sync, state.lastSyncedLabel)
+                else -> stringResource(R.string.settings_cloud_not_synced)
+            },
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        if (state.switchedAccount) {
+            Text(
+                text = stringResource(R.string.settings_cloud_switched),
+                style = MaterialTheme.typography.bodyMedium,
+            )
+        }
+        CloudIssueText(issue = state.issue)
+        OutlinedButton(onClick = actions.onSignOut, enabled = !state.isSigningIn) {
+            Text(text = stringResource(R.string.settings_cloud_sign_out))
+        }
+    } else {
+        Text(
+            text = stringResource(R.string.settings_cloud_signed_out),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        if (state.signInFailed) {
+            Text(
+                text = stringResource(R.string.settings_cloud_sign_in_failed),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.error,
+            )
+        }
+        Button(onClick = actions.onSignIn, enabled = !state.isSigningIn, modifier = modifier) {
+            Text(
+                text = stringResource(
+                    if (state.isSigningIn) R.string.settings_cloud_signing_in else R.string.settings_cloud_sign_in,
+                ),
+            )
+        }
+    }
+}
+
+@Composable
+private fun CloudIssueText(issue: CloudSyncIssue) {
+    val text = when (issue) {
+        CloudSyncIssue.None -> return
+        CloudSyncIssue.Retrying -> stringResource(R.string.settings_cloud_retrying)
+        CloudSyncIssue.PermissionDenied -> stringResource(R.string.settings_cloud_permission)
+    }
+    val color = when (issue) {
+        CloudSyncIssue.PermissionDenied -> MaterialTheme.colorScheme.error
+        else -> MaterialTheme.colorScheme.onSurfaceVariant
+    }
+    Text(text = text, style = MaterialTheme.typography.bodyMedium, color = color)
 }
 
 @Composable
@@ -184,6 +250,36 @@ private fun SettingsScreenPreview() {
     }
 }
 
+@Preview(name = "Signed in", showBackground = true, widthDp = 360, heightDp = 800)
+@Composable
+private fun SettingsSignedInPreview() {
+    NoteTheme {
+        SettingsScreen(
+            state = SettingsUiState(
+                isSignedIn = true,
+                accountLabel = "sun@example.com",
+                lastSyncedLabel = "10月20日 週二 15:40",
+            ),
+            notificationGranted = true,
+            exactAlarmGranted = true,
+            actions = previewSettingsActions(),
+        )
+    }
+}
+
+@Preview(name = "Sign-in failed", showBackground = true, widthDp = 360, heightDp = 800)
+@Composable
+private fun SettingsSignInFailedPreview() {
+    NoteTheme {
+        SettingsScreen(
+            state = SettingsUiState(signInFailed = true, issue = CloudSyncIssue.Retrying),
+            notificationGranted = true,
+            exactAlarmGranted = false,
+            actions = previewSettingsActions(),
+        )
+    }
+}
+
 @Preview(name = "Notifications off", showBackground = true, widthDp = 360, heightDp = 800)
 @Composable
 private fun SettingsNotificationsOffPreview() {
@@ -222,4 +318,6 @@ private fun previewSettingsActions() = SettingsActions(
     onFontScaleSelected = {},
     onOpenNotificationSettings = {},
     onOpenExactAlarmSettings = {},
+    onSignIn = {},
+    onSignOut = {},
 )

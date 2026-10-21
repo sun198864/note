@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.CircularProgressIndicator
@@ -20,6 +21,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -41,8 +44,14 @@ fun NoteListScreen(
     actions: NoteListActions,
     modifier: Modifier = Modifier,
     bottomBar: @Composable () -> Unit = {},
+    focusId: String? = null,
+    onFocusConsumed: () -> Unit = {},
 ) {
     val pendingDelete = state.pendingDelete
+    LaunchedEffect(focusId, state.status) {
+        if (focusId == null || state.status == ScreenStatus.Loading || state.status == ScreenStatus.Content) return@LaunchedEffect
+        onFocusConsumed()
+    }
     Scaffold(
         modifier = modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
@@ -100,13 +109,25 @@ fun NoteListScreen(
                     onAction = actions.onAddClick,
                 )
             }
-            ScreenStatus.Content -> LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(innerPadding),
-                contentPadding = PaddingValues(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 88.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
-            ) {
+            ScreenStatus.Content -> {
+                val initialIndex = remember(state.notes, state.actionFailed, focusId) {
+                    focusId?.let { noteScrollIndex(state.notes, it, state.actionFailed) } ?: 0
+                }
+                val listState = rememberLazyListState(initialFirstVisibleItemIndex = initialIndex)
+                LaunchedEffect(focusId, state.notes, state.actionFailed) {
+                    val id = focusId ?: return@LaunchedEffect
+                    val index = noteScrollIndex(state.notes, id, state.actionFailed)
+                    if (index != null) listState.scrollToItem(index)
+                    onFocusConsumed()
+                }
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(innerPadding),
+                    state = listState,
+                    contentPadding = PaddingValues(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 88.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
                 if (state.actionFailed) {
                     item(key = "error") {
                         ActionFailedBanner(text = stringResource(R.string.action_error))
@@ -118,6 +139,7 @@ fun NoteListScreen(
                         onClick = { actions.onNoteClick(note.id) },
                         onDelete = { actions.onDeleteRequest(note.id, note.title) },
                     )
+                }
                 }
             }
         }

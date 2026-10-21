@@ -5,11 +5,15 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.graphics.drawable.toBitmap
 import com.davidsun.note.MainActivity
 import com.davidsun.note.R
+import com.davidsun.note.core.common.formatWeekdaySelection
+import com.davidsun.note.core.common.isValidWeekdays
 import com.davidsun.note.domain.model.ReminderType
 import com.davidsun.note.domain.model.Task
 
@@ -44,7 +48,8 @@ object TaskNotifications {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
         )
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_notification)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setLargeIcon(appIcon(context))
             .setContentTitle(task.title)
             .setContentText(body)
             .setStyle(NotificationCompat.BigTextStyle().bigText(body))
@@ -55,12 +60,22 @@ object TaskNotifications {
         NotificationManagerCompat.from(context).notify(task.id.hashCode(), notification)
     }
 
+    private fun appIcon(context: Context): Bitmap {
+        val drawable = context.packageManager.getApplicationIcon(context.packageName)
+        val size = context.resources.getDimensionPixelSize(android.R.dimen.notification_large_icon_width)
+        return drawable.toBitmap(width = size, height = size)
+    }
+
     private fun notificationBody(context: Context, task: Task): String {
         val summary = when (task.reminderType) {
             ReminderType.INTERVAL -> context.getString(
                 R.string.notification_interval_body,
                 task.intervalDays ?: 1,
             )
+            ReminderType.WEEKLY -> {
+                val weekdays = task.weekdays?.takeIf(::isValidWeekdays) ?: return context.getString(R.string.notification_once_body)
+                context.getString(R.string.notification_weekly_body, formatWeekdaySelection(weekdays))
+            }
             else -> context.getString(R.string.notification_once_body)
         }
         val description = task.description?.takeIf { it.isNotBlank() } ?: return summary

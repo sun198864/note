@@ -27,4 +27,5 @@ data class TaskEntity(
     val deletedAt: Long?,
     val revision: Long,
     val syncStatus: String,
+    val weekdays: Int?,
 )

@@ -9,6 +9,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -26,6 +28,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -55,6 +58,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.core.app.NotificationManagerCompat
 import com.davidsun.note.R
+import com.davidsun.note.core.common.isWeekdaySelected
+import com.davidsun.note.core.common.weekdayLabel
 import com.davidsun.note.ui.component.ConfirmDialog
 import com.davidsun.note.ui.theme.NoteTheme
 
@@ -193,6 +198,7 @@ fun TaskEditorScreen(
         ReminderOptionsDialog(
             onOnce = actions.onChooseOnce,
             onInterval = actions.onChooseInterval,
+            onWeekly = actions.onChooseWeekly,
             onDismiss = actions.onDismissReminderOptions,
         )
     }
@@ -221,6 +227,18 @@ fun TaskEditorScreen(
             onPickTime = actions.onOpenIntervalTime,
             onConfirm = actions.onConfirmInterval,
             onDismiss = actions.onDismissInterval,
+        )
+    }
+    if (state.showWeeklyDialog) {
+        WeeklyReminderDialog(
+            weekdays = state.weekdaysMask,
+            hour = state.timePickerHour,
+            minute = state.timePickerMinute,
+            weekdaysError = state.weekdaysError,
+            onToggleWeekday = actions.onToggleWeekday,
+            onPickTime = actions.onOpenWeeklyTime,
+            onConfirm = actions.onConfirmWeekly,
+            onDismiss = actions.onDismissWeekly,
         )
     }
     if (state.showDiscardDialog) {
@@ -263,6 +281,7 @@ fun ReminderField(
 fun ReminderOptionsDialog(
     onOnce: () -> Unit,
     onInterval: () -> Unit,
+    onWeekly: () -> Unit,
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -302,6 +321,18 @@ fun ReminderOptionsDialog(
                 }
                 Text(
                     text = stringResource(R.string.reminder_interval_body),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                OutlinedButton(onClick = onWeekly, modifier = Modifier.fillMaxWidth()) {
+                    Text(
+                        text = stringResource(R.string.reminder_weekly),
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Start,
+                    )
+                }
+                Text(
+                    text = stringResource(R.string.reminder_weekly_body),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -357,6 +388,82 @@ fun IntervalReminderDialog(
                     singleLine = true,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 )
+                OutlinedButton(onClick = onPickTime, modifier = Modifier.fillMaxWidth()) {
+                    Text(
+                        text = stringResource(R.string.reminder_time_value, hour, minute),
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Start,
+                    )
+                }
+                Row(
+                    modifier = Modifier.align(Alignment.End),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    TextButton(onClick = onDismiss) {
+                        Text(text = stringResource(R.string.cancel))
+                    }
+                    TextButton(onClick = onConfirm) {
+                        Text(text = stringResource(R.string.confirm))
+                    }
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
+@Composable
+fun WeeklyReminderDialog(
+    weekdays: Int,
+    hour: Int,
+    minute: Int,
+    weekdaysError: Boolean,
+    onToggleWeekday: (Int) -> Unit,
+    onPickTime: () -> Unit,
+    onConfirm: () -> Unit,
+    onDismiss: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Dialog(onDismissRequest = onDismiss) {
+        Surface(
+            modifier = modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(16.dp),
+            color = MaterialTheme.colorScheme.surface,
+        ) {
+            Column(
+                modifier = Modifier.padding(24.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                Text(
+                    text = stringResource(R.string.reminder_weekly),
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.onSurface,
+                )
+                Text(
+                    text = stringResource(R.string.reminder_weekly_body),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                FlowRow(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    (1..7).forEach { isoDay ->
+                        FilterChip(
+                            selected = isWeekdaySelected(weekdays, isoDay),
+                            onClick = { onToggleWeekday(isoDay) },
+                            label = { Text(text = weekdayLabel(isoDay)) },
+                        )
+                    }
+                }
+                if (weekdaysError) {
+                    Text(
+                        text = stringResource(R.string.reminder_weekly_empty),
+                        color = MaterialTheme.colorScheme.error,
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                }
                 OutlinedButton(onClick = onPickTime, modifier = Modifier.fillMaxWidth()) {
                     Text(
                         text = stringResource(R.string.reminder_time_value, hour, minute),
@@ -484,7 +591,7 @@ private fun ReminderFieldPreview() {
 @Composable
 private fun ReminderOptionsDialogPreview() {
     NoteTheme {
-        ReminderOptionsDialog(onOnce = {}, onInterval = {}, onDismiss = {})
+        ReminderOptionsDialog(onOnce = {}, onInterval = {}, onWeekly = {}, onDismiss = {})
     }
 }
 
@@ -506,6 +613,25 @@ private fun IntervalReminderDialogPreview() {
     }
 }
 
+@Preview(name = "Light", showBackground = true)
+@Preview(name = "Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Large font", showBackground = true, fontScale = 1.3f)
+@Composable
+private fun WeeklyReminderDialogPreview() {
+    NoteTheme {
+        WeeklyReminderDialog(
+            weekdays = 21,
+            hour = 9,
+            minute = 0,
+            weekdaysError = false,
+            onToggleWeekday = {},
+            onPickTime = {},
+            onConfirm = {},
+            onDismiss = {},
+        )
+    }
+}
+
 private fun previewTaskEditorActions() = TaskEditorActions(
     onTitleChange = {},
     onDescriptionChange = {},
@@ -513,6 +639,7 @@ private fun previewTaskEditorActions() = TaskEditorActions(
     onDismissReminderOptions = {},
     onChooseOnce = {},
     onChooseInterval = {},
+    onChooseWeekly = {},
     onDismissDatePicker = {},
     onDatePicked = {},
     onDismissTimePicker = {},
@@ -521,6 +648,10 @@ private fun previewTaskEditorActions() = TaskEditorActions(
     onOpenIntervalTime = {},
     onConfirmInterval = {},
     onDismissInterval = {},
+    onToggleWeekday = {},
+    onOpenWeeklyTime = {},
+    onConfirmWeekly = {},
+    onDismissWeekly = {},
     onClearReminder = {},
     onSave = {},
     onBack = {},

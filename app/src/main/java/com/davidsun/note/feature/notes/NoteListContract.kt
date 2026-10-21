@@ -24,3 +24,9 @@ data class NoteListActions(
     val onConfirmDelete: () -> Unit,
     val onDismissDelete: () -> Unit,
 )
+
+fun noteScrollIndex(notes: List<NoteItemUi>, noteId: String, hasErrorBanner: Boolean): Int? {
+    val offset = notes.indexOfFirst { note -> note.id == noteId }
+    if (offset < 0) return null
+    return offset + if (hasErrorBanner) 1 else 0
+}

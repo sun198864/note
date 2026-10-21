@@ -1,0 +1,17 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json",
+    "edition": "enterprise",
+    "database": "note",
+    "location": "asia-east1"
+  },
+  "auth": {
+    "providers": {
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "波波筆記",
+        "supportEmail": "sun198864@gmail.com"
+      }
+    }
+  }
+}

@@ -15,6 +15,18 @@ interface NoteDao {
     @Query("SELECT * FROM notes WHERE id = :id AND deletedAt IS NULL LIMIT 1")
     suspend fun getById(id: String): NoteEntity?
 
+    @Query("SELECT * FROM notes WHERE id = :id LIMIT 1")
+    suspend fun getAnyById(id: String): NoteEntity?
+
+    @Query("SELECT * FROM notes WHERE syncStatus != 'SYNCED'")
+    suspend fun getPending(): List<NoteEntity>
+
+    @Query("UPDATE notes SET syncStatus = 'SYNCED' WHERE id = :id AND revision = :revision")
+    suspend fun markSynced(id: String, revision: Long)
+
+    @Query("DELETE FROM notes")
+    suspend fun deleteAll()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(entity: NoteEntity)
 }

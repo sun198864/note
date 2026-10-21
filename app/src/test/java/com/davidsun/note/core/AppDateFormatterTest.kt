@@ -1,6 +1,7 @@
 package com.davidsun.note.core
 
 import com.davidsun.note.core.common.AppDateFormatter
+import com.davidsun.note.core.common.weekdayBit
 import com.davidsun.note.domain.model.ReminderType
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -53,12 +54,17 @@ class AppDateFormatterTest {
 
         assertEquals(
             "10月16日 週五 09:30",
-            formatter.formatTaskReminder(ReminderType.ONCE, reminderAt, null, zone),
+            formatter.formatTaskReminder(ReminderType.ONCE, reminderAt, null, zone = zone),
         )
         assertEquals(
             "每 3 天 · 10月16日 週五 09:30",
-            formatter.formatTaskReminder(ReminderType.INTERVAL, reminderAt, 3, zone),
+            formatter.formatTaskReminder(ReminderType.INTERVAL, reminderAt, 3, zone = zone),
         )
-        assertNull(formatter.formatTaskReminder(ReminderType.NONE, null, null, zone))
+        val weekdays = weekdayBit(1) or weekdayBit(3) or weekdayBit(5)
+        assertEquals(
+            "每週一、三、五 · 10月16日 週五 09:30",
+            formatter.formatTaskReminder(ReminderType.WEEKLY, reminderAt, null, weekdays, zone),
+        )
+        assertNull(formatter.formatTaskReminder(ReminderType.NONE, null, null, zone = zone))
     }
 }

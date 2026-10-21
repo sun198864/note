@@ -1,10 +1,17 @@
 package com.davidsun.note.navigation
 
 import android.content.Intent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -21,6 +28,7 @@ import com.davidsun.note.feature.notes.NoteEditorViewModel
 import com.davidsun.note.feature.notes.NoteListActions
 import com.davidsun.note.feature.notes.NoteListScreen
 import com.davidsun.note.feature.notes.NoteListViewModel
+import com.davidsun.note.feature.settings.GoogleIdTokenRequester
 import com.davidsun.note.feature.settings.SettingsActions
 import com.davidsun.note.feature.settings.SettingsScreen
 import com.davidsun.note.feature.settings.SettingsViewModel
@@ -38,34 +46,64 @@ import com.davidsun.note.feature.tasks.TaskListViewModel
 import kotlinx.coroutines.launch
 
 @Composable
-fun NoteApp(modifier: Modifier = Modifier) {
+fun NoteApp(
+    pendingRoute: String? = null,
+    focusId: String? = null,
+    onPendingRouteConsumed: () -> Unit = {},
+    onFocusConsumed: () -> Unit = {},
+    modifier: Modifier = Modifier,
+) {
     val navController = rememberNavController()
-    NavHost(
-        navController = navController,
-        startDestination = AppRoute.Tasks,
-        modifier = modifier,
-    ) {
-        composable(AppRoute.Tasks) { TaskListRoute(navController) }
-        composable(AppRoute.Notes) { NoteListRoute(navController) }
-        composable(AppRoute.Settings) { SettingsRoute(navController) }
-        composable(AppRoute.HiddenTasks) { HiddenTasksRoute(navController) }
-        composable(
-            route = AppRoute.TaskEditor,
-            arguments = listOf(navArgument("taskId") { type = NavType.StringType }),
-        ) {
-            TaskEditorRoute(navController)
+    var coverStartup by remember { mutableStateOf(pendingRoute != null) }
+    LaunchedEffect(pendingRoute) {
+        try {
+            if (pendingRoute == AppRoute.Tasks || pendingRoute == AppRoute.Notes) {
+                navController.openWidgetList(pendingRoute)
+            }
+            if (pendingRoute != null) onPendingRouteConsumed()
+        } finally {
+            coverStartup = false
         }
-        composable(
-            route = AppRoute.NoteEditor,
-            arguments = listOf(navArgument("noteId") { type = NavType.StringType }),
+    }
+    Box(modifier = modifier) {
+        NavHost(
+            navController = navController,
+            startDestination = AppRoute.Tasks,
+            modifier = Modifier.fillMaxSize(),
         ) {
-            NoteEditorRoute(navController)
+            composable(AppRoute.Tasks) { TaskListRoute(navController, focusId, onFocusConsumed) }
+            composable(AppRoute.Notes) { NoteListRoute(navController, focusId, onFocusConsumed) }
+            composable(AppRoute.Settings) { SettingsRoute(navController) }
+            composable(AppRoute.HiddenTasks) { HiddenTasksRoute(navController) }
+            composable(
+                route = AppRoute.TaskEditor,
+                arguments = listOf(navArgument("taskId") { type = NavType.StringType }),
+            ) {
+                TaskEditorRoute(navController)
+            }
+            composable(
+                route = AppRoute.NoteEditor,
+                arguments = listOf(navArgument("noteId") { type = NavType.StringType }),
+            ) {
+                NoteEditorRoute(navController)
+            }
+        }
+        if (coverStartup) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.background),
+            )
         }
     }
 }
 
 @Composable
-private fun TaskListRoute(navController: NavHostController) {
+private fun TaskListRoute(
+    navController: NavHostController,
+    focusId: String?,
+    onFocusConsumed: () -> Unit,
+) {
     val viewModel: TaskListViewModel = hiltViewModel()
     val state by viewModel.uiState.collectAsStateWithLifecycle()
     TaskListScreen(
@@ -80,6 +118,8 @@ private fun TaskListRoute(navController: NavHostController) {
             onDismissDelete = viewModel::onDismissDelete,
             onOpenHidden = { navController.navigate(AppRoute.HiddenTasks) },
         ),
+        focusId = focusId,
+        onFocusConsumed = onFocusConsumed,
         bottomBar = {
             NoteBottomBar(
                 selected = AppTab.Tasks,
@@ -90,7 +130,11 @@ private fun TaskListRoute(navController: NavHostController) {
 }
 
 @Composable
-private fun NoteListRoute(navController: NavHostController) {
+private fun NoteListRoute(
+    navController: NavHostController,
+    focusId: String?,
+    onFocusConsumed: () -> Unit,
+) {
     val viewModel: NoteListViewModel = hiltViewModel()
     val state by viewModel.uiState.collectAsStateWithLifecycle()
     NoteListScreen(
@@ -102,6 +146,8 @@ private fun NoteListRoute(navController: NavHostController) {
             onConfirmDelete = viewModel::onConfirmDelete,
             onDismissDelete = viewModel::onDismissDelete,
         ),
+        focusId = focusId,
+        onFocusConsumed = onFocusConsumed,
         bottomBar = {
             NoteBottomBar(
                 selected = AppTab.Notes,
@@ -116,6 +162,7 @@ private fun SettingsRoute(navController: NavHostController) {
     val viewModel: SettingsViewModel = hiltViewModel()
     val state by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
     val notificationsEnabled = rememberNotificationsEnabled()
     val exactAlarmsAllowed = rememberExactAlarmsAllowed()
     SettingsScreen(
@@ -136,6 +183,12 @@ private fun SettingsRoute(navController: NavHostController) {
                 }
                 context.startActivity(intent)
             },
+            onSignIn = {
+                scope.launch {
+                    viewModel.onSignInAttempt(GoogleIdTokenRequester(context).request())
+                }
+            },
+            onSignOut = viewModel::onSignOut,
         ),
         bottomBar = {
             NoteBottomBar(
@@ -180,6 +233,7 @@ private fun TaskEditorRoute(navController: NavHostController) {
             onDismissReminderOptions = viewModel::onDismissReminderOptions,
             onChooseOnce = viewModel::onChooseOnce,
             onChooseInterval = viewModel::onChooseInterval,
+            onChooseWeekly = viewModel::onChooseWeekly,
             onDismissDatePicker = viewModel::onDismissDatePicker,
             onDatePicked = viewModel::onDatePicked,
             onDismissTimePicker = viewModel::onDismissTimePicker,
@@ -188,6 +242,10 @@ private fun TaskEditorRoute(navController: NavHostController) {
             onOpenIntervalTime = viewModel::onOpenIntervalTime,
             onConfirmInterval = viewModel::onConfirmInterval,
             onDismissInterval = viewModel::onDismissInterval,
+            onToggleWeekday = viewModel::onToggleWeekday,
+            onOpenWeeklyTime = viewModel::onOpenWeeklyTime,
+            onConfirmWeekly = viewModel::onConfirmWeekly,
+            onDismissWeekly = viewModel::onDismissWeekly,
             onClearReminder = viewModel::onClearReminder,
             onSave = viewModel::onSave,
             onBack = viewModel::onBack,
@@ -223,5 +281,12 @@ private fun NavHostController.navigateToTab(tab: AppTab) {
         popUpTo(AppRoute.Tasks) { saveState = true }
         launchSingleTop = true
         restoreState = true
+    }
+}
+
+private fun NavHostController.openWidgetList(route: String) {
+    navigate(route) {
+        popUpTo(AppRoute.Tasks) { inclusive = false }
+        launchSingleTop = true
     }
 }
