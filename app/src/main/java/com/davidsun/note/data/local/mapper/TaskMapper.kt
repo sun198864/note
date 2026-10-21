@@ -20,6 +20,8 @@ internal fun TaskEntity.toDomain(): Task = Task(
     deletedAt = deletedAt,
     revision = revision,
     syncStatus = syncStatus.toSyncStatus(),
+    isImportant = isImportant,
+    sortIndex = sortIndex,
 )
 
 internal fun Task.toEntity(): TaskEntity = TaskEntity(
@@ -38,6 +40,8 @@ internal fun Task.toEntity(): TaskEntity = TaskEntity(
     deletedAt = deletedAt,
     revision = revision,
     syncStatus = syncStatus.name,
+    isImportant = isImportant,
+    sortIndex = sortIndex,
 )
 
 internal fun String.toReminderType(): ReminderType =

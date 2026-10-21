@@ -40,7 +40,10 @@ import com.davidsun.note.ui.ScreenStatus
 import com.davidsun.note.ui.component.ActionFailedBanner
 import com.davidsun.note.ui.component.ConfirmDialog
 import com.davidsun.note.ui.component.EmptyState
+import com.davidsun.note.ui.component.ImportantFilter
+import com.davidsun.note.ui.component.rememberReorderableOrder
 import com.davidsun.note.ui.theme.NoteTheme
+import sh.calvin.reorderable.ReorderableItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -83,6 +86,12 @@ fun TaskListScreen(
                 .fillMaxSize()
                 .padding(innerPadding),
         ) {
+            if (state.status == ScreenStatus.Empty || state.status == ScreenStatus.Content) {
+                ImportantFilter(
+                    checked = state.importantOnly,
+                    onCheckedChange = actions.onImportantOnlyChange,
+                )
+            }
             if (state.status == ScreenStatus.Empty || state.status == ScreenStatus.Error) {
                 TextButton(
                     onClick = actions.onOpenHidden,
@@ -114,8 +123,20 @@ fun TaskListScreen(
                     contentAlignment = Alignment.Center,
                 ) {
                     EmptyState(
-                        title = stringResource(R.string.empty_tasks_title),
-                        body = stringResource(R.string.empty_tasks_body),
+                        title = stringResource(
+                            if (state.importantOnly) {
+                                R.string.empty_important_tasks_title
+                            } else {
+                                R.string.empty_tasks_title
+                            },
+                        ),
+                        body = stringResource(
+                            if (state.importantOnly) {
+                                R.string.empty_important_tasks_body
+                            } else {
+                                R.string.empty_tasks_body
+                            },
+                        ),
                         modifier = Modifier.fillMaxWidth(),
                         actionLabel = stringResource(R.string.add_task),
                         onAction = actions.onAddClick,
@@ -126,6 +147,11 @@ fun TaskListScreen(
                         focusId?.let { taskScrollIndex(state.sections, it) } ?: 0
                     }
                     val listState = rememberLazyListState(initialFirstVisibleItemIndex = initialIndex)
+                    val order = rememberReorderableOrder(
+                        source = state.sections,
+                        listState = listState,
+                        move = { items, fromKey, toKey -> items.moveTask(fromKey, toKey) },
+                    )
                     LaunchedEffect(focusId, state.sections) {
                         val id = focusId ?: return@LaunchedEffect
                         val index = taskScrollIndex(state.sections, id)
@@ -144,19 +170,36 @@ fun TaskListScreen(
                             onClick = actions.onOpenHidden,
                         )
                     }
-                    state.sections.forEach { section ->
+                    order.items.forEach { section ->
                         item(key = "header-${section.section.name}") {
                             SectionHeader(section = section.section, count = section.tasks.size)
                         }
                         items(items = section.tasks, key = { task -> task.id }) { task ->
-                            TaskCard(
-                                item = task,
-                                menuPrimaryLabel = stringResource(R.string.menu_hide),
-                                onClick = { actions.onTaskClick(task.id) },
-                                onToggleComplete = { checked -> actions.onToggleComplete(task.id, checked) },
-                                onMenuPrimary = { actions.onHide(task.id) },
-                                onDelete = { actions.onDeleteRequest(task.id, task.title) },
-                            )
+                            ReorderableItem(order.state, key = task.id) { _ ->
+                                TaskCard(
+                                    item = task,
+                                    menuPrimaryLabel = stringResource(R.string.menu_hide),
+                                    onClick = { actions.onTaskClick(task.id) },
+                                    onToggleComplete = { checked -> actions.onToggleComplete(task.id, checked) },
+                                    onMenuPrimary = { actions.onHide(task.id) },
+                                    onDelete = { actions.onDeleteRequest(task.id, task.title) },
+                                    onToggleImportant = {
+                                        actions.onToggleImportant(task.id, !task.isImportant)
+                                    },
+                                    dragHandleModifier = Modifier.draggableHandle(
+                                        onDragStopped = {
+                                            val current = order.current()
+                                                .firstOrNull { it.section == section.section }
+                                            if (current != null) {
+                                                actions.onReorder(
+                                                    current.section,
+                                                    current.tasks.map { it.id },
+                                                )
+                                            }
+                                        },
+                                    ),
+                                )
+                            }
                         }
                     }
                     }
@@ -270,7 +313,7 @@ private fun previewTaskListState() = TaskListUiState(
         TaskSectionUi(
             section = TaskSection.Today,
             tasks = listOf(
-                TaskItemUi("1", "回覆信件", "下午前完成", "10月14日 週三", true, false),
+                TaskItemUi("1", "回覆信件", "下午前完成", "10月14日 週三", true, false, true),
                 TaskItemUi("2", "買菜", null, "10月15日 週四", false, false),
             ),
         ),
@@ -291,6 +334,9 @@ private fun previewTaskListActions() = TaskListActions(
     onConfirmDelete = {},
     onDismissDelete = {},
     onOpenHidden = {},
+    onToggleImportant = { _, _ -> },
+    onImportantOnlyChange = {},
+    onReorder = { _, _ -> },
 )
 
 @Preview(showBackground = true)

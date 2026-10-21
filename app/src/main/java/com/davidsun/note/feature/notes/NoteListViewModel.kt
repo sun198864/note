@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.davidsun.note.core.common.AppClock
 import com.davidsun.note.core.common.AppDateFormatter
+import com.davidsun.note.domain.ListOrder
 import com.davidsun.note.domain.model.Note
 import com.davidsun.note.domain.usecase.NoteUseCase
 import com.davidsun.note.ui.PendingDelete
@@ -28,6 +29,8 @@ class NoteListViewModel @Inject constructor(
 ) : ViewModel() {
     private val pendingDelete = MutableStateFlow<PendingDelete?>(null)
     private val actionFailed = MutableStateFlow(false)
+    private val importantOnly = MutableStateFlow(false)
+    private var latestNotes: List<Note> = emptyList()
     private val snapshots = noteUseCase.observeNotes()
         .map { notes -> NoteSnapshot(notes = notes, loaded = true) }
         .catch { emit(NoteSnapshot(loaded = true, failed = true)) }
@@ -36,30 +39,55 @@ class NoteListViewModel @Inject constructor(
         snapshots,
         pendingDelete,
         actionFailed,
-    ) { snapshot, pending, failed ->
+        importantOnly,
+    ) { snapshot, pending, failed, onlyImportant ->
         when {
-            !snapshot.loaded -> NoteListUiState()
+            !snapshot.loaded -> NoteListUiState(importantOnly = onlyImportant)
             snapshot.failed || snapshot.notes == null -> NoteListUiState(
                 status = ScreenStatus.Error,
+                importantOnly = onlyImportant,
                 actionFailed = failed,
             )
-            snapshot.notes.isEmpty() -> NoteListUiState(
-                status = ScreenStatus.Empty,
-                pendingDelete = pending,
-                actionFailed = failed,
-            )
-            else -> NoteListUiState(
-                status = ScreenStatus.Content,
-                notes = snapshot.notes.map { note -> note.toItem() },
-                pendingDelete = pending,
-                actionFailed = failed,
-            )
+            else -> {
+                val sorted = ListOrder.notes(snapshot.notes)
+                latestNotes = sorted
+                val visible = if (onlyImportant) sorted.filter { it.isImportant } else sorted
+                if (visible.isEmpty()) {
+                    NoteListUiState(
+                        status = ScreenStatus.Empty,
+                        importantOnly = onlyImportant,
+                        pendingDelete = pending,
+                        actionFailed = failed,
+                    )
+                } else {
+                    NoteListUiState(
+                        status = ScreenStatus.Content,
+                        notes = visible.map { note -> note.toItem() },
+                        importantOnly = onlyImportant,
+                        pendingDelete = pending,
+                        actionFailed = failed,
+                    )
+                }
+            }
         }
     }.stateIn(
         viewModelScope,
         SharingStarted.WhileSubscribed(5_000),
         NoteListUiState(),
     )
+
+    fun setImportant(id: String, important: Boolean) {
+        launchUpdate { noteUseCase.setImportant(id, important) }
+    }
+
+    fun onImportantOnlyChange(enabled: Boolean) {
+        importantOnly.value = enabled
+    }
+
+    fun reorder(visibleIds: List<String>) {
+        val merged = ListOrder.merge(latestNotes.map { it.id }, visibleIds)
+        launchUpdate { noteUseCase.reorder(merged) }
+    }
 
     fun onDeleteRequest(id: String, title: String) {
         pendingDelete.value = PendingDelete(id = id, title = title)
@@ -84,11 +112,25 @@ class NoteListViewModel @Inject constructor(
         }
     }
 
+    private fun launchUpdate(block: suspend () -> Unit) {
+        viewModelScope.launch {
+            try {
+                block()
+                actionFailed.value = false
+            } catch (exception: CancellationException) {
+                throw exception
+            } catch (_: Exception) {
+                actionFailed.value = true
+            }
+        }
+    }
+
     private fun Note.toItem(): NoteItemUi = NoteItemUi(
         id = id,
         title = title,
         summary = summarize(content),
         editedLabel = dateFormatter.formatEditedAt(updatedAt, clock.nowMillis()),
+        isImportant = isImportant,
     )
 
     private fun summarize(content: String): String {

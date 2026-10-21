@@ -3,6 +3,7 @@ package com.davidsun.note.feature.notes
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -29,13 +30,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.davidsun.note.R
+import com.davidsun.note.domain.ListOrder
 import com.davidsun.note.navigation.AppTab
 import com.davidsun.note.navigation.NoteBottomBar
 import com.davidsun.note.ui.ScreenStatus
 import com.davidsun.note.ui.component.ActionFailedBanner
 import com.davidsun.note.ui.component.ConfirmDialog
 import com.davidsun.note.ui.component.EmptyState
+import com.davidsun.note.ui.component.ImportantFilter
+import com.davidsun.note.ui.component.rememberReorderableOrder
 import com.davidsun.note.ui.theme.NoteTheme
+import sh.calvin.reorderable.ReorderableItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -76,70 +81,107 @@ fun NoteListScreen(
             }
         },
     ) { innerPadding ->
-        when (state.status) {
-            ScreenStatus.Loading -> Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(innerPadding),
-                contentAlignment = Alignment.Center,
-            ) {
-                CircularProgressIndicator()
-            }
-            ScreenStatus.Error -> Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(innerPadding),
-                contentAlignment = Alignment.Center,
-            ) {
-                EmptyState(
-                    title = stringResource(R.string.load_error),
-                    body = stringResource(R.string.load_error_body),
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+        ) {
+            if (state.status == ScreenStatus.Empty || state.status == ScreenStatus.Content) {
+                ImportantFilter(
+                    checked = state.importantOnly,
+                    onCheckedChange = actions.onImportantOnlyChange,
                 )
             }
-            ScreenStatus.Empty -> Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(innerPadding),
-                contentAlignment = Alignment.Center,
-            ) {
-                EmptyState(
-                    title = stringResource(R.string.empty_notes_title),
-                    body = stringResource(R.string.empty_notes_body),
-                    actionLabel = stringResource(R.string.add_note),
-                    onAction = actions.onAddClick,
-                )
-            }
-            ScreenStatus.Content -> {
-                val initialIndex = remember(state.notes, state.actionFailed, focusId) {
-                    focusId?.let { noteScrollIndex(state.notes, it, state.actionFailed) } ?: 0
-                }
-                val listState = rememberLazyListState(initialFirstVisibleItemIndex = initialIndex)
-                LaunchedEffect(focusId, state.notes, state.actionFailed) {
-                    val id = focusId ?: return@LaunchedEffect
-                    val index = noteScrollIndex(state.notes, id, state.actionFailed)
-                    if (index != null) listState.scrollToItem(index)
-                    onFocusConsumed()
-                }
-                LazyColumn(
+            when (state.status) {
+                ScreenStatus.Loading -> Box(
                     modifier = Modifier
-                        .fillMaxSize()
-                        .padding(innerPadding),
-                    state = listState,
-                    contentPadding = PaddingValues(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 88.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                        .weight(1f)
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center,
                 ) {
-                if (state.actionFailed) {
-                    item(key = "error") {
-                        ActionFailedBanner(text = stringResource(R.string.action_error))
-                    }
+                    CircularProgressIndicator()
                 }
-                items(items = state.notes, key = { note -> note.id }) { note ->
-                    NoteCard(
-                        note = note,
-                        onClick = { actions.onNoteClick(note.id) },
-                        onDelete = { actions.onDeleteRequest(note.id, note.title) },
+                ScreenStatus.Error -> Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    EmptyState(
+                        title = stringResource(R.string.load_error),
+                        body = stringResource(R.string.load_error_body),
                     )
                 }
+                ScreenStatus.Empty -> Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    EmptyState(
+                        title = stringResource(
+                            if (state.importantOnly) {
+                                R.string.empty_important_notes_title
+                            } else {
+                                R.string.empty_notes_title
+                            },
+                        ),
+                        body = stringResource(
+                            if (state.importantOnly) {
+                                R.string.empty_important_notes_body
+                            } else {
+                                R.string.empty_notes_body
+                            },
+                        ),
+                        actionLabel = stringResource(R.string.add_note),
+                        onAction = actions.onAddClick,
+                    )
+                }
+                ScreenStatus.Content -> {
+                    val initialIndex = remember(state.notes, state.actionFailed, focusId) {
+                        focusId?.let { noteScrollIndex(state.notes, it, state.actionFailed) } ?: 0
+                    }
+                    val listState = rememberLazyListState(initialFirstVisibleItemIndex = initialIndex)
+                    val order = rememberReorderableOrder(
+                        source = state.notes,
+                        listState = listState,
+                        move = { items, fromKey, toKey -> ListOrder.move(items, fromKey, toKey) { it.id } },
+                    )
+                    LaunchedEffect(focusId, state.notes, state.actionFailed) {
+                        val id = focusId ?: return@LaunchedEffect
+                        val index = noteScrollIndex(state.notes, id, state.actionFailed)
+                        if (index != null) listState.scrollToItem(index)
+                        onFocusConsumed()
+                    }
+                    LazyColumn(
+                        modifier = Modifier.weight(1f),
+                        state = listState,
+                        contentPadding = PaddingValues(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 88.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        if (state.actionFailed) {
+                            item(key = "error") {
+                                ActionFailedBanner(text = stringResource(R.string.action_error))
+                            }
+                        }
+                        items(items = order.items, key = { note -> note.id }) { note ->
+                            ReorderableItem(order.state, key = note.id) { _ ->
+                                NoteCard(
+                                    note = note,
+                                    onClick = { actions.onNoteClick(note.id) },
+                                    onDelete = { actions.onDeleteRequest(note.id, note.title) },
+                                    onToggleImportant = {
+                                        actions.onToggleImportant(note.id, !note.isImportant)
+                                    },
+                                    dragHandleModifier = Modifier.draggableHandle(
+                                        onDragStopped = {
+                                            actions.onReorder(order.current().map { it.id })
+                                        },
+                                    ),
+                                )
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -167,7 +209,7 @@ private fun NoteListScreenPreview() {
             state = NoteListUiState(
                 status = ScreenStatus.Content,
                 notes = listOf(
-                    NoteItemUi("1", "會議紀錄", "下週一確認設計稿。", "14:30"),
+                    NoteItemUi("1", "會議紀錄", "下週一確認設計稿。", "14:30", true),
                     NoteItemUi("2", "", "", "10月12日"),
                 ),
             ),
@@ -195,4 +237,7 @@ private fun previewNoteListActions() = NoteListActions(
     onDeleteRequest = { _, _ -> },
     onConfirmDelete = {},
     onDismissDelete = {},
+    onToggleImportant = { _, _ -> },
+    onImportantOnlyChange = {},
+    onReorder = {},
 )

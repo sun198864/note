@@ -117,6 +117,9 @@ private fun TaskListRoute(
             onConfirmDelete = viewModel::onConfirmDelete,
             onDismissDelete = viewModel::onDismissDelete,
             onOpenHidden = { navController.navigate(AppRoute.HiddenTasks) },
+            onToggleImportant = viewModel::setImportant,
+            onImportantOnlyChange = viewModel::onImportantOnlyChange,
+            onReorder = viewModel::reorder,
         ),
         focusId = focusId,
         onFocusConsumed = onFocusConsumed,
@@ -145,6 +148,9 @@ private fun NoteListRoute(
             onDeleteRequest = viewModel::onDeleteRequest,
             onConfirmDelete = viewModel::onConfirmDelete,
             onDismissDelete = viewModel::onDismissDelete,
+            onToggleImportant = viewModel::setImportant,
+            onImportantOnlyChange = viewModel::onImportantOnlyChange,
+            onReorder = viewModel::reorder,
         ),
         focusId = focusId,
         onFocusConsumed = onFocusConsumed,
@@ -213,6 +219,9 @@ private fun HiddenTasksRoute(navController: NavHostController) {
             onDeleteRequest = viewModel::onDeleteRequest,
             onConfirmDelete = viewModel::onConfirmDelete,
             onDismissDelete = viewModel::onDismissDelete,
+            onToggleImportant = viewModel::setImportant,
+            onImportantOnlyChange = viewModel::onImportantOnlyChange,
+            onReorder = viewModel::reorder,
         ),
     )
 }
@@ -251,6 +260,7 @@ private fun TaskEditorRoute(navController: NavHostController) {
             onBack = viewModel::onBack,
             onConfirmDiscard = viewModel::onConfirmDiscard,
             onDismissDiscard = viewModel::onDismissDiscard,
+            onToggleImportant = viewModel::onToggleImportant,
         ),
     )
 }
@@ -272,6 +282,7 @@ private fun NoteEditorRoute(navController: NavHostController) {
                     }
                 }
             },
+            onToggleImportant = viewModel::onToggleImportant,
         ),
     )
 }

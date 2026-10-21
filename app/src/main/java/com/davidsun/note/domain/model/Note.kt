@@ -9,4 +9,6 @@ data class Note(
     val deletedAt: Long?,
     val revision: Long,
     val syncStatus: SyncStatus,
+    val isImportant: Boolean = false,
+    val sortIndex: Long = 0,
 )

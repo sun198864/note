@@ -13,6 +13,8 @@ internal fun Note.toFirestoreMap(): Map<String, Any> = cloudMap(
     "updatedAt" to updatedAt,
     "deletedAt" to deletedAt,
     "revision" to revision,
+    "isImportant" to isImportant,
+    "sortIndex" to sortIndex,
 )
 
 internal fun Task.toFirestoreMap(): Map<String, Any> = cloudMap(
@@ -29,6 +31,8 @@ internal fun Task.toFirestoreMap(): Map<String, Any> = cloudMap(
     "updatedAt" to updatedAt,
     "deletedAt" to deletedAt,
     "revision" to revision,
+    "isImportant" to isImportant,
+    "sortIndex" to sortIndex,
 )
 
 internal fun DocumentSnapshot.toNote(): Note? = data?.let { noteFromMap(id, it) }
@@ -54,6 +58,8 @@ internal fun noteFromMap(id: String, data: Map<String, Any?>): Note? {
         deletedAt = deletedAt.value,
         revision = revision,
         syncStatus = SyncStatus.SYNCED,
+        isImportant = data["isImportant"] as? Boolean ?: false,
+        sortIndex = data.long("sortIndex") ?: 0L,
     )
 }
 
@@ -93,6 +99,8 @@ internal fun taskFromMap(id: String, data: Map<String, Any?>): Task? {
         deletedAt = deletedAt.value,
         revision = revision,
         syncStatus = SyncStatus.SYNCED,
+        isImportant = data["isImportant"] as? Boolean ?: false,
+        sortIndex = data.long("sortIndex") ?: 0L,
     )
 }
 

@@ -28,6 +28,7 @@ class TaskUseCase @Inject constructor(
         reminderAt: Long?,
         intervalDays: Int?,
         weekdays: Int? = null,
+        isImportant: Boolean = false,
     ): SaveTaskResult {
         val trimmedTitle = title.trim()
         if (trimmedTitle.isEmpty()) return SaveTaskResult.InvalidTitle
@@ -42,7 +43,8 @@ class TaskUseCase @Inject constructor(
             existing.reminderType == reminder.type &&
             existing.reminderAt == reminder.triggerAt &&
             existing.intervalDays == reminder.intervalDays &&
-            existing.weekdays == reminder.weekdays
+            existing.weekdays == reminder.weekdays &&
+            existing.isImportant == isImportant
         ) {
             return SaveTaskResult.Saved
         }
@@ -63,6 +65,8 @@ class TaskUseCase @Inject constructor(
             deletedAt = null,
             revision = (existing?.revision ?: 0L) + 1L,
             syncStatus = SyncStatus.PENDING,
+            isImportant = isImportant,
+            sortIndex = existing?.sortIndex ?: -now,
         )
         repository.upsert(task)
         reminderScheduler.sync(task)
@@ -82,6 +86,37 @@ class TaskUseCase @Inject constructor(
         )
         repository.upsert(updated)
         reminderScheduler.sync(updated)
+    }
+
+    suspend fun setImportant(id: String, important: Boolean) {
+        val existing = repository.getTask(id) ?: return
+        if (existing.isImportant == important) return
+        val now = clock.nowMillis()
+        repository.upsert(
+            existing.copy(
+                isImportant = important,
+                updatedAt = now,
+                revision = existing.revision + 1L,
+                syncStatus = SyncStatus.PENDING,
+            ),
+        )
+    }
+
+    suspend fun reorder(idsInOrder: List<String>) {
+        val now = clock.nowMillis()
+        idsInOrder.forEachIndexed { index, id ->
+            val existing = repository.getTask(id) ?: return@forEachIndexed
+            val sortIndex = index.toLong()
+            if (existing.sortIndex == sortIndex) return@forEachIndexed
+            repository.upsert(
+                existing.copy(
+                    sortIndex = sortIndex,
+                    updatedAt = now,
+                    revision = existing.revision + 1L,
+                    syncStatus = SyncStatus.PENDING,
+                ),
+            )
+        }
     }
 
     suspend fun setHidden(id: String, hidden: Boolean) {

@@ -37,6 +37,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.davidsun.note.R
 import com.davidsun.note.domain.model.FontScale
+import com.davidsun.note.ui.component.ImportanceStar
 import com.davidsun.note.ui.theme.NoteTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -79,6 +80,14 @@ fun NoteEditorScreen(
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.back),
+                        )
+                    }
+                },
+                actions = {
+                    if (!state.isLoading && !state.missing) {
+                        ImportanceStar(
+                            important = state.isImportant,
+                            onClick = actions.onToggleImportant,
                         )
                     }
                 },
@@ -186,4 +195,5 @@ private fun previewNoteEditorActions() = NoteEditorActions(
     onTitleChange = {},
     onContentChange = {},
     onBack = {},
+    onToggleImportant = {},
 )

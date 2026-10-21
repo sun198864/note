@@ -14,6 +14,7 @@ data class WidgetRow(
     val id: String,
     val title: String,
     val subtitle: String,
+    val important: Boolean = false,
 )
 
 data class WidgetSnapshot(
@@ -34,6 +35,7 @@ class WidgetSnapshotLoader @Inject constructor(
                 id = task.id,
                 title = task.title,
                 subtitle = task.description?.let { WidgetLists.summary(it, SUBTITLE_LIMIT) }.orEmpty(),
+                important = task.isImportant,
             )
         }
         val noteRows = WidgetLists.recentNotes(notes.observeActiveNotes().first()).map { note ->
@@ -43,6 +45,7 @@ class WidgetSnapshotLoader @Inject constructor(
                 subtitle = WidgetLists.summary(note.content).ifBlank {
                     context.getString(R.string.no_note_content)
                 },
+                important = note.isImportant,
             )
         }
         return WidgetSnapshot(tasks = taskRows, notes = noteRows)

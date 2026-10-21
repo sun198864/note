@@ -20,6 +20,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.davidsun.note.R
+import com.davidsun.note.ui.component.DragHandle
+import com.davidsun.note.ui.component.ImportanceStar
 import com.davidsun.note.ui.theme.NoteTheme
 
 @Composable
@@ -27,7 +29,9 @@ fun NoteCard(
     note: NoteItemUi,
     onClick: () -> Unit,
     onDelete: () -> Unit,
+    onToggleImportant: () -> Unit,
     modifier: Modifier = Modifier,
+    dragHandleModifier: Modifier = Modifier,
 ) {
     val title = note.title.ifBlank { stringResource(R.string.untitled_note) }
     val summary = note.summary.ifBlank { stringResource(R.string.no_note_content) }
@@ -36,9 +40,10 @@ fun NoteCard(
         modifier = modifier.fillMaxWidth(),
     ) {
         Row(
-            modifier = Modifier.padding(start = 16.dp, top = 12.dp, bottom = 12.dp, end = 4.dp),
+            modifier = Modifier.padding(top = 4.dp, bottom = 4.dp, end = 4.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
+            DragHandle(modifier = dragHandleModifier)
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = title,
@@ -59,6 +64,10 @@ fun NoteCard(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
+            ImportanceStar(
+                important = note.isImportant,
+                onClick = onToggleImportant,
+            )
             IconButton(onClick = onDelete) {
                 Icon(
                     imageVector = Icons.Filled.Delete,
@@ -81,9 +90,11 @@ private fun NoteCardPreview() {
                 title = "會議紀錄",
                 summary = "下週一確認設計稿，並補上待辦。",
                 editedLabel = "14:30",
+                isImportant = true,
             ),
             onClick = {},
             onDelete = {},
+            onToggleImportant = {},
             modifier = Modifier.padding(16.dp),
         )
     }

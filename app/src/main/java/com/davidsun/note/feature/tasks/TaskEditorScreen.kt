@@ -61,6 +61,7 @@ import com.davidsun.note.R
 import com.davidsun.note.core.common.isWeekdaySelected
 import com.davidsun.note.core.common.weekdayLabel
 import com.davidsun.note.ui.component.ConfirmDialog
+import com.davidsun.note.ui.component.ImportanceStar
 import com.davidsun.note.ui.theme.NoteTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -97,6 +98,12 @@ fun TaskEditorScreen(
                     }
                 },
                 actions = {
+                    if (!state.isLoading && !state.missing) {
+                        ImportanceStar(
+                            important = state.isImportant,
+                            onClick = actions.onToggleImportant,
+                        )
+                    }
                     TextButton(
                         onClick = actions.onSave,
                         enabled = !state.isSaving && !state.isLoading && !state.missing,
@@ -657,4 +664,5 @@ private fun previewTaskEditorActions() = TaskEditorActions(
     onBack = {},
     onConfirmDiscard = {},
     onDismissDiscard = {},
+    onToggleImportant = {},
 )

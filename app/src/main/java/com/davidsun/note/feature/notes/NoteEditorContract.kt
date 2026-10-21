@@ -14,10 +14,12 @@ data class NoteEditorUiState(
     val title: String = "",
     val content: String = "",
     val saveStatus: NoteSaveStatus = NoteSaveStatus.Idle,
+    val isImportant: Boolean = false,
 )
 
 data class NoteEditorActions(
     val onTitleChange: (String) -> Unit,
     val onContentChange: (String) -> Unit,
     val onBack: () -> Unit,
+    val onToggleImportant: () -> Unit,
 )

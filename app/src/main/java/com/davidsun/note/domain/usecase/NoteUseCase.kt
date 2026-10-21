@@ -15,14 +15,18 @@ class NoteUseCase @Inject constructor(
 
     suspend fun getNote(id: String): Note? = repository.getNote(id)
 
-    suspend fun save(id: String, title: String, content: String): SaveNoteResult {
+    suspend fun save(id: String, title: String, content: String, isImportant: Boolean = false): SaveNoteResult {
         val trimmedTitle = title.trim()
         val trimmedContent = content.trim()
         val existing = repository.getNote(id)
         if (existing == null && trimmedTitle.isEmpty() && trimmedContent.isEmpty()) {
             return SaveNoteResult.IgnoredEmpty
         }
-        if (existing != null && existing.title == trimmedTitle && existing.content == trimmedContent) {
+        if (existing != null &&
+            existing.title == trimmedTitle &&
+            existing.content == trimmedContent &&
+            existing.isImportant == isImportant
+        ) {
             return SaveNoteResult.Saved(title = trimmedTitle, content = trimmedContent)
         }
         val now = clock.nowMillis()
@@ -36,9 +40,42 @@ class NoteUseCase @Inject constructor(
                 deletedAt = null,
                 revision = (existing?.revision ?: 0L) + 1L,
                 syncStatus = SyncStatus.PENDING,
+                isImportant = isImportant,
+                sortIndex = existing?.sortIndex ?: -now,
             ),
         )
         return SaveNoteResult.Saved(title = trimmedTitle, content = trimmedContent)
+    }
+
+    suspend fun setImportant(id: String, important: Boolean) {
+        val existing = repository.getNote(id) ?: return
+        if (existing.isImportant == important) return
+        val now = clock.nowMillis()
+        repository.upsert(
+            existing.copy(
+                isImportant = important,
+                updatedAt = now,
+                revision = existing.revision + 1L,
+                syncStatus = SyncStatus.PENDING,
+            ),
+        )
+    }
+
+    suspend fun reorder(idsInOrder: List<String>) {
+        val now = clock.nowMillis()
+        idsInOrder.forEachIndexed { index, id ->
+            val existing = repository.getNote(id) ?: return@forEachIndexed
+            val sortIndex = index.toLong()
+            if (existing.sortIndex == sortIndex) return@forEachIndexed
+            repository.upsert(
+                existing.copy(
+                    sortIndex = sortIndex,
+                    updatedAt = now,
+                    revision = existing.revision + 1L,
+                    syncStatus = SyncStatus.PENDING,
+                ),
+            )
+        }
     }
 
     suspend fun delete(id: String) {

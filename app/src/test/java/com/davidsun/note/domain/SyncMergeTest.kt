@@ -77,4 +77,26 @@ class CloudDocumentTest {
     fun malformedNoteIsIgnored() {
         assertNull(noteFromMap("n1", mapOf("title" to "只有標題")))
     }
+
+    @Test
+    fun oldDocumentsDefaultImportanceAndOrder() {
+        val note = Note(
+            id = "n1",
+            title = "標題",
+            content = "內容",
+            createdAt = 10,
+            updatedAt = 20,
+            deletedAt = null,
+            revision = 2,
+            syncStatus = SyncStatus.PENDING,
+        )
+        val noteMap = note.toFirestoreMap().toMutableMap()
+        noteMap.remove("isImportant")
+        noteMap.remove("sortIndex")
+
+        val restored = noteFromMap("n1", noteMap)
+
+        assertEquals(false, restored?.isImportant)
+        assertEquals(0L, restored?.sortIndex)
+    }
 }

@@ -3,6 +3,7 @@ package com.davidsun.note.feature.tasks
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.davidsun.note.core.common.AppDateFormatter
+import com.davidsun.note.domain.ListOrder
 import com.davidsun.note.domain.model.GroupedTasks
 import com.davidsun.note.domain.model.Task
 import com.davidsun.note.domain.usecase.TaskClassifier
@@ -29,6 +30,8 @@ class TaskListViewModel @Inject constructor(
 ) : ViewModel() {
     private val pendingDelete = MutableStateFlow<PendingDelete?>(null)
     private val actionFailed = MutableStateFlow(false)
+    private val importantOnly = MutableStateFlow(false)
+    private var latestGroups: GroupedTasks? = null
     private val snapshots = taskUseCase.observeTasks()
         .map { tasks -> TaskSnapshot(grouped = classifier.group(tasks), loaded = true) }
         .catch { emit(TaskSnapshot(loaded = true, failed = true)) }
@@ -37,8 +40,9 @@ class TaskListViewModel @Inject constructor(
         snapshots,
         pendingDelete,
         actionFailed,
-    ) { snapshot, pending, failed ->
-        mapState(snapshot, pending, failed)
+        importantOnly,
+    ) { snapshot, pending, failed, onlyImportant ->
+        mapState(snapshot, pending, failed, onlyImportant)
     }.stateIn(
         viewModelScope,
         SharingStarted.WhileSubscribed(5_000),
@@ -51,6 +55,21 @@ class TaskListViewModel @Inject constructor(
 
     fun hide(id: String) {
         launchUpdate { taskUseCase.setHidden(id, true) }
+    }
+
+    fun setImportant(id: String, important: Boolean) {
+        launchUpdate { taskUseCase.setImportant(id, important) }
+    }
+
+    fun onImportantOnlyChange(enabled: Boolean) {
+        importantOnly.value = enabled
+    }
+
+    fun reorder(section: TaskSection, visibleIds: List<String>) {
+        val grouped = latestGroups ?: return
+        val allIds = grouped.sectionTasks(section).map { it.id }
+        val merged = ListOrder.merge(allIds, visibleIds)
+        launchUpdate { taskUseCase.reorder(merged) }
     }
 
     fun onDeleteRequest(id: String, title: String) {
@@ -84,24 +103,27 @@ class TaskListViewModel @Inject constructor(
         snapshot: TaskSnapshot,
         pending: PendingDelete?,
         failed: Boolean,
+        onlyImportant: Boolean,
     ): TaskListUiState {
-        if (!snapshot.loaded) return TaskListUiState(status = ScreenStatus.Loading)
+        if (!snapshot.loaded) return TaskListUiState(status = ScreenStatus.Loading, importantOnly = onlyImportant)
         val grouped = snapshot.grouped
         if (snapshot.failed || grouped == null) {
-            return TaskListUiState(status = ScreenStatus.Error, actionFailed = failed)
+            return TaskListUiState(status = ScreenStatus.Error, actionFailed = failed, importantOnly = onlyImportant)
         }
+        latestGroups = grouped
         val sections = listOf(
             TaskSection.Today to grouped.today,
             TaskSection.Upcoming to grouped.upcoming,
             TaskSection.Undated to grouped.undated,
             TaskSection.Completed to grouped.completed,
         ).mapNotNull { (section, tasks) ->
-            if (tasks.isEmpty()) {
+            val visible = if (onlyImportant) tasks.filter { it.isImportant } else tasks
+            if (visible.isEmpty()) {
                 null
             } else {
                 TaskSectionUi(
                     section = section,
-                    tasks = tasks.map { task -> task.toItem() },
+                    tasks = visible.map { task -> task.toItem() },
                 )
             }
         }
@@ -109,12 +131,20 @@ class TaskListViewModel @Inject constructor(
             status = if (sections.isEmpty()) ScreenStatus.Empty else ScreenStatus.Content,
             sections = sections,
             hiddenCount = grouped.hidden.size,
+            importantOnly = onlyImportant,
             pendingDelete = pending,
             actionFailed = failed,
         )
     }
 
     private fun Task.toItem(): TaskItemUi = toTaskItemUi(dateFormatter, classifier.isOverdue(this))
+
+    private fun GroupedTasks.sectionTasks(section: TaskSection): List<Task> = when (section) {
+        TaskSection.Today -> today
+        TaskSection.Upcoming -> upcoming
+        TaskSection.Undated -> undated
+        TaskSection.Completed -> completed
+    }
 
     private data class TaskSnapshot(
         val grouped: GroupedTasks? = null,

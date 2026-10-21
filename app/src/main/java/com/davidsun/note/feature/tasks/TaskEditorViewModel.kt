@@ -27,6 +27,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import java.time.Instant
 import java.time.ZoneId
 import java.util.UUID
@@ -67,6 +69,7 @@ class TaskEditorViewModel @Inject constructor(
         null
     }
     private var closing = false
+    private val importanceMutex = Mutex()
 
     private val closeChannel = Channel<Unit>(Channel.CONFLATED)
     val closeEvents: Flow<Unit> = closeChannel.receiveAsFlow()
@@ -85,6 +88,25 @@ class TaskEditorViewModel @Inject constructor(
     fun onTitleChange(value: String) {
         savedStateHandle[TITLE] = value
         _uiState.update { it.copy(title = value, titleError = false, saveFailed = false) }
+    }
+
+    fun onToggleImportant() {
+        val current = _uiState.value
+        if (current.isLoading || current.missing || current.isSaving || closing) return
+        val next = !current.isImportant
+        savedStateHandle[IMPORTANT] = next
+        _uiState.update { it.copy(isImportant = next) }
+        viewModelScope.launch {
+            importanceMutex.withLock {
+                try {
+                    taskUseCase.setImportant(taskId, _uiState.value.isImportant)
+                } catch (exception: CancellationException) {
+                    throw exception
+                } catch (_: Exception) {
+                    _uiState.update { it.copy(saveFailed = true) }
+                }
+            }
+        }
     }
 
     fun onDescriptionChange(value: String) {
@@ -345,6 +367,7 @@ class TaskEditorViewModel @Inject constructor(
                         reminderAt = reminderAt,
                         intervalDays = intervalDays,
                         weekdays = weekdays,
+                        isImportant = _uiState.value.isImportant,
                     )
                 ) {
                     SaveTaskResult.InvalidTitle -> _uiState.update {
@@ -420,6 +443,7 @@ class TaskEditorViewModel @Inject constructor(
         savedStateHandle[BASE_DESCRIPTION] = task.description.orEmpty()
         persistReminder()
         persistBaseline()
+        savedStateHandle[IMPORTANT] = task.isImportant
         val (hour, minute) = hourMinute(task.reminderAt)
         _uiState.update {
             it.copy(
@@ -439,6 +463,7 @@ class TaskEditorViewModel @Inject constructor(
                 timePickerMinute = minute,
                 intervalDaysInput = task.intervalDays?.toString() ?: "1",
                 weekdaysMask = task.weekdays ?: 0,
+                isImportant = task.isImportant,
             )
         }
     }
@@ -468,6 +493,7 @@ class TaskEditorViewModel @Inject constructor(
             timePickerMinute = minute,
             intervalDaysInput = intervalDays?.toString() ?: "1",
             weekdaysMask = weekdays ?: 0,
+            isImportant = savedStateHandle.get<Boolean>(IMPORTANT) == true,
         )
     }
 
@@ -529,6 +555,7 @@ class TaskEditorViewModel @Inject constructor(
         const val READY = "taskEditorReady"
         const val TITLE = "taskTitle"
         const val DESCRIPTION = "taskDescription"
+        const val IMPORTANT = "taskImportant"
         const val TYPE_KEY = "taskReminderType"
         const val AT_KEY = "taskReminderAt"
         const val DAYS_KEY = "taskIntervalDays"

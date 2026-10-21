@@ -10,6 +10,7 @@ data class TaskItemUi(
     val reminderLabel: String?,
     val isOverdue: Boolean,
     val isCompleted: Boolean,
+    val isImportant: Boolean = false,
 )
 
 fun Task.toTaskItemUi(formatter: AppDateFormatter, isOverdue: Boolean): TaskItemUi = TaskItemUi(
@@ -19,4 +20,5 @@ fun Task.toTaskItemUi(formatter: AppDateFormatter, isOverdue: Boolean): TaskItem
     reminderLabel = formatter.formatTaskReminder(reminderType, reminderAt, intervalDays, weekdays),
     isOverdue = isOverdue,
     isCompleted = isCompleted,
+    isImportant = isImportant,
 )

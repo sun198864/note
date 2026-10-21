@@ -55,8 +55,10 @@ import com.davidsun.note.ui.theme.NoteOnSurfaceVariant
 import com.davidsun.note.ui.theme.NoteOnSurfaceVariantDark
 import com.davidsun.note.ui.theme.NoteOutline
 import com.davidsun.note.ui.theme.NoteOutlineDark
+import com.davidsun.note.ui.theme.NotePrimary
 import com.davidsun.note.ui.theme.NotePrimaryContainer
 import com.davidsun.note.ui.theme.NotePrimaryContainerDark
+import com.davidsun.note.ui.theme.NotePrimaryDark
 import com.davidsun.note.ui.theme.NoteSurface
 import com.davidsun.note.ui.theme.NoteSurfaceDark
 import dagger.hilt.android.EntryPointAccessors
@@ -209,31 +211,50 @@ private fun NoteListWidgetContent(
                 }
             } else {
                 items(items = rows, itemId = { row -> row.id.hashCode().toLong() }) { row ->
-                    Column(
+                    Row(
                         modifier = GlanceModifier
                             .fillMaxWidth()
                             .clickable(actionStart(context, listRoute, row.id))
                             .padding(vertical = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically,
                     ) {
-                        Text(
-                            text = row.title,
-                            maxLines = 1,
-                            style = TextStyle(
-                                color = titleColor,
-                                fontSize = 14.sp,
-                                fontWeight = FontWeight.Medium,
-                            ),
-                        )
-                        if (row.subtitle.isNotBlank()) {
+                        Column(modifier = GlanceModifier.defaultWeight()) {
                             Text(
-                                text = row.subtitle,
-                                maxLines = 2,
+                                text = row.title,
+                                maxLines = 1,
                                 style = TextStyle(
-                                    color = subtitleColor,
-                                    fontSize = 12.sp,
+                                    color = titleColor,
+                                    fontSize = 14.sp,
+                                    fontWeight = FontWeight.Medium,
                                 ),
                             )
+                            if (row.subtitle.isNotBlank()) {
+                                Text(
+                                    text = row.subtitle,
+                                    maxLines = 2,
+                                    style = TextStyle(
+                                        color = subtitleColor,
+                                        fontSize = 12.sp,
+                                    ),
+                                )
+                            }
                         }
+                        Image(
+                            provider = ImageProvider(
+                                if (row.important) R.drawable.ic_star else R.drawable.ic_star_border,
+                            ),
+                            contentDescription = null,
+                            modifier = GlanceModifier
+                                .padding(start = 8.dp)
+                                .size(18.dp),
+                            colorFilter = ColorFilter.tint(
+                                if (row.important) {
+                                    ColorProvider(NotePrimary, NotePrimaryDark)
+                                } else {
+                                    ColorProvider(NoteOnSurfaceVariant, NoteOnSurfaceVariantDark)
+                                },
+                            ),
+                        )
                     }
                 }
             }
@@ -262,7 +283,7 @@ private fun NoteListWidgetTasksPreview() {
     NoteListWidgetContent(
         mode = WidgetListMode.Tasks,
         rows = listOf(
-            WidgetRow(id = "1", title = "買菜", subtitle = "超市營業到九點"),
+            WidgetRow(id = "1", title = "買菜", subtitle = "超市營業到九點", important = true),
             WidgetRow(id = "2", title = "回覆信件", subtitle = ""),
         ),
     )
@@ -276,7 +297,7 @@ private fun NoteListWidgetNotesPreview() {
     NoteListWidgetContent(
         mode = WidgetListMode.Notes,
         rows = listOf(
-            WidgetRow(id = "1", title = "會議紀錄", subtitle = "下週先確認議程"),
+            WidgetRow(id = "1", title = "會議紀錄", subtitle = "下週先確認議程", important = true),
             WidgetRow(id = "2", title = "未命名筆記", subtitle = "沒有內容"),
         ),
     )

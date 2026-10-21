@@ -64,6 +64,23 @@ class TaskClassifierTest {
         assertEquals(visibleIds.size, visibleIds.distinct().size)
     }
 
+    @Test
+    fun sortIndexComesBeforeThePreviousTieBreak() {
+        val grouped = classifier.group(
+            tasks = listOf(
+                task("later", "後", reminderAt = today.start(), sortIndex = 2),
+                task("first", "先", reminderAt = today.start() + 60_000, sortIndex = 0),
+                task("middle", "中", reminderAt = today.start() + 30_000, sortIndex = 1),
+                task("undated-new", "未定新", reminderType = ReminderType.NONE, updatedAt = 1, sortIndex = 1),
+                task("undated-old", "未定舊", reminderType = ReminderType.NONE, updatedAt = 9, sortIndex = 0),
+            ),
+            zone = zone,
+        )
+
+        assertEquals(listOf("先", "中", "後"), grouped.today.map { it.title })
+        assertEquals(listOf("未定舊", "未定新"), grouped.undated.map { it.title })
+    }
+
     private fun LocalDate.start(): Long = atStartOfDay(zone).toInstant().toEpochMilli()
 
     private fun task(
@@ -76,6 +93,7 @@ class TaskClassifierTest {
         isHidden: Boolean = false,
         deletedAt: Long? = null,
         updatedAt: Long = 0,
+        sortIndex: Long = 0,
     ) = Task(
         id = id,
         title = title,
@@ -91,6 +109,7 @@ class TaskClassifierTest {
         deletedAt = deletedAt,
         revision = 1,
         syncStatus = SyncStatus.PENDING,
+        sortIndex = sortIndex,
     )
 
     private class FixedClock(private val today: LocalDate) : AppClock {

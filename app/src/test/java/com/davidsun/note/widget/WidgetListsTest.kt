@@ -36,6 +36,18 @@ class WidgetListsTest {
     }
 
     @Test
+    fun recentNotesPreferSortIndexOverUpdatedAt() {
+        val notes = WidgetLists.recentNotes(
+            listOf(
+                note("new", "新", updatedAt = 5, sortIndex = 1),
+                note("old", "舊", updatedAt = 1, sortIndex = 0),
+            ),
+        )
+
+        assertEquals(listOf("舊", "新"), notes.map { it.title })
+    }
+
+    @Test
     fun summaryCollapsesBlankLines() {
         assertEquals("先寫這句 再寫這句", WidgetLists.summary("先寫這句\n再寫這句"))
         assertEquals("", WidgetLists.summary("  \n "))
@@ -68,6 +80,7 @@ class WidgetListsTest {
         title: String,
         updatedAt: Long,
         deletedAt: Long? = null,
+        sortIndex: Long = 0,
     ) = Note(
         id = id,
         title = title,
@@ -77,5 +90,6 @@ class WidgetListsTest {
         deletedAt = deletedAt,
         revision = 1,
         syncStatus = SyncStatus.PENDING,
+        sortIndex = sortIndex,
     )
 }

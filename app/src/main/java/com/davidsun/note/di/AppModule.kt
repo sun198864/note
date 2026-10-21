@@ -6,6 +6,7 @@ import com.davidsun.note.core.common.AppClock
 import com.davidsun.note.core.common.SystemAppClock
 import com.davidsun.note.data.local.MIGRATION_1_2
 import com.davidsun.note.data.local.MIGRATION_2_3
+import com.davidsun.note.data.local.MIGRATION_3_4
 import com.davidsun.note.data.local.NoteDatabase
 import com.davidsun.note.data.local.dao.NoteDao
 import com.davidsun.note.data.local.dao.TaskDao
@@ -38,7 +39,7 @@ object DatabaseModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): NoteDatabase =
         Room.databaseBuilder(context, NoteDatabase::class.java, "note.db")
-            .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
+            .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
             .build()
 
     @Provides

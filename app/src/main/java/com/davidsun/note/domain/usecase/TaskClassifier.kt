@@ -37,12 +37,15 @@ class TaskClassifier @Inject constructor(
             }
         }
 
+        val openOrder = compareBy<Task>({ it.sortIndex }, { it.reminderAt ?: Long.MAX_VALUE }, { it.title })
         return GroupedTasks(
-            today = todayTasks.sortedWith(compareBy({ it.reminderAt ?: Long.MAX_VALUE }, { it.title })),
-            upcoming = upcoming.sortedWith(compareBy({ it.reminderAt ?: Long.MAX_VALUE }, { it.title })),
-            undated = undated.sortedByDescending { it.updatedAt },
-            completed = completed.sortedByDescending { it.completedAt ?: it.updatedAt },
-            hidden = hidden.sortedByDescending { it.updatedAt },
+            today = todayTasks.sortedWith(openOrder),
+            upcoming = upcoming.sortedWith(openOrder),
+            undated = undated.sortedWith(compareBy<Task> { it.sortIndex }.thenByDescending { it.updatedAt }),
+            completed = completed.sortedWith(
+                compareBy<Task> { it.sortIndex }.thenByDescending { it.completedAt ?: it.updatedAt },
+            ),
+            hidden = hidden.sortedWith(compareBy<Task> { it.sortIndex }.thenByDescending { it.updatedAt }),
         )
     }
 

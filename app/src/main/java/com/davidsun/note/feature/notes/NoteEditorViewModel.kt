@@ -49,6 +49,7 @@ class NoteEditorViewModel @Inject constructor(
             title = initialTitle,
             content = initialContent,
             saveStatus = statusFor(initialTitle, initialContent),
+            isImportant = savedStateHandle.get<Boolean>(IMPORTANT) == true,
         ),
     )
     val uiState: StateFlow<NoteEditorUiState> = _uiState.asStateFlow()
@@ -75,6 +76,26 @@ class NoteEditorViewModel @Inject constructor(
         val nextStatus = statusFor(_uiState.value.title, value)
         _uiState.update { it.copy(content = value, saveStatus = nextStatus) }
         onEdited(nextStatus)
+    }
+
+    fun onToggleImportant() {
+        val current = _uiState.value
+        if (current.isLoading || current.missing || closing) return
+        val next = !current.isImportant
+        savedStateHandle[IMPORTANT] = next
+        _uiState.update { it.copy(isImportant = next) }
+        viewModelScope.launch {
+            saveMutex.withLock {
+                if (!hasPersisted) return@withLock
+                try {
+                    noteUseCase.setImportant(noteId, _uiState.value.isImportant)
+                } catch (exception: CancellationException) {
+                    throw exception
+                } catch (_: Exception) {
+                    _uiState.update { it.copy(saveStatus = NoteSaveStatus.Error) }
+                }
+            }
+        }
     }
 
     suspend fun onLeave(): Boolean {
@@ -119,6 +140,7 @@ class NoteEditorViewModel @Inject constructor(
         hasPersisted = true
         savedStateHandle[TITLE] = note.title
         savedStateHandle[CONTENT] = note.content
+        savedStateHandle[IMPORTANT] = note.isImportant
         savedStateHandle[SAVED_TITLE] = note.title
         savedStateHandle[SAVED_CONTENT] = note.content
         savedStateHandle[HAS_PERSISTED] = true
@@ -129,6 +151,7 @@ class NoteEditorViewModel @Inject constructor(
                 title = note.title,
                 content = note.content,
                 saveStatus = NoteSaveStatus.Saved,
+                isImportant = note.isImportant,
             )
         }
     }
@@ -138,7 +161,7 @@ class NoteEditorViewModel @Inject constructor(
         if (state.isLoading || state.missing) return@withLock true
         val result = try {
             withContext(NonCancellable) {
-                noteUseCase.save(noteId, state.title, state.content)
+                noteUseCase.save(noteId, state.title, state.content, state.isImportant)
             }
         } catch (exception: CancellationException) {
             throw exception
@@ -194,6 +217,7 @@ class NoteEditorViewModel @Inject constructor(
         const val READY = "noteEditorReady"
         const val TITLE = "noteTitle"
         const val CONTENT = "noteContent"
+        const val IMPORTANT = "noteImportant"
         const val SAVED_TITLE = "noteSavedTitle"
         const val SAVED_CONTENT = "noteSavedContent"
         const val HAS_PERSISTED = "noteHasPersisted"

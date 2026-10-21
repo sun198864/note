@@ -9,7 +9,7 @@ import com.davidsun.note.data.local.entity.TaskEntity
 
 @Database(
     entities = [NoteEntity::class, TaskEntity::class],
-    version = 3,
+    version = 4,
     exportSchema = false,
 )
 abstract class NoteDatabase : RoomDatabase() {

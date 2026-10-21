@@ -13,6 +13,8 @@ internal fun NoteEntity.toDomain(): Note = Note(
     deletedAt = deletedAt,
     revision = revision,
     syncStatus = syncStatus.toSyncStatus(),
+    isImportant = isImportant,
+    sortIndex = sortIndex,
 )
 
 internal fun Note.toEntity(): NoteEntity = NoteEntity(
@@ -24,6 +26,8 @@ internal fun Note.toEntity(): NoteEntity = NoteEntity(
     deletedAt = deletedAt,
     revision = revision,
     syncStatus = syncStatus.name,
+    isImportant = isImportant,
+    sortIndex = sortIndex,
 )
 
 internal fun String.toSyncStatus(): SyncStatus =

@@ -29,6 +29,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.davidsun.note.R
+import com.davidsun.note.ui.component.DragHandle
+import com.davidsun.note.ui.component.ImportanceStar
 import com.davidsun.note.ui.theme.NoteTheme
 
 @Composable
@@ -39,7 +41,9 @@ fun TaskCard(
     onToggleComplete: (Boolean) -> Unit,
     onMenuPrimary: () -> Unit,
     onDelete: () -> Unit,
+    onToggleImportant: () -> Unit,
     modifier: Modifier = Modifier,
+    dragHandleModifier: Modifier = Modifier,
 ) {
     var menuExpanded by remember { mutableStateOf(false) }
     val completeLabel = stringResource(R.string.complete_task)
@@ -51,6 +55,7 @@ fun TaskCard(
             modifier = Modifier.padding(start = 4.dp, end = 4.dp, top = 4.dp, bottom = 4.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
+            DragHandle(modifier = dragHandleModifier)
             Checkbox(
                 checked = item.isCompleted,
                 onCheckedChange = onToggleComplete,
@@ -98,6 +103,10 @@ fun TaskCard(
                     )
                 }
             }
+            ImportanceStar(
+                important = item.isImportant,
+                onClick = onToggleImportant,
+            )
             Box {
                 IconButton(onClick = { menuExpanded = true }) {
                     Icon(
@@ -147,12 +156,14 @@ private fun TaskCardPreview() {
                 reminderLabel = "10月14日 週三 09:00",
                 isOverdue = true,
                 isCompleted = false,
+                isImportant = true,
             ),
             menuPrimaryLabel = "隱藏",
             onClick = {},
             onToggleComplete = {},
             onMenuPrimary = {},
             onDelete = {},
+            onToggleImportant = {},
             modifier = Modifier.padding(16.dp),
         )
     }

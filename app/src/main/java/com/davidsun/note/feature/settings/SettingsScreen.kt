@@ -1,8 +1,6 @@
 package com.davidsun.note.feature.settings
 
 import android.content.res.Configuration
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -11,24 +9,20 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.davidsun.note.R
@@ -37,6 +31,7 @@ import com.davidsun.note.domain.model.FontScale
 import com.davidsun.note.navigation.AppTab
 import com.davidsun.note.navigation.NoteBottomBar
 import com.davidsun.note.ui.theme.NoteTheme
+import kotlin.math.roundToInt
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -71,13 +66,10 @@ fun SettingsScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             SettingsCard(title = stringResource(R.string.font_size)) {
-                FontScale.entries.forEach { scale ->
-                    FontScaleOption(
-                        label = stringResource(scale.labelRes()),
-                        selected = state.fontScale == scale,
-                        onClick = { actions.onFontScaleSelected(scale) },
-                    )
-                }
+                FontScaleSlider(
+                    scale = state.fontScale,
+                    onScaleSelected = actions.onFontScaleSelected,
+                )
             }
             SettingsCard(title = stringResource(R.string.settings_notification)) {
                 if (notificationGranted) {
@@ -124,11 +116,6 @@ private fun CloudBackupContent(
             text = state.accountLabel?.let { stringResource(R.string.settings_cloud_signed_in, it) }
                 ?: stringResource(R.string.settings_cloud_signed_in_no_email),
             style = MaterialTheme.typography.bodyLarge,
-        )
-        Text(
-            text = stringResource(R.string.settings_cloud_sync_body),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         Text(
             text = when {
@@ -204,28 +191,39 @@ private fun SettingsCard(
 }
 
 @Composable
-fun FontScaleOption(
-    label: String,
-    selected: Boolean,
-    onClick: () -> Unit,
+private fun FontScaleSlider(
+    scale: FontScale,
+    onScaleSelected: (FontScale) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val background = if (selected) {
-        MaterialTheme.colorScheme.primaryContainer
-    } else {
-        MaterialTheme.colorScheme.surface
-    }
-    Row(
-        modifier = modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(12.dp))
-            .background(background)
-            .clickable(role = Role.RadioButton, onClick = onClick)
-            .padding(horizontal = 8.dp, vertical = 4.dp),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        RadioButton(selected = selected, onClick = onClick)
-        Text(text = label, style = MaterialTheme.typography.bodyLarge)
+    val lastIndex = FontScale.entries.lastIndex
+    Column(modifier = modifier.fillMaxWidth()) {
+        Slider(
+            value = scale.ordinal.toFloat(),
+            onValueChange = { value ->
+                val next = FontScale.entries[value.roundToInt().coerceIn(0, lastIndex)]
+                if (next != scale) onScaleSelected(next)
+            },
+            valueRange = 0f..lastIndex.toFloat(),
+            steps = (FontScale.entries.size - 2).coerceAtLeast(0),
+            modifier = Modifier.fillMaxWidth(),
+        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+        ) {
+            FontScale.entries.forEach { item ->
+                Text(
+                    text = stringResource(item.labelRes()),
+                    style = MaterialTheme.typography.labelLarge,
+                    color = if (item == scale) {
+                        MaterialTheme.colorScheme.primary
+                    } else {
+                        MaterialTheme.colorScheme.onSurfaceVariant
+                    },
+                )
+            }
+        }
     }
 }
 
@@ -306,11 +304,12 @@ private fun SettingsLargeFontPreview() {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(name = "Light", showBackground = true)
+@Preview(name = "Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun FontScaleOptionPreview() {
+private fun FontScaleSliderPreview() {
     NoteTheme {
-        FontScaleOption(label = "中", selected = true, onClick = {})
+        FontScaleSlider(scale = FontScale.MEDIUM, onScaleSelected = {})
     }
 }
 

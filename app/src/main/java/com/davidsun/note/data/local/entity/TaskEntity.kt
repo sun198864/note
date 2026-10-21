@@ -28,4 +28,6 @@ data class TaskEntity(
     val revision: Long,
     val syncStatus: String,
     val weekdays: Int?,
+    val isImportant: Boolean = false,
+    val sortIndex: Long = 0,
 )

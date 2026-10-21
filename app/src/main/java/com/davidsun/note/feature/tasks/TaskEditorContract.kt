@@ -27,6 +27,7 @@ data class TaskEditorUiState(
     val showDiscardDialog: Boolean = false,
     val isSaving: Boolean = false,
     val saveFailed: Boolean = false,
+    val isImportant: Boolean = false,
 )
 
 data class TaskEditorActions(
@@ -54,6 +55,7 @@ data class TaskEditorActions(
     val onBack: () -> Unit,
     val onConfirmDiscard: () -> Unit,
     val onDismissDiscard: () -> Unit,
+    val onToggleImportant: () -> Unit,
 )
 
 const val DEFAULT_REMINDER_HOUR = 9

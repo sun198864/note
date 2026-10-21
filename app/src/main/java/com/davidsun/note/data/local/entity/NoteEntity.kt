@@ -17,4 +17,6 @@ data class NoteEntity(
     val deletedAt: Long?,
     val revision: Long,
     val syncStatus: String,
+    val isImportant: Boolean = false,
+    val sortIndex: Long = 0,
 )

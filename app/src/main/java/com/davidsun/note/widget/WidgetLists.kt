@@ -1,5 +1,6 @@
 package com.davidsun.note.widget
 
+import com.davidsun.note.domain.ListOrder
 import com.davidsun.note.domain.model.GroupedTasks
 import com.davidsun.note.domain.model.Note
 import com.davidsun.note.domain.model.Task
@@ -11,11 +12,7 @@ object WidgetLists {
         (grouped.today + grouped.upcoming + grouped.undated).take(Limit)
 
     fun recentNotes(notes: List<Note>): List<Note> =
-        notes.asSequence()
-            .filter { it.deletedAt == null }
-            .sortedByDescending { it.updatedAt }
-            .take(Limit)
-            .toList()
+        ListOrder.notes(notes.filter { it.deletedAt == null }).take(Limit)
 
     fun summary(content: String, limit: Int = 80): String {
         val singleLine = content.replace(WHITESPACE, " ").trim()

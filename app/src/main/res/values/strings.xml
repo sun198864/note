@@ -74,6 +74,16 @@
     <string name="menu_hide">隱藏</string>
     <string name="menu_restore">恢復</string>
     <string name="menu_delete">刪除</string>
+    <string name="mark_important">標記為重要</string>
+    <string name="unmark_important">取消重要</string>
+    <string name="filter_important">只顯示重要</string>
+    <string name="drag_to_reorder">拖曳調整順序</string>
+    <string name="empty_important_tasks_title">沒有重要待辦</string>
+    <string name="empty_important_tasks_body">點星號可以把待辦標成重要。</string>
+    <string name="empty_important_notes_title">沒有重要筆記</string>
+    <string name="empty_important_notes_body">點星號可以把筆記標成重要。</string>
+    <string name="empty_important_hidden_title">沒有重要的隱藏待辦</string>
+    <string name="empty_important_hidden_body">點星號可以把項目標成重要。</string>
     <string name="updated_at">更新 %1$s</string>
     <string name="missing_note">找不到這筆筆記</string>
     <string name="missing_task">找不到這筆待辦</string>
