@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "467182542991-9v7qc03h5jt2sbu5bhkqerdgd1ege169.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.davidsun.note",
+            "certificate_hash": "e661f761261c0863c4ec19aa9201151b58896f41"
+          }
+        },
+        {
           "client_id": "467182542991-cgf3afgek76pb1nbou5r0eb3dl97tsm6.apps.googleusercontent.com",
           "client_type": 3
         }
