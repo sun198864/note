@@ -11,6 +11,8 @@ rules_version = '2';
 //   updatedAt: number >= 0
 //   deletedAt: null or number >= 0
 //   revision: number >= 0
+//   isImportant: bool
+//   sortIndex: number，可為負數，新項目用負的時間讓它排在最前面
 //
 // Collection: users/{userId}/tasks/{taskId}
 //   title: string (1..2000)
@@ -26,6 +28,8 @@ rules_version = '2';
 //   updatedAt: number >= 0
 //   deletedAt: null or number >= 0
 //   revision: number >= 0
+//   isImportant: bool
+//   sortIndex: number，可為負數，新項目用負的時間讓它排在最前面
 //
 // Access is limited to the signed-in owner of {userId}.
 
@@ -49,7 +53,10 @@ service cloud.firestore {
     }
 
     function isValidNote(data) {
-      return hasExactFields(['title', 'content', 'createdAt', 'updatedAt', 'deletedAt', 'revision'])
+      return hasExactFields([
+          'title', 'content', 'createdAt', 'updatedAt', 'deletedAt', 'revision',
+          'isImportant', 'sortIndex'
+        ])
         && data.title is string
         && data.title.size() <= 2000
         && data.content is string
@@ -57,7 +64,9 @@ service cloud.firestore {
         && isNonNegativeNumber(data.createdAt)
         && isNonNegativeNumber(data.updatedAt)
         && isOptionalNonNegativeNumber(data.deletedAt)
-        && isNonNegativeNumber(data.revision);
+        && isNonNegativeNumber(data.revision)
+        && data.isImportant is bool
+        && data.sortIndex is number;
     }
 
     function isValidReminder(data) {
@@ -86,7 +95,8 @@ service cloud.firestore {
     function isValidTask(data) {
       return hasExactFields([
           'title', 'description', 'reminderType', 'reminderAt', 'intervalDays', 'weekdays',
-          'isCompleted', 'completedAt', 'isHidden', 'createdAt', 'updatedAt', 'deletedAt', 'revision'
+          'isCompleted', 'completedAt', 'isHidden', 'createdAt', 'updatedAt', 'deletedAt', 'revision',
+          'isImportant', 'sortIndex'
         ])
         && data.title is string
         && data.title.size() >= 1
@@ -100,7 +110,9 @@ service cloud.firestore {
         && isNonNegativeNumber(data.createdAt)
         && isNonNegativeNumber(data.updatedAt)
         && isOptionalNonNegativeNumber(data.deletedAt)
-        && isNonNegativeNumber(data.revision);
+        && isNonNegativeNumber(data.revision)
+        && data.isImportant is bool
+        && data.sortIndex is number;
     }
 
     match /users/{userId}/notes/{noteId} {

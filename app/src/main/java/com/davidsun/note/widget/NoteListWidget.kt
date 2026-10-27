@@ -215,7 +215,7 @@ private fun NoteListWidgetContent(
                         modifier = GlanceModifier
                             .fillMaxWidth()
                             .clickable(actionStart(context, listRoute, row.id))
-                            .padding(vertical = 8.dp),
+                            .padding(vertical = 2.dp),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Column(modifier = GlanceModifier.defaultWeight()) {
