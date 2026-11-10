@@ -10,6 +10,7 @@ data class VocabDetailUiState(
     val meaning: String = "",
     val definition: String = "",
     val example: String = "",
+    val exampleZh: String = "",
     val mastered: Boolean = false,
 )
 
@@ -17,4 +18,8 @@ data class VocabDetailActions(
     val onBack: () -> Unit,
     val onMasteredChange: (Boolean) -> Unit,
     val onSpeak: () -> Unit,
+    val onSpeakDefinition: () -> Unit,
+    val onSpeakExample: () -> Unit,
+    val onCopy: (String) -> Unit,
+    val onTranslate: (String) -> Unit,
 )

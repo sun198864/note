@@ -44,6 +44,7 @@ class VocabDetailViewModel @Inject constructor(
                 meaning = item.meaning,
                 definition = item.definition,
                 example = item.example,
+                exampleZh = item.exampleZh,
                 mastered = item.id in mastered,
             )
         }
@@ -67,7 +68,19 @@ class VocabDetailViewModel @Inject constructor(
     }
 
     fun onSpeak() {
-        val spoken = vocabPronunciation(entry.value?.word.orEmpty())
+        speakPrepared(vocabPronunciation(entry.value?.word.orEmpty()))
+    }
+
+    fun onSpeakDefinition() {
+        speakPrepared(entry.value?.definition.orEmpty())
+    }
+
+    fun onSpeakExample() {
+        speakPrepared(entry.value?.example.orEmpty())
+    }
+
+    private fun speakPrepared(text: String) {
+        val spoken = text.trim()
         if (spoken.isBlank()) return
         speaker.speak(spoken)
     }

@@ -9,4 +9,5 @@ data class VocabEntry(
     val phonetic: String,
     val definition: String,
     val example: String,
+    val exampleZh: String = "",
 )

@@ -398,6 +398,7 @@ def write_asset(entries: list[dict], output: Path) -> None:
             "definition": entry.get("definition", ""),
             "example": entry.get("example", ""),
         }
+        | ({"exampleZh": entry["exampleZh"]} if entry.get("exampleZh") else {})
         for entry in entries
     ]
     output.parent.mkdir(parents=True, exist_ok=True)

@@ -6,6 +6,7 @@ object AppRoute {
     const val Vocab = "vocab"
     const val Settings = "settings"
     const val VocabDetail = "vocab/detail/{vocabId}"
+    const val VocabProgress = "vocab/progress"
     const val HiddenTasks = "tasks/hidden"
     const val TaskEditor = "tasks/editor/{taskId}"
     const val NoteEditor = "notes/editor/{noteId}"

@@ -20,4 +20,5 @@ data class VocabListActions(
     val onRefresh: () -> Unit,
     val onMasteredChange: (String, Boolean) -> Unit,
     val onItemClick: (String) -> Unit,
+    val onOpenProgress: () -> Unit,
 )

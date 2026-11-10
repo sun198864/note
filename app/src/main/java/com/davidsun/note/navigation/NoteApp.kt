@@ -1,6 +1,9 @@
 package com.davidsun.note.navigation
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -49,6 +52,9 @@ import com.davidsun.note.feature.vocab.VocabDetailViewModel
 import com.davidsun.note.feature.vocab.VocabListActions
 import com.davidsun.note.feature.vocab.VocabListScreen
 import com.davidsun.note.feature.vocab.VocabListViewModel
+import com.davidsun.note.feature.vocab.VocabProgressActions
+import com.davidsun.note.feature.vocab.VocabProgressScreen
+import com.davidsun.note.feature.vocab.VocabProgressViewModel
 import com.davidsun.note.widget.WidgetRoutes
 import kotlinx.coroutines.launch
 
@@ -80,6 +86,7 @@ fun NoteApp(
             composable(AppRoute.Tasks) { TaskListRoute(navController, focusId, onFocusConsumed) }
             composable(AppRoute.Notes) { NoteListRoute(navController, focusId, onFocusConsumed) }
             composable(AppRoute.Vocab) { VocabListRoute(navController) }
+            composable(AppRoute.VocabProgress) { VocabProgressRoute(navController) }
             composable(
                 route = AppRoute.VocabDetail,
                 arguments = listOf(navArgument("vocabId") { type = NavType.StringType }),
@@ -187,6 +194,7 @@ private fun VocabListRoute(navController: NavHostController) {
             onRefresh = viewModel::onRefresh,
             onMasteredChange = viewModel::onMasteredChange,
             onItemClick = { id -> navController.navigate(AppRoute.vocabDetail(id)) },
+            onOpenProgress = { navController.navigate(AppRoute.VocabProgress) },
         ),
         bottomBar = {
             NoteBottomBar(
@@ -201,12 +209,47 @@ private fun VocabListRoute(navController: NavHostController) {
 private fun VocabDetailRoute(navController: NavHostController) {
     val viewModel: VocabDetailViewModel = hiltViewModel()
     val state by viewModel.uiState.collectAsStateWithLifecycle()
+    val context = LocalContext.current
     VocabDetailScreen(
         state = state,
         actions = VocabDetailActions(
             onBack = { navController.popBackStack() },
             onMasteredChange = viewModel::onMasteredChange,
             onSpeak = viewModel::onSpeak,
+            onSpeakDefinition = viewModel::onSpeakDefinition,
+            onSpeakExample = viewModel::onSpeakExample,
+            onCopy = { text ->
+                val clipboard = context.getSystemService(ClipboardManager::class.java)
+                clipboard?.setPrimaryClip(ClipData.newPlainText("vocab", text))
+            },
+            onTranslate = { text ->
+                val intent = Intent(Intent.ACTION_VIEW, vocabTranslateUri(text))
+                runCatching { context.startActivity(intent) }
+            },
+        ),
+    )
+}
+
+private fun vocabTranslateUri(text: String): Uri {
+    val chinese = text.any { character -> character.code in 0x4E00..0x9FFF }
+    val source = if (chinese) "zh-TW" else "en"
+    val target = if (chinese) "en" else "zh-TW"
+    return Uri.parse(
+        "https://translate.google.com/?sl=$source&tl=$target&text=${Uri.encode(text)}&op=translate",
+    )
+}
+
+@Composable
+private fun VocabProgressRoute(navController: NavHostController) {
+    val viewModel: VocabProgressViewModel = hiltViewModel()
+    val state by viewModel.uiState.collectAsStateWithLifecycle()
+    VocabProgressScreen(
+        state = state,
+        actions = VocabProgressActions(
+            onBack = { navController.popBackStack() },
+            onQueryChange = viewModel::onQueryChange,
+            onMasteredChange = viewModel::onMasteredChange,
+            onItemClick = { id -> navController.navigate(AppRoute.vocabDetail(id)) },
         ),
     )
 }

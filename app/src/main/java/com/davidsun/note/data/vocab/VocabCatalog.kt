@@ -41,6 +41,7 @@ class VocabCatalog @Inject constructor(
                         phonetic = item.optString("phonetic"),
                         definition = item.optString("definition"),
                         example = item.optString("example"),
+                        exampleZh = item.optString("exampleZh"),
                     ),
                 )
             }
