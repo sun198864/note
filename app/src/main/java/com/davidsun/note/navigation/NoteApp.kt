@@ -43,6 +43,13 @@ import com.davidsun.note.feature.tasks.TaskEditorViewModel
 import com.davidsun.note.feature.tasks.TaskListActions
 import com.davidsun.note.feature.tasks.TaskListScreen
 import com.davidsun.note.feature.tasks.TaskListViewModel
+import com.davidsun.note.feature.vocab.VocabDetailActions
+import com.davidsun.note.feature.vocab.VocabDetailScreen
+import com.davidsun.note.feature.vocab.VocabDetailViewModel
+import com.davidsun.note.feature.vocab.VocabListActions
+import com.davidsun.note.feature.vocab.VocabListScreen
+import com.davidsun.note.feature.vocab.VocabListViewModel
+import com.davidsun.note.widget.WidgetRoutes
 import kotlinx.coroutines.launch
 
 @Composable
@@ -57,9 +64,8 @@ fun NoteApp(
     var coverStartup by remember { mutableStateOf(pendingRoute != null) }
     LaunchedEffect(pendingRoute) {
         try {
-            if (pendingRoute == AppRoute.Tasks || pendingRoute == AppRoute.Notes) {
-                navController.openWidgetList(pendingRoute)
-            }
+            WidgetRoutes.listRoute(pendingRoute)?.let { route -> navController.openWidgetList(route) }
+            WidgetRoutes.detailRoute(pendingRoute)?.let { route -> navController.navigate(route) }
             if (pendingRoute != null) onPendingRouteConsumed()
         } finally {
             coverStartup = false
@@ -73,6 +79,13 @@ fun NoteApp(
         ) {
             composable(AppRoute.Tasks) { TaskListRoute(navController, focusId, onFocusConsumed) }
             composable(AppRoute.Notes) { NoteListRoute(navController, focusId, onFocusConsumed) }
+            composable(AppRoute.Vocab) { VocabListRoute(navController) }
+            composable(
+                route = AppRoute.VocabDetail,
+                arguments = listOf(navArgument("vocabId") { type = NavType.StringType }),
+            ) {
+                VocabDetailRoute(navController)
+            }
             composable(AppRoute.Settings) { SettingsRoute(navController) }
             composable(AppRoute.HiddenTasks) { HiddenTasksRoute(navController) }
             composable(
@@ -160,6 +173,41 @@ private fun NoteListRoute(
                 onSelect = { tab -> navController.navigateToTab(tab) },
             )
         },
+    )
+}
+
+@Composable
+private fun VocabListRoute(navController: NavHostController) {
+    val viewModel: VocabListViewModel = hiltViewModel()
+    val state by viewModel.uiState.collectAsStateWithLifecycle()
+    VocabListScreen(
+        state = state,
+        actions = VocabListActions(
+            onQueryChange = viewModel::onQueryChange,
+            onRefresh = viewModel::onRefresh,
+            onMasteredChange = viewModel::onMasteredChange,
+            onItemClick = { id -> navController.navigate(AppRoute.vocabDetail(id)) },
+        ),
+        bottomBar = {
+            NoteBottomBar(
+                selected = AppTab.Vocab,
+                onSelect = { tab -> navController.navigateToTab(tab) },
+            )
+        },
+    )
+}
+
+@Composable
+private fun VocabDetailRoute(navController: NavHostController) {
+    val viewModel: VocabDetailViewModel = hiltViewModel()
+    val state by viewModel.uiState.collectAsStateWithLifecycle()
+    VocabDetailScreen(
+        state = state,
+        actions = VocabDetailActions(
+            onBack = { navController.popBackStack() },
+            onMasteredChange = viewModel::onMasteredChange,
+            onSpeak = viewModel::onSpeak,
+        ),
     )
 }
 

@@ -9,5 +9,6 @@ enum class AppTab(
 ) {
     Tasks(R.string.tab_tasks, AppRoute.Tasks),
     Notes(R.string.tab_notes, AppRoute.Notes),
+    Vocab(R.string.tab_vocab, AppRoute.Vocab),
     Settings(R.string.tab_settings, AppRoute.Settings),
 }

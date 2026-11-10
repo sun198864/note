@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.glance.appwidget.updateAll
 import com.davidsun.note.domain.repository.NoteRepository
 import com.davidsun.note.domain.repository.TaskRepository
+import com.davidsun.note.domain.repository.VocabRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -23,6 +24,7 @@ class WidgetRefreshCoordinator @Inject constructor(
     @ApplicationContext private val context: Context,
     private val tasks: TaskRepository,
     private val notes: NoteRepository,
+    private val vocab: VocabRepository,
 ) {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val started = AtomicBoolean(false)
@@ -33,7 +35,8 @@ class WidgetRefreshCoordinator @Inject constructor(
             combine(
                 tasks.observeActiveTasks(),
                 notes.observeActiveNotes(),
-            ) { _, _ -> Unit }
+                vocab.sampleIds(),
+            ) { _, _, _ -> Unit }
                 .debounce(REFRESH_DELAY_MILLIS)
                 .collect {
                     try {

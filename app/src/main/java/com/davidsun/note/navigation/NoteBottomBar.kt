@@ -1,6 +1,8 @@
 package com.davidsun.note.navigation
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.automirrored.outlined.MenuBook
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.Settings
@@ -49,6 +51,7 @@ fun NoteBottomBar(
 private fun tabIcon(tab: AppTab, selected: Boolean): ImageVector = when (tab) {
     AppTab.Tasks -> if (selected) Icons.Filled.CheckCircle else Icons.Outlined.CheckCircle
     AppTab.Notes -> if (selected) Icons.Filled.Description else Icons.Outlined.Description
+    AppTab.Vocab -> if (selected) Icons.AutoMirrored.Filled.MenuBook else Icons.AutoMirrored.Outlined.MenuBook
     AppTab.Settings -> if (selected) Icons.Filled.Settings else Icons.Outlined.Settings
 }
 

@@ -65,12 +65,13 @@ import dagger.hilt.android.EntryPointAccessors
 
 private val ModeKey = stringPreferencesKey("list_mode")
 
-private enum class WidgetListMode {
+internal enum class WidgetListMode {
     Tasks,
     Notes,
+    Vocab,
     ;
 
-    fun toggled(): WidgetListMode = if (this == Tasks) Notes else Tasks
+    fun next(): WidgetListMode = entries[(ordinal + 1) % entries.size]
 
     companion object {
         fun from(value: String?): WidgetListMode =
@@ -91,7 +92,11 @@ class NoteListWidget : GlanceAppWidget() {
             val mode = WidgetListMode.from(currentState<Preferences>()[ModeKey])
             NoteListWidgetContent(
                 mode = mode,
-                rows = if (mode == WidgetListMode.Tasks) snapshot.tasks else snapshot.notes,
+                rows = when (mode) {
+                    WidgetListMode.Tasks -> snapshot.tasks
+                    WidgetListMode.Notes -> snapshot.notes
+                    WidgetListMode.Vocab -> snapshot.vocab
+                },
             )
         }
     }
@@ -104,7 +109,7 @@ class NoteListWidgetReceiver : GlanceAppWidgetReceiver() {
 class ToggleWidgetModeAction : ActionCallback {
     override suspend fun onAction(context: Context, glanceId: GlanceId, parameters: androidx.glance.action.ActionParameters) {
         updateAppWidgetState(context, glanceId) { prefs ->
-            val next = WidgetListMode.from(prefs[ModeKey]).toggled()
+            val next = WidgetListMode.from(prefs[ModeKey]).next()
             prefs[ModeKey] = next.name
         }
         NoteListWidget().update(context, glanceId)
@@ -124,15 +129,38 @@ private fun NoteListWidgetContent(
     rows: List<WidgetRow>,
 ) {
     val context = LocalContext.current
-    val listRoute = if (mode == WidgetListMode.Tasks) AppRoute.Tasks else AppRoute.Notes
-    val title = context.getString(if (mode == WidgetListMode.Tasks) R.string.tab_tasks else R.string.tab_notes)
+    val listRoute = when (mode) {
+        WidgetListMode.Tasks -> AppRoute.Tasks
+        WidgetListMode.Notes -> AppRoute.Notes
+        WidgetListMode.Vocab -> AppRoute.Vocab
+    }
+    val title = context.getString(
+        when (mode) {
+            WidgetListMode.Tasks -> R.string.tab_tasks
+            WidgetListMode.Notes -> R.string.tab_notes
+            WidgetListMode.Vocab -> R.string.tab_vocab
+        },
+    )
     val empty = context.getString(
-        if (mode == WidgetListMode.Tasks) R.string.widget_empty_tasks else R.string.widget_empty_notes,
+        when (mode) {
+            WidgetListMode.Tasks -> R.string.widget_empty_tasks
+            WidgetListMode.Notes -> R.string.widget_empty_notes
+            WidgetListMode.Vocab -> R.string.widget_empty_vocab
+        },
     )
+    val next = mode.next()
     val toggleDescription = context.getString(
-        if (mode == WidgetListMode.Tasks) R.string.widget_show_notes else R.string.widget_show_tasks,
+        when (next) {
+            WidgetListMode.Tasks -> R.string.widget_show_tasks
+            WidgetListMode.Notes -> R.string.widget_show_notes
+            WidgetListMode.Vocab -> R.string.widget_show_vocab
+        },
     )
-    val toggleIcon = if (mode == WidgetListMode.Tasks) R.drawable.ic_widget_note else R.drawable.ic_widget_task
+    val toggleIcon = when (next) {
+        WidgetListMode.Tasks -> R.drawable.ic_widget_task
+        WidgetListMode.Notes -> R.drawable.ic_widget_note
+        WidgetListMode.Vocab -> R.drawable.ic_widget_vocab
+    }
     val titleColor = ColorProvider(NoteOnSurface, NoteOnSurfaceDark)
     val subtitleColor = ColorProvider(NoteOnSurfaceVariant, NoteOnSurfaceVariantDark)
 
@@ -211,10 +239,16 @@ private fun NoteListWidgetContent(
                 }
             } else {
                 items(items = rows, itemId = { row -> row.id.hashCode().toLong() }) { row ->
+                    val itemRoute = if (mode == WidgetListMode.Vocab) {
+                        AppRoute.vocabDetail(row.id)
+                    } else {
+                        listRoute
+                    }
+                    val focusId = if (mode == WidgetListMode.Vocab) null else row.id
                     Row(
                         modifier = GlanceModifier
                             .fillMaxWidth()
-                            .clickable(actionStart(context, listRoute, row.id))
+                            .clickable(actionStart(context, itemRoute, focusId))
                             .padding(vertical = 2.dp),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
@@ -239,22 +273,24 @@ private fun NoteListWidgetContent(
                                 )
                             }
                         }
-                        Image(
-                            provider = ImageProvider(
-                                if (row.important) R.drawable.ic_star else R.drawable.ic_star_border,
-                            ),
-                            contentDescription = null,
-                            modifier = GlanceModifier
-                                .padding(start = 8.dp)
-                                .size(18.dp),
-                            colorFilter = ColorFilter.tint(
-                                if (row.important) {
-                                    ColorProvider(NotePrimary, NotePrimaryDark)
-                                } else {
-                                    ColorProvider(NoteOnSurfaceVariant, NoteOnSurfaceVariantDark)
-                                },
-                            ),
-                        )
+                        if (mode != WidgetListMode.Vocab) {
+                            Image(
+                                provider = ImageProvider(
+                                    if (row.important) R.drawable.ic_star else R.drawable.ic_star_border,
+                                ),
+                                contentDescription = null,
+                                modifier = GlanceModifier
+                                    .padding(start = 8.dp)
+                                    .size(18.dp),
+                                colorFilter = ColorFilter.tint(
+                                    if (row.important) {
+                                        ColorProvider(NotePrimary, NotePrimaryDark)
+                                    } else {
+                                        ColorProvider(NoteOnSurfaceVariant, NoteOnSurfaceVariantDark)
+                                    },
+                                ),
+                            )
+                        }
                     }
                 }
             }
@@ -299,6 +335,20 @@ private fun NoteListWidgetNotesPreview() {
         rows = listOf(
             WidgetRow(id = "1", title = "會議紀錄", subtitle = "下週先確認議程", important = true),
             WidgetRow(id = "2", title = "未命名筆記", subtitle = "沒有內容"),
+        ),
+    )
+}
+
+@Preview(name = "單字 Light", widthDp = 300, heightDp = 180)
+@Preview(name = "單字 Dark", widthDp = 300, heightDp = 180, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "單字 Large font", widthDp = 300, heightDp = 180, fontScale = 1.3f)
+@Composable
+private fun NoteListWidgetVocabPreview() {
+    NoteListWidgetContent(
+        mode = WidgetListMode.Vocab,
+        rows = listOf(
+            WidgetRow(id = "1", title = "abandon", subtitle = "v. 放棄"),
+            WidgetRow(id = "2", title = "ability", subtitle = "n. 能力"),
         ),
     )
 }

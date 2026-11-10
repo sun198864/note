@@ -15,12 +15,16 @@ import com.davidsun.note.data.remote.FirestoreCloudSync
 import com.davidsun.note.data.repository.NoteRepositoryImpl
 import com.davidsun.note.data.repository.SettingsRepositoryImpl
 import com.davidsun.note.data.repository.TaskRepositoryImpl
+import com.davidsun.note.data.repository.VocabRepositoryImpl
+import com.davidsun.note.data.vocab.AndroidVocabSpeaker
 import com.davidsun.note.domain.repository.AuthRepository
 import com.davidsun.note.domain.repository.CloudSyncCoordinator
 import com.davidsun.note.domain.repository.NoteRepository
 import com.davidsun.note.domain.repository.ReminderScheduler
 import com.davidsun.note.domain.repository.SettingsRepository
 import com.davidsun.note.domain.repository.TaskRepository
+import com.davidsun.note.domain.repository.VocabRepository
+import com.davidsun.note.domain.vocab.VocabSpeaker
 import com.davidsun.note.notification.AlarmReminderScheduler
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -77,6 +81,14 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindSettingsRepository(impl: SettingsRepositoryImpl): SettingsRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindVocabRepository(impl: VocabRepositoryImpl): VocabRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindVocabSpeaker(impl: AndroidVocabSpeaker): VocabSpeaker
 
     @Binds
     @Singleton
