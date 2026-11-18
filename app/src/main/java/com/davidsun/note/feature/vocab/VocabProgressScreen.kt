@@ -1,6 +1,9 @@
 package com.davidsun.note.feature.vocab
 
 import android.content.res.Configuration
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -9,13 +12,14 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.BasicTextField
@@ -24,6 +28,8 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -38,10 +44,19 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
@@ -51,7 +66,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.glance.layout.Spacer
+import androidx.compose.ui.unit.sp
 import com.davidsun.note.R
 import com.davidsun.note.domain.model.FontScale
 import com.davidsun.note.ui.component.EmptyState
@@ -77,6 +92,26 @@ fun VocabProgressScreen(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.back),
                         )
+                    }
+                },
+                actions = {
+                    if (!state.isLoading && !state.loadFailed) {
+                        IconButton(onClick = actions.onToggleBars) {
+                            Icon(
+                                imageVector = if (state.barsExpanded) {
+                                    Icons.Filled.ExpandLess
+                                } else {
+                                    Icons.Filled.ExpandMore
+                                },
+                                contentDescription = stringResource(
+                                    if (state.barsExpanded) {
+                                        R.string.vocab_progress_collapse
+                                    } else {
+                                        R.string.vocab_progress_expand
+                                    },
+                                ),
+                            )
+                        }
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -111,12 +146,18 @@ fun VocabProgressScreen(
                     .fillMaxSize()
                     .padding(innerPadding),
             ) {
-                VocabProgressHeader(
-                    mastered = state.mastered,
-                    total = state.total,
-                    levels = state.levels,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-                )
+                AnimatedVisibility(
+                    visible = state.barsExpanded,
+                    enter = expandVertically(),
+                    exit = shrinkVertically(),
+                ) {
+                    VocabProgressHeader(
+                        levels = state.levels,
+                        toeicMastered = state.toeicMastered,
+                        toeicTotal = state.toeicTotal,
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                    )
+                }
                 Text(
                     text = stringResource(R.string.vocab_progress_list),
                     modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
@@ -161,6 +202,7 @@ fun VocabProgressScreen(
                                 onMasteredChange = { mastered ->
                                     actions.onMasteredChange(item.id, mastered)
                                 },
+                                onSpeak = { actions.onSpeak(item.word) },
                             )
                         }
                     }
@@ -172,116 +214,119 @@ fun VocabProgressScreen(
 
 @Composable
 fun VocabProgressHeader(
-    mastered: Int,
-    total: Int,
     levels: List<VocabLevelProgressUi>,
+    toeicMastered: Int,
+    toeicTotal: Int,
     modifier: Modifier = Modifier,
 ) {
-    Row(
+    val byLevel = levels.associateBy { level -> level.level }
+    Column(
         modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(12.dp),
-        verticalAlignment = Alignment.CenterVertically,
+        verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
-        VocabOverallPie(
-            mastered = mastered,
-            total = total,
-            modifier = Modifier.weight(1f),
-        )
-        VocabLevelFractions(
-            levels = levels,
-            modifier = Modifier.weight(2f),
+        (1..6).forEach { level ->
+            val item = byLevel[level]
+            VocabProgressBar(
+                label = stringResource(R.string.vocab_level_label, level),
+                mastered = item?.mastered ?: 0,
+                total = item?.total ?: 0,
+            )
+        }
+        VocabProgressBar(
+            label = stringResource(R.string.vocab_progress_toeic),
+            mastered = toeicMastered,
+            total = toeicTotal,
         )
     }
 }
 
 @Composable
-private fun VocabOverallPie(
+private fun VocabProgressBar(
+    label: String,
     mastered: Int,
     total: Int,
     modifier: Modifier = Modifier,
 ) {
     val fraction = if (total <= 0) 0f else mastered.toFloat() / total.toFloat()
-    val doneColor = MaterialTheme.colorScheme.primary
-    val remainColor = MaterialTheme.colorScheme.surfaceVariant
     val count = stringResource(R.string.vocab_progress_count, mastered, total)
-    val description = stringResource(R.string.vocab_progress_all) + " " + count
-    Column(
-        modifier = modifier.semantics { contentDescription = description },
-        horizontalAlignment = Alignment.CenterHorizontally,
+    val labelWidth = with(LocalDensity.current) { 40.sp.toDp() }
+    val barHeight = with(LocalDensity.current) { 28.sp.toDp() }
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .semantics { contentDescription = "$label $count" },
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Canvas(
-            modifier = Modifier
-                .padding(top = 8.dp)
-                .size(50.dp),
-        ) {
-            drawArc(
-                color = remainColor,
-                startAngle = 0f,
-                sweepAngle = 360f,
-                useCenter = true,
-            )
-            if (fraction > 0f) {
-                drawArc(
-                    color = doneColor,
-                    startAngle = -90f,
-                    sweepAngle = 360f * fraction.coerceIn(0f, 1f),
-                    useCenter = true,
-                )
-            }
-        }
         Text(
-            text = count,
-            modifier = Modifier.padding(top = 8.dp),
-            style = MaterialTheme.typography.titleMedium,
-            color = MaterialTheme.colorScheme.onBackground,
+            text = label,
+            modifier = Modifier.width(labelWidth),
+            maxLines = 1,
+            style = MaterialTheme.typography.labelLarge,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        VocabProgressTrack(
+            fraction = fraction.coerceIn(0f, 1f),
+            count = count,
+            modifier = Modifier
+                .weight(1f)
+                .padding(start = 8.dp)
+                .height(barHeight),
         )
     }
 }
 
 @Composable
-private fun VocabLevelFractions(
-    levels: List<VocabLevelProgressUi>,
+private fun VocabProgressTrack(
+    fraction: Float,
+    count: String,
     modifier: Modifier = Modifier,
 ) {
-    Column(
-        modifier = modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
+    val fill = MaterialTheme.colorScheme.primary
+    val track = MaterialTheme.colorScheme.surfaceVariant
+    val onFill = MaterialTheme.colorScheme.onPrimary
+    val onTrack = MaterialTheme.colorScheme.onSurface
+    var barWidth by remember { mutableIntStateOf(0) }
+    var countWidth by remember { mutableIntStateOf(0) }
+    val density = LocalDensity.current
+    Box(
+        modifier = modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(percent = 50))
+            .onSizeChanged { barWidth = it.width },
     ) {
-        levels.chunked(2).forEach { pair ->
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                pair.forEach { level ->
-                    Row(
-                        modifier = Modifier.weight(1f),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Text(
-                            text = stringResource(R.string.vocab_level_label, level.level),
-                            style = MaterialTheme.typography.labelLarge,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-
-                        Spacer(modifier = Modifier.width(4.dp))
-
-                        Text(
-                            text = stringResource(
-                                R.string.vocab_progress_count,
-                                level.mastered,
-                                level.total,
-                            ),
-                            style = MaterialTheme.typography.labelLarge,
-                            color = MaterialTheme.colorScheme.primary,
-                        )
-                    }
-                }
-                if (pair.size == 1) {
-                    Box(modifier = Modifier.weight(1f))
-                }
+        val insetPx = with(density) { 12.dp.toPx() }
+        val fillPx = barWidth * fraction
+        val measured = barWidth > 0 && countWidth > 0
+        val fitsInFill = measured && fillPx >= countWidth + insetPx
+        Canvas(modifier = Modifier.matchParentSize()) {
+            val radius = CornerRadius(size.height / 2f, size.height / 2f)
+            drawRoundRect(color = track, cornerRadius = radius)
+            if (fraction > 0f) {
+                drawRoundRect(
+                    color = fill,
+                    size = Size(size.width * fraction, size.height),
+                    cornerRadius = radius,
+                )
             }
         }
+        val offsetX = with(density) {
+            when {
+                !measured -> 0.dp
+                fitsInFill -> ((fillPx - countWidth) / 2f).toDp()
+                else -> ((barWidth - countWidth) / 2f).toDp()
+            }
+        }
+        Text(
+            text = count,
+            modifier = Modifier
+                .align(Alignment.CenterStart)
+                .offset(x = offsetX)
+                .alpha(if (measured) 1f else 0f)
+                .onSizeChanged { countWidth = it.width },
+            maxLines = 1,
+            style = MaterialTheme.typography.labelLarge,
+            color = if (fitsInFill) onFill else onTrack,
+        )
     }
 }
 
@@ -365,6 +410,17 @@ private fun VocabProgressScreenPreview() {
     }
 }
 
+@Preview(name = "Bars collapsed", showBackground = true, widthDp = 360, heightDp = 800)
+@Composable
+private fun VocabProgressCollapsedPreview() {
+    NoteTheme {
+        VocabProgressScreen(
+            state = previewVocabProgressState().copy(barsExpanded = false),
+            actions = previewVocabProgressActions(),
+        )
+    }
+}
+
 @Preview(name = "Large font", showBackground = true, widthDp = 360, heightDp = 800, fontScale = 1.3f)
 @Composable
 private fun VocabProgressLargeFontPreview() {
@@ -401,25 +457,12 @@ private fun VocabProgressSearchEmptyPreview() {
 @Preview(name = "Light", showBackground = true, widthDp = 360)
 @Preview(name = "Dark", showBackground = true, widthDp = 360, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun VocabOverallPiePreview() {
+private fun VocabProgressBarPreview() {
     NoteTheme {
-        VocabOverallPie(
-            mastered = 10,
-            total = 100,
-            modifier = Modifier.padding(16.dp),
-        )
-    }
-}
-
-@Preview(name = "Light", showBackground = true, widthDp = 180)
-@Preview(name = "Dark", showBackground = true, widthDp = 180, uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Composable
-private fun VocabLevelFractionsPreview() {
-    NoteTheme {
-        VocabLevelFractions(
-            levels = previewLevels(),
-            modifier = Modifier.padding(16.dp),
-        )
+        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            VocabProgressBar(label = "Lv1", mastered = 18, total = 20)
+            VocabProgressBar(label = "多益", mastered = 0, total = 40)
+        }
     }
 }
 
@@ -443,20 +486,20 @@ private fun VocabProgressSearchFieldPreview() {
 private fun VocabProgressHeaderPreview() {
     NoteTheme {
         VocabProgressHeader(
-            mastered = 10,
-            total = 100,
             levels = previewLevels(),
+            toeicMastered = 32,
+            toeicTotal = 40,
             modifier = Modifier.padding(16.dp),
         )
     }
 }
 
 private fun previewLevels() = listOf(
-    VocabLevelProgressUi(level = 1, mastered = 4, total = 20),
-    VocabLevelProgressUi(level = 2, mastered = 2, total = 20),
-    VocabLevelProgressUi(level = 3, mastered = 1, total = 20),
-    VocabLevelProgressUi(level = 4, mastered = 2, total = 20),
-    VocabLevelProgressUi(level = 5, mastered = 1, total = 10),
+    VocabLevelProgressUi(level = 1, mastered = 18, total = 20),
+    VocabLevelProgressUi(level = 2, mastered = 15, total = 20),
+    VocabLevelProgressUi(level = 3, mastered = 12, total = 20),
+    VocabLevelProgressUi(level = 4, mastered = 8, total = 20),
+    VocabLevelProgressUi(level = 5, mastered = 4, total = 10),
     VocabLevelProgressUi(level = 6, mastered = 0, total = 10),
 )
 
@@ -472,6 +515,8 @@ private fun previewVocabProgressState(
     query = query,
     mastered = mastered,
     total = 100,
+    toeicMastered = 32,
+    toeicTotal = 40,
     levels = previewLevels(),
     items = items,
 )
@@ -481,4 +526,6 @@ private fun previewVocabProgressActions() = VocabProgressActions(
     onQueryChange = {},
     onMasteredChange = { _, _ -> },
     onItemClick = {},
+    onSpeak = {},
+    onToggleBars = {},
 )

@@ -12,6 +12,7 @@ data class VocabDetailUiState(
     val example: String = "",
     val exampleZh: String = "",
     val mastered: Boolean = false,
+    val toeic: Boolean = false,
 )
 
 data class VocabDetailActions(
@@ -19,7 +20,7 @@ data class VocabDetailActions(
     val onMasteredChange: (Boolean) -> Unit,
     val onSpeak: () -> Unit,
     val onSpeakDefinition: () -> Unit,
-    val onSpeakExample: () -> Unit,
+    val onSpeakExample: (String) -> Unit,
     val onCopy: (String) -> Unit,
     val onTranslate: (String) -> Unit,
 )

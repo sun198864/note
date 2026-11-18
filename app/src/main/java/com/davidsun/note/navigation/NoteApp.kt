@@ -3,7 +3,6 @@ package com.davidsun.note.navigation
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -55,6 +54,7 @@ import com.davidsun.note.feature.vocab.VocabListViewModel
 import com.davidsun.note.feature.vocab.VocabProgressActions
 import com.davidsun.note.feature.vocab.VocabProgressScreen
 import com.davidsun.note.feature.vocab.VocabProgressViewModel
+import com.davidsun.note.feature.vocab.openVocabTranslation
 import com.davidsun.note.widget.WidgetRoutes
 import kotlinx.coroutines.launch
 
@@ -191,10 +191,14 @@ private fun VocabListRoute(navController: NavHostController) {
         state = state,
         actions = VocabListActions(
             onQueryChange = viewModel::onQueryChange,
+            onSearchOpenChange = viewModel::onSearchOpenChange,
             onRefresh = viewModel::onRefresh,
             onMasteredChange = viewModel::onMasteredChange,
             onItemClick = { id -> navController.navigate(AppRoute.vocabDetail(id)) },
             onOpenProgress = { navController.navigate(AppRoute.VocabProgress) },
+            onSpeak = viewModel::onSpeak,
+            onToggleChinese = viewModel::onToggleChinese,
+            onToggleEnglish = viewModel::onToggleEnglish,
         ),
         bottomBar = {
             NoteBottomBar(
@@ -222,20 +226,20 @@ private fun VocabDetailRoute(navController: NavHostController) {
                 val clipboard = context.getSystemService(ClipboardManager::class.java)
                 clipboard?.setPrimaryClip(ClipData.newPlainText("vocab", text))
             },
-            onTranslate = { text ->
-                val intent = Intent(Intent.ACTION_VIEW, vocabTranslateUri(text))
-                runCatching { context.startActivity(intent) }
-            },
+            onTranslate = { text -> context.openVocabTranslation(text) },
         ),
-    )
-}
-
-private fun vocabTranslateUri(text: String): Uri {
-    val chinese = text.any { character -> character.code in 0x4E00..0x9FFF }
-    val source = if (chinese) "zh-TW" else "en"
-    val target = if (chinese) "en" else "zh-TW"
-    return Uri.parse(
-        "https://translate.google.com/?sl=$source&tl=$target&text=${Uri.encode(text)}&op=translate",
+        bottomBar = {
+            NoteBottomBar(
+                selected = AppTab.Vocab,
+                onSelect = { tab ->
+                    if (tab == AppTab.Vocab) {
+                        navController.popBackStack(AppRoute.Vocab, inclusive = false)
+                    } else {
+                        navController.navigateToTab(tab)
+                    }
+                },
+            )
+        },
     )
 }
 
@@ -250,6 +254,8 @@ private fun VocabProgressRoute(navController: NavHostController) {
             onQueryChange = viewModel::onQueryChange,
             onMasteredChange = viewModel::onMasteredChange,
             onItemClick = { id -> navController.navigate(AppRoute.vocabDetail(id)) },
+            onSpeak = viewModel::onSpeak,
+            onToggleBars = viewModel::onToggleBars,
         ),
     )
 }
@@ -382,13 +388,14 @@ private fun NavHostController.navigateToTab(tab: AppTab) {
     navigate(tab.route) {
         popUpTo(AppRoute.Tasks) { saveState = true }
         launchSingleTop = true
-        restoreState = true
+        // 待辦是起點。若還原剛被 pop 的分頁，點待辦會停在單字或筆記。
+        restoreState = tab != AppTab.Tasks
     }
 }
 
 private fun NavHostController.openWidgetList(route: String) {
     navigate(route) {
-        popUpTo(AppRoute.Tasks) { inclusive = false }
+        popUpTo(AppRoute.Tasks) { saveState = true }
         launchSingleTop = true
     }
 }

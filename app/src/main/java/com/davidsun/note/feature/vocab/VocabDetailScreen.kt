@@ -43,6 +43,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.davidsun.note.R
 import com.davidsun.note.domain.model.FontScale
+import com.davidsun.note.navigation.AppTab
+import com.davidsun.note.navigation.NoteBottomBar
 import com.davidsun.note.ui.component.EmptyState
 import com.davidsun.note.ui.theme.NoteTheme
 
@@ -52,10 +54,12 @@ fun VocabDetailScreen(
     state: VocabDetailUiState,
     actions: VocabDetailActions,
     modifier: Modifier = Modifier,
+    bottomBar: @Composable () -> Unit = {},
 ) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
+        bottomBar = bottomBar,
         topBar = {
             TopAppBar(
                 title = { Text(text = stringResource(R.string.vocab_detail_title)) },
@@ -128,7 +132,7 @@ fun VocabDetailScreen(
                     )
                 }
                 Text(
-                    text = stringResource(R.string.vocab_pos_level, state.partOfSpeech, state.level),
+                    text = VocabMeta(state),
                     modifier = Modifier.padding(top = 8.dp),
                     style = MaterialTheme.typography.labelLarge,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -169,11 +173,11 @@ fun VocabDetailScreen(
                         onTranslate = actions.onTranslate,
                     )
                 }
-                DetailBlock(
+                ExampleBlock(
                     label = stringResource(R.string.vocab_example_label),
-                    body = state.example.ifBlank { stringResource(R.string.vocab_no_example) },
-                    translation = state.exampleZh,
-                    onSpeak = if (state.example.isNotBlank()) actions.onSpeakExample else null,
+                    pairs = pairedExamples(state.example, state.exampleZh),
+                    emptyText = stringResource(R.string.vocab_no_example),
+                    onSpeakLine = actions.onSpeakExample,
                     speakDescription = stringResource(R.string.vocab_speak_example),
                     onCopy = actions.onCopy.takeIf { state.example.isNotBlank() },
                     onTranslate = actions.onTranslate.takeIf { state.example.isNotBlank() },
@@ -212,43 +216,118 @@ private fun DetailBlock(
     label: String,
     body: String,
     modifier: Modifier = Modifier,
-    translation: String = "",
     onSpeak: (() -> Unit)? = null,
     speakDescription: String = "",
     onCopy: ((String) -> Unit)? = null,
     onTranslate: ((String) -> Unit)? = null,
 ) {
     Column(modifier = modifier.padding(top = 20.dp)) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            if (onSpeak != null) {
-                SpeakButton(
-                    onClick = onSpeak,
-                    description = speakDescription,
-                )
-            }
-            Text(
-                text = label,
-                modifier = Modifier.weight(1f),
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.primary,
-            )
-        }
+        SectionLabel(
+            label = label,
+            onSpeak = onSpeak,
+            speakDescription = speakDescription,
+        )
         VocabBodyText(
             text = body,
             onCopy = onCopy,
             onTranslate = onTranslate,
         )
-        if (translation.isNotBlank()) {
-            VocabBodyText(
-                text = translation,
-                onCopy = onCopy,
-                onTranslate = onTranslate,
-                modifier = Modifier.padding(top = 4.dp),
+    }
+}
+
+@Composable
+private fun VocabMeta(state: VocabDetailUiState): String = when {
+    state.level in 1..6 && state.toeic -> stringResource(
+        R.string.vocab_pos_level_toeic,
+        state.partOfSpeech,
+        state.level,
+    )
+    state.level in 1..6 -> stringResource(R.string.vocab_pos_level, state.partOfSpeech, state.level)
+    state.toeic -> stringResource(R.string.vocab_pos_toeic, state.partOfSpeech)
+    else -> state.partOfSpeech
+}
+
+@Composable
+private fun ExampleBlock(
+    label: String,
+    pairs: List<Pair<String, String>>,
+    emptyText: String,
+    modifier: Modifier = Modifier,
+    onSpeakLine: ((String) -> Unit)? = null,
+    speakDescription: String = "",
+    onCopy: ((String) -> Unit)? = null,
+    onTranslate: ((String) -> Unit)? = null,
+) {
+    Column(modifier = modifier.padding(top = 20.dp)) {
+        SectionLabel(
+            label = label,
+            onSpeak = null,
+            speakDescription = "",
+        )
+        if (pairs.isEmpty()) {
+            Text(
+                text = emptyText,
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onBackground,
+            )
+        } else {
+            pairs.forEachIndexed { index, (english, chinese) ->
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = if (index == 0) 0.dp else 12.dp),
+                    verticalAlignment = Alignment.Top,
+                ) {
+                    if (onSpeakLine != null) {
+                        SpeakButton(
+                            onClick = { onSpeakLine(english) },
+                            description = speakDescription,
+                        )
+                    }
+                    Column(modifier = Modifier.weight(1f)) {
+                        VocabBodyText(
+                            text = english,
+                            onCopy = onCopy,
+                            onTranslate = onTranslate,
+                        )
+                        if (chinese.isNotBlank()) {
+                            VocabBodyText(
+                                text = chinese,
+                                onCopy = onCopy,
+                                onTranslate = onTranslate,
+                                modifier = Modifier.padding(top = 2.dp),
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun SectionLabel(
+    label: String,
+    onSpeak: (() -> Unit)?,
+    speakDescription: String,
+    modifier: Modifier = Modifier,
+) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        if (onSpeak != null) {
+            SpeakButton(
+                onClick = onSpeak,
+                description = speakDescription,
             )
         }
+        Text(
+            text = label,
+            modifier = Modifier.weight(1f),
+            style = MaterialTheme.typography.labelLarge,
+            color = MaterialTheme.colorScheme.primary,
+        )
     }
 }
 
@@ -260,6 +339,7 @@ private fun VocabDetailScreenPreview() {
         VocabDetailScreen(
             state = previewVocabDetailState(),
             actions = previewVocabDetailActions(),
+            bottomBar = { NoteBottomBar(selected = AppTab.Vocab, onSelect = {}) },
         )
     }
 }
@@ -271,6 +351,7 @@ private fun VocabDetailLargeFontPreview() {
         VocabDetailScreen(
             state = previewVocabDetailState(mastered = true),
             actions = previewVocabDetailActions(),
+            bottomBar = { NoteBottomBar(selected = AppTab.Vocab, onSelect = {}) },
         )
     }
 }
@@ -376,13 +457,43 @@ private fun SpeakButtonPreview() {
 @Preview(name = "Light", showBackground = true)
 @Preview(name = "Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
+private fun SectionLabelPreview() {
+    NoteTheme {
+        SectionLabel(
+            label = "例句",
+            onSpeak = {},
+            speakDescription = "播放例句",
+            modifier = Modifier.padding(16.dp),
+        )
+    }
+}
+
+@Preview(name = "Light", showBackground = true)
+@Preview(name = "Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
 private fun DetailBlockPreview() {
     NoteTheme {
         DetailBlock(
+            label = "英文解釋",
+            body = "to leave a person or place",
+            modifier = Modifier.padding(16.dp),
+        )
+    }
+}
+
+@Preview(name = "Light", showBackground = true)
+@Preview(name = "Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun ExampleBlockPreview() {
+    NoteTheme {
+        ExampleBlock(
             label = "例句",
-            body = "Why did he abandon us?",
-            translation = "他為什麼放棄我們？",
-            onSpeak = {},
+            pairs = pairedExamples(
+                example = "1. Why did he abandon his family?\n2. They abandoned the plan.",
+                exampleZh = "1. 他為什麼離棄家人？\n2. 他們中止了這個計畫。",
+            ),
+            emptyText = "這個單字還沒有例句",
+            onSpeakLine = {},
             speakDescription = "播放例句",
             modifier = Modifier.padding(16.dp),
         )
@@ -397,9 +508,10 @@ private fun previewVocabDetailState(mastered: Boolean = false) = VocabDetailUiSt
     level = 4,
     meaning = "放棄",
     definition = "forsake, leave behind",
-    example = "Why did he abandon us?",
-    exampleZh = "他為什麼放棄我們？",
+    example = "1. Why did he abandon his family?\n2. They abandoned the plan.",
+    exampleZh = "1. 他為什麼離棄家人？\n2. 他們中止了這個計畫。",
     mastered = mastered,
+    toeic = true,
 )
 
 private fun previewVocabDetailActions() = VocabDetailActions(
@@ -407,7 +519,7 @@ private fun previewVocabDetailActions() = VocabDetailActions(
     onMasteredChange = {},
     onSpeak = {},
     onSpeakDefinition = {},
-    onSpeakExample = {},
+    onSpeakExample = { _ -> },
     onCopy = {},
     onTranslate = {},
 )

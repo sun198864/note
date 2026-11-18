@@ -19,8 +19,8 @@ android {
         applicationId = "com.davidsun.note"
         minSdk = 29
         targetSdk = 36
-        versionCode = 4
-        versionName = "1.0.3"
+        versionCode = 6
+        versionName = "1.0.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -37,7 +37,7 @@ android {
     buildTypes {
         release {
             signingConfig = signingConfigs.getByName("release")
-//            isDebuggable = true
+            isDebuggable = true
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

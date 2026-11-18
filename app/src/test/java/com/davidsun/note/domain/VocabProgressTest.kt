@@ -56,11 +56,32 @@ class VocabProgressTest {
         )
     }
 
+    @Test
+    fun toeicPercentageStaysSeparateWhenAWordAlsoHasALevel() {
+        val entries = listOf(
+            word("a", "agenda", level = 5, toeic = true),
+            word("b", "apple", level = 1),
+            word("c", "invoice", level = 0, toeic = true),
+        )
+
+        val summary = VocabProgress.summary(entries, masteredIds = setOf("a"))
+
+        assertEquals(1, summary.mastered)
+        assertEquals(2, summary.total)
+        assertEquals(1, summary.toeicMastered)
+        assertEquals(2, summary.toeicTotal)
+        assertEquals(
+            listOf(1 to "0/1", 5 to "1/1"),
+            summary.levels.map { level -> level.level to "${level.mastered}/${level.total}" },
+        )
+    }
+
     private fun word(
         id: String,
         headword: String,
         level: Int = 1,
         meaning: String = "",
+        toeic: Boolean = false,
     ) = VocabEntry(
         id = id,
         word = headword,
@@ -70,5 +91,6 @@ class VocabProgressTest {
         phonetic = "",
         definition = "",
         example = "",
+        toeic = toeic,
     )
 }

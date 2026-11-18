@@ -1,0 +1,6186 @@
+[
+  {
+    "word": "abandon"
+  },
+  {
+    "word": "ability"
+  },
+  {
+    "word": "able"
+  },
+  {
+    "word": "abroad"
+  },
+  {
+    "word": "absence"
+  },
+  {
+    "word": "absent"
+  },
+  {
+    "word": "absolute"
+  },
+  {
+    "word": "absorb"
+  },
+  {
+    "word": "abstract"
+  },
+  {
+    "word": "accept"
+  },
+  {
+    "word": "acceptable"
+  },
+  {
+    "word": "access"
+  },
+  {
+    "word": "accessible"
+  },
+  {
+    "word": "accident"
+  },
+  {
+    "word": "accommodate"
+  },
+  {
+    "word": "accommodation"
+  },
+  {
+    "word": "accompany"
+  },
+  {
+    "word": "accomplish"
+  },
+  {
+    "word": "according",
+    "pos": "prep.",
+    "meaning": "根據",
+    "phonetic": "/əˈkɔːrdɪŋ/",
+    "definition": "as stated by someone or something",
+    "example": "1. According to the schedule, the train leaves at noon.\n2. The fee changes according to the season.",
+    "exampleZh": "1. 根據時刻表，火車中午出發。\n2. 費用會依照季節調整。",
+    "id": "9d0bb7678d63"
+  },
+  {
+    "word": "account"
+  },
+  {
+    "word": "accountant"
+  },
+  {
+    "word": "accounting"
+  },
+  {
+    "word": "accumulate"
+  },
+  {
+    "word": "accurate"
+  },
+  {
+    "word": "achieve"
+  },
+  {
+    "word": "achievement"
+  },
+  {
+    "word": "acknowledge"
+  },
+  {
+    "word": "acquire"
+  },
+  {
+    "word": "acquisition"
+  },
+  {
+    "word": "across"
+  },
+  {
+    "word": "act"
+  },
+  {
+    "word": "action"
+  },
+  {
+    "word": "active"
+  },
+  {
+    "word": "activity"
+  },
+  {
+    "word": "actual"
+  },
+  {
+    "word": "adapt"
+  },
+  {
+    "word": "add"
+  },
+  {
+    "word": "addition"
+  },
+  {
+    "word": "additional"
+  },
+  {
+    "word": "address"
+  },
+  {
+    "word": "adequate"
+  },
+  {
+    "word": "adjust"
+  },
+  {
+    "word": "adjustment"
+  },
+  {
+    "word": "administration"
+  },
+  {
+    "word": "administrative"
+  },
+  {
+    "word": "administrator"
+  },
+  {
+    "word": "admit"
+  },
+  {
+    "word": "advance"
+  },
+  {
+    "word": "advanced"
+  },
+  {
+    "word": "advantage"
+  },
+  {
+    "word": "advertise"
+  },
+  {
+    "word": "advertisement"
+  },
+  {
+    "word": "advertising",
+    "pos": "n.",
+    "meaning": "廣告；廣告業",
+    "phonetic": "/ˈædvərtaɪzɪŋ/",
+    "definition": "the business of promoting products or services",
+    "example": "1. She works in advertising.\n2. The company cut its advertising budget.",
+    "exampleZh": "1. 她從事廣告業。\n2. 公司刪減了廣告預算。",
+    "id": "fa915f8ec7a0"
+  },
+  {
+    "word": "advice"
+  },
+  {
+    "word": "advise"
+  },
+  {
+    "word": "advisor"
+  },
+  {
+    "word": "affair"
+  },
+  {
+    "word": "affect"
+  },
+  {
+    "word": "affiliate"
+  },
+  {
+    "word": "afford"
+  },
+  {
+    "word": "affordable",
+    "pos": "adj.",
+    "meaning": "負擔得起的",
+    "phonetic": "/əˈfɔːrdəbl/",
+    "definition": "priced so that people can pay for it",
+    "example": "1. The hotel offers affordable rooms.\n2. We need an affordable health plan.",
+    "exampleZh": "1. 這家旅館提供價格實惠的房間。\n2. 我們需要負擔得起的健康方案。",
+    "id": "b705fcf81f0f"
+  },
+  {
+    "word": "agency"
+  },
+  {
+    "word": "agenda"
+  },
+  {
+    "word": "agent"
+  },
+  {
+    "word": "agree"
+  },
+  {
+    "word": "agreement"
+  },
+  {
+    "word": "ahead"
+  },
+  {
+    "word": "aim"
+  },
+  {
+    "word": "airline"
+  },
+  {
+    "word": "airplane"
+  },
+  {
+    "word": "airport"
+  },
+  {
+    "word": "aisle"
+  },
+  {
+    "word": "alert"
+  },
+  {
+    "word": "allocate"
+  },
+  {
+    "word": "allow"
+  },
+  {
+    "word": "allowance"
+  },
+  {
+    "word": "almost"
+  },
+  {
+    "word": "along"
+  },
+  {
+    "word": "already"
+  },
+  {
+    "word": "alter"
+  },
+  {
+    "word": "alternative"
+  },
+  {
+    "word": "although"
+  },
+  {
+    "word": "amazing",
+    "pos": "adj.",
+    "meaning": "驚人的",
+    "phonetic": "/əˈmeɪzɪŋ/",
+    "definition": "causing great surprise or wonder",
+    "example": "1. The team made amazing progress.\n2. It was an amazing sales result.",
+    "exampleZh": "1. 團隊有驚人的進展。\n2. 那是一個驚人的銷售成績。",
+    "id": "441c15e66f4f"
+  },
+  {
+    "word": "ambition"
+  },
+  {
+    "word": "amend"
+  },
+  {
+    "word": "amount"
+  },
+  {
+    "word": "analysis"
+  },
+  {
+    "word": "analyze"
+  },
+  {
+    "word": "announce"
+  },
+  {
+    "word": "announcement"
+  },
+  {
+    "word": "annual"
+  },
+  {
+    "word": "answer"
+  },
+  {
+    "word": "anticipate"
+  },
+  {
+    "word": "anxious"
+  },
+  {
+    "word": "apology"
+  },
+  {
+    "word": "apparent"
+  },
+  {
+    "word": "appeal"
+  },
+  {
+    "word": "appear"
+  },
+  {
+    "word": "appearance"
+  },
+  {
+    "word": "applicant"
+  },
+  {
+    "word": "application"
+  },
+  {
+    "word": "apply"
+  },
+  {
+    "word": "appoint"
+  },
+  {
+    "word": "appointment"
+  },
+  {
+    "word": "appraisal",
+    "pos": "n.",
+    "meaning": "評估；考績",
+    "phonetic": "/əˈpreɪzl/",
+    "definition": "a judgment of value or job performance",
+    "example": "1. Her annual appraisal is next week.\n2. The bank ordered an appraisal of the building.",
+    "exampleZh": "1. 她的年度考績在下週。\n2. 銀行要求對這棟建築進行估價。",
+    "id": "d8965da3e343"
+  },
+  {
+    "word": "appreciate"
+  },
+  {
+    "word": "approach"
+  },
+  {
+    "word": "appropriate"
+  },
+  {
+    "word": "approval"
+  },
+  {
+    "word": "approve"
+  },
+  {
+    "word": "approximate"
+  },
+  {
+    "word": "area"
+  },
+  {
+    "word": "argue"
+  },
+  {
+    "word": "argument",
+    "pos": "n.",
+    "meaning": "論點；爭論",
+    "phonetic": "/ˈɑːrɡjumənt/",
+    "definition": "a reason given for or against something, or a disagreement",
+    "example": "1. He presented a strong argument.\n2. The partners had an argument about the budget.",
+    "exampleZh": "1. 他提出了有力的論點。\n2. 合夥人為了預算起了爭執。",
+    "id": "a4f46c7bd349"
+  },
+  {
+    "word": "arise"
+  },
+  {
+    "word": "arrange"
+  },
+  {
+    "word": "arrangement"
+  },
+  {
+    "word": "arrival"
+  },
+  {
+    "word": "arrive"
+  },
+  {
+    "word": "article"
+  },
+  {
+    "word": "assemble"
+  },
+  {
+    "word": "assembly"
+  },
+  {
+    "word": "assert"
+  },
+  {
+    "word": "assess"
+  },
+  {
+    "word": "assessment"
+  },
+  {
+    "word": "asset"
+  },
+  {
+    "word": "assign"
+  },
+  {
+    "word": "assignment"
+  },
+  {
+    "word": "assist"
+  },
+  {
+    "word": "assistance"
+  },
+  {
+    "word": "assistant"
+  },
+  {
+    "word": "associate"
+  },
+  {
+    "word": "association"
+  },
+  {
+    "word": "assume"
+  },
+  {
+    "word": "assumption"
+  },
+  {
+    "word": "assure"
+  },
+  {
+    "word": "attach"
+  },
+  {
+    "word": "attachment"
+  },
+  {
+    "word": "attain"
+  },
+  {
+    "word": "attempt"
+  },
+  {
+    "word": "attend"
+  },
+  {
+    "word": "attendance"
+  },
+  {
+    "word": "attendee",
+    "pos": "n.",
+    "meaning": "出席者",
+    "phonetic": "/əˌtenˈdiː/",
+    "definition": "a person who goes to a meeting or event",
+    "example": "1. Each attendee received a name badge.\n2. Over 200 attendees joined the seminar.",
+    "exampleZh": "1. 每位出席者都拿到名牌。\n2. 超過 200 位出席者參加了研討會。",
+    "id": "1c07a73e7451"
+  },
+  {
+    "word": "attention"
+  },
+  {
+    "word": "attitude"
+  },
+  {
+    "word": "attract"
+  },
+  {
+    "word": "attraction"
+  },
+  {
+    "word": "attractive"
+  },
+  {
+    "word": "attribute"
+  },
+  {
+    "word": "auction"
+  },
+  {
+    "word": "audience"
+  },
+  {
+    "word": "audit"
+  },
+  {
+    "word": "auditor",
+    "pos": "n.",
+    "meaning": "查帳員",
+    "phonetic": "/ˈɔːdɪtər/",
+    "definition": "a person who officially examines financial records",
+    "example": "1. An auditor reviewed the accounts.\n2. The auditor found a small error.",
+    "exampleZh": "1. 查帳員複核了帳目。\n2. 查帳員發現一個小錯誤。",
+    "id": "70b87cc2effc"
+  },
+  {
+    "word": "authority"
+  },
+  {
+    "word": "authorize"
+  },
+  {
+    "word": "automatic"
+  },
+  {
+    "word": "available"
+  },
+  {
+    "word": "average"
+  },
+  {
+    "word": "avoid"
+  },
+  {
+    "word": "award"
+  },
+  {
+    "word": "aware"
+  },
+  {
+    "word": "awareness",
+    "pos": "n.",
+    "meaning": "意識；認知",
+    "phonetic": "/əˈwernəs/",
+    "definition": "knowledge or understanding of a situation",
+    "example": "1. The campaign raised safety awareness.\n2. Staff need more awareness of the new policy.",
+    "exampleZh": "1. 這項活動提升了安全意識。\n2. 員工需要更了解新政策。",
+    "id": "a12aa70171fd"
+  },
+  {
+    "word": "background"
+  },
+  {
+    "word": "baggage"
+  },
+  {
+    "word": "balance"
+  },
+  {
+    "word": "ban"
+  },
+  {
+    "word": "bank"
+  },
+  {
+    "word": "bankrupt"
+  },
+  {
+    "word": "bankruptcy",
+    "pos": "n.",
+    "meaning": "破產",
+    "phonetic": "/ˈbæŋkrʌptsi/",
+    "definition": "the legal state of being unable to pay debts",
+    "example": "1. The store filed for bankruptcy.\n2. Bankruptcy can take months to settle.",
+    "exampleZh": "1. 這家店申請破產。\n2. 破產程序可能要花好幾個月。",
+    "id": "6da7a10781cd"
+  },
+  {
+    "word": "banquet"
+  },
+  {
+    "word": "bargain"
+  },
+  {
+    "word": "barrier"
+  },
+  {
+    "word": "base"
+  },
+  {
+    "word": "basic"
+  },
+  {
+    "word": "basis"
+  },
+  {
+    "word": "batch"
+  },
+  {
+    "word": "bear"
+  },
+  {
+    "word": "become"
+  },
+  {
+    "word": "before"
+  },
+  {
+    "word": "begin"
+  },
+  {
+    "word": "behalf"
+  },
+  {
+    "word": "behave"
+  },
+  {
+    "word": "behavior"
+  },
+  {
+    "word": "behind"
+  },
+  {
+    "word": "belong"
+  },
+  {
+    "word": "below"
+  },
+  {
+    "word": "benefit"
+  },
+  {
+    "word": "beverage"
+  },
+  {
+    "word": "bid"
+  },
+  {
+    "word": "bill"
+  },
+  {
+    "word": "billing",
+    "pos": "n.",
+    "meaning": "帳務；請款",
+    "phonetic": "/ˈbɪlɪŋ/",
+    "definition": "the process of preparing and sending bills",
+    "example": "1. Please contact billing about this charge.\n2. Billing errors should be reported at once.",
+    "exampleZh": "1. 關於這筆費用請聯絡帳務部門。\n2. 帳務錯誤應立刻回報。",
+    "id": "4e1ca2d3c722"
+  },
+  {
+    "word": "billboard",
+    "pos": "n.",
+    "meaning": "廣告看板",
+    "phonetic": "/ˈbɪlbɔːrd/",
+    "definition": "a large outdoor board used for advertising",
+    "example": "1. A billboard advertised the new phone.\n2. The billboard is beside the highway.",
+    "exampleZh": "1. 一塊廣告看板在宣傳新手機。\n2. 廣告看板在高速公路旁。",
+    "id": "66cd8d3f56c7"
+  },
+  {
+    "word": "board"
+  },
+  {
+    "word": "boarding",
+    "pos": "n.",
+    "meaning": "登機",
+    "phonetic": "/ˈbɔːrdɪŋ/",
+    "definition": "the act of getting onto a plane, ship, or train",
+    "example": "1. Boarding begins in twenty minutes.\n2. Please have your pass ready for boarding.",
+    "exampleZh": "1. 二十分鐘後開始登機。\n2. 登機時請準備好登機證。",
+    "id": "097d41a2378c"
+  },
+  {
+    "word": "bonus"
+  },
+  {
+    "word": "book"
+  },
+  {
+    "word": "booking",
+    "pos": "n.",
+    "meaning": "預訂",
+    "phonetic": "/ˈbʊkɪŋ/",
+    "definition": "an arrangement to reserve a seat, room, or ticket",
+    "example": "1. I changed my hotel booking.\n2. Online booking is faster.",
+    "exampleZh": "1. 我更改了旅館預訂。\n2. 線上預訂比較快。",
+    "id": "1eeb0b25db8b"
+  },
+  {
+    "word": "boost"
+  },
+  {
+    "word": "borrow"
+  },
+  {
+    "word": "boss"
+  },
+  {
+    "word": "both"
+  },
+  {
+    "word": "bottom"
+  },
+  {
+    "word": "branch"
+  },
+  {
+    "word": "brand"
+  },
+  {
+    "word": "break"
+  },
+  {
+    "word": "brief"
+  },
+  {
+    "word": "briefing",
+    "pos": "n.",
+    "meaning": "簡報",
+    "phonetic": "/ˈbriːfɪŋ/",
+    "definition": "a short meeting that gives necessary information",
+    "example": "1. The morning briefing starts at nine.\n2. Managers attended a budget briefing.",
+    "exampleZh": "1. 早上的簡報九點開始。\n2. 經理們參加了預算簡報。",
+    "id": "d239be31dc93"
+  },
+  {
+    "word": "bring"
+  },
+  {
+    "word": "broad"
+  },
+  {
+    "word": "brochure"
+  },
+  {
+    "word": "budget"
+  },
+  {
+    "word": "build"
+  },
+  {
+    "word": "building"
+  },
+  {
+    "word": "bulletin"
+  },
+  {
+    "word": "business"
+  },
+  {
+    "word": "busy"
+  },
+  {
+    "word": "buyer",
+    "pos": "n.",
+    "meaning": "買方",
+    "phonetic": "/ˈbaɪər/",
+    "definition": "a person or company that purchases something",
+    "example": "1. The buyer asked for a discount.\n2. Our biggest buyer is in Osaka.",
+    "exampleZh": "1. 買方要求折扣。\n2. 我們最大的買方在大阪。",
+    "id": "ada2300b81c8"
+  },
+  {
+    "word": "calculate"
+  },
+  {
+    "word": "calendar"
+  },
+  {
+    "word": "call"
+  },
+  {
+    "word": "campaign"
+  },
+  {
+    "word": "cancel"
+  },
+  {
+    "word": "cancellation",
+    "pos": "n.",
+    "meaning": "取消",
+    "phonetic": "/ˌkænsəˈleɪʃn/",
+    "definition": "a decision to stop a planned event or booking",
+    "example": "1. The flight cancellation surprised everyone.\n2. Cancellations must be made one day ahead.",
+    "exampleZh": "1. 班機取消讓大家都很意外。\n2. 取消必須提前一天辦理。",
+    "id": "79a6b33ab337"
+  },
+  {
+    "word": "candidate"
+  },
+  {
+    "word": "capable"
+  },
+  {
+    "word": "capacity"
+  },
+  {
+    "word": "capital"
+  },
+  {
+    "word": "card"
+  },
+  {
+    "word": "career"
+  },
+  {
+    "word": "cargo"
+  },
+  {
+    "word": "carry"
+  },
+  {
+    "word": "case"
+  },
+  {
+    "word": "cash"
+  },
+  {
+    "word": "catalog",
+    "pos": "n.",
+    "meaning": "型錄；目錄",
+    "phonetic": "/ˈkætəlɔːɡ/",
+    "definition": "a list or book showing products for sale",
+    "example": "1. The new catalog arrives in March.\n2. Prices are listed in the catalog.",
+    "exampleZh": "1. 新型錄三月會到。\n2. 價格列在型錄裡。",
+    "id": "e18c1615cd07"
+  },
+  {
+    "word": "category"
+  },
+  {
+    "word": "cater"
+  },
+  {
+    "word": "catering",
+    "pos": "n.",
+    "meaning": "外燴；餐飲承辦",
+    "phonetic": "/ˈkeɪtərɪŋ/",
+    "definition": "the business of providing food for events",
+    "example": "1. The hotel offers catering for meetings.\n2. Catering costs were higher than expected.",
+    "exampleZh": "1. 旅館為會議提供外燴。\n2. 餐飲費用比預期高。",
+    "id": "2a53b0986aef"
+  },
+  {
+    "word": "cause"
+  },
+  {
+    "word": "caution"
+  },
+  {
+    "word": "celebrate"
+  },
+  {
+    "word": "center"
+  },
+  {
+    "word": "certain"
+  },
+  {
+    "word": "certificate"
+  },
+  {
+    "word": "chain"
+  },
+  {
+    "word": "chair"
+  },
+  {
+    "word": "chairman"
+  },
+  {
+    "word": "challenge"
+  },
+  {
+    "word": "chance"
+  },
+  {
+    "word": "change"
+  },
+  {
+    "word": "channel"
+  },
+  {
+    "word": "charge"
+  },
+  {
+    "word": "chart"
+  },
+  {
+    "word": "cheap"
+  },
+  {
+    "word": "check"
+  },
+  {
+    "word": "checkout",
+    "pos": "n.",
+    "meaning": "退房；結帳",
+    "phonetic": "/ˈtʃekaʊt/",
+    "definition": "the process of leaving a hotel or paying for goods",
+    "example": "1. Checkout is at eleven.\n2. There was a long line at checkout.",
+    "exampleZh": "1. 退房時間是十一點。\n2. 結帳櫃檯排了很長的隊。",
+    "id": "88cd52db9876"
+  },
+  {
+    "word": "choice"
+  },
+  {
+    "word": "choose"
+  },
+  {
+    "word": "claim"
+  },
+  {
+    "word": "clarify"
+  },
+  {
+    "word": "class"
+  },
+  {
+    "word": "clause"
+  },
+  {
+    "word": "clear"
+  },
+  {
+    "word": "clerk"
+  },
+  {
+    "word": "client"
+  },
+  {
+    "word": "climate"
+  },
+  {
+    "word": "close"
+  },
+  {
+    "word": "closing",
+    "pos": "n.",
+    "meaning": "結束；成交",
+    "phonetic": "/ˈkloʊzɪŋ/",
+    "definition": "the end of an event, or the completion of a sale",
+    "example": "1. The closing date of the sale is Friday.\n2. She spoke at the closing of the conference.",
+    "exampleZh": "1. 這筆交易的截止日是星期五。\n2. 她在會議閉幕時致詞。",
+    "id": "140ab6dd9c7e"
+  },
+  {
+    "word": "code"
+  },
+  {
+    "word": "colleague"
+  },
+  {
+    "word": "collect"
+  },
+  {
+    "word": "collection"
+  },
+  {
+    "word": "combine"
+  },
+  {
+    "word": "come"
+  },
+  {
+    "word": "comfort"
+  },
+  {
+    "word": "comfortable"
+  },
+  {
+    "word": "command"
+  },
+  {
+    "word": "comment"
+  },
+  {
+    "word": "commerce"
+  },
+  {
+    "word": "commercial"
+  },
+  {
+    "word": "commission"
+  },
+  {
+    "word": "commit"
+  },
+  {
+    "word": "commitment"
+  },
+  {
+    "word": "committee"
+  },
+  {
+    "word": "common"
+  },
+  {
+    "word": "communicate"
+  },
+  {
+    "word": "communication"
+  },
+  {
+    "word": "community"
+  },
+  {
+    "word": "commute"
+  },
+  {
+    "word": "company"
+  },
+  {
+    "word": "compare"
+  },
+  {
+    "word": "comparison"
+  },
+  {
+    "word": "compensate"
+  },
+  {
+    "word": "compensation"
+  },
+  {
+    "word": "compete"
+  },
+  {
+    "word": "competition"
+  },
+  {
+    "word": "competitive"
+  },
+  {
+    "word": "competitor"
+  },
+  {
+    "word": "compile"
+  },
+  {
+    "word": "complain"
+  },
+  {
+    "word": "complaint"
+  },
+  {
+    "word": "complete"
+  },
+  {
+    "word": "complex"
+  },
+  {
+    "word": "comply"
+  },
+  {
+    "word": "component"
+  },
+  {
+    "word": "compose"
+  },
+  {
+    "word": "comprehensive"
+  },
+  {
+    "word": "comprise"
+  },
+  {
+    "word": "compromise"
+  },
+  {
+    "word": "compute"
+  },
+  {
+    "word": "computer"
+  },
+  {
+    "word": "concentrate"
+  },
+  {
+    "word": "concept"
+  },
+  {
+    "word": "concern"
+  },
+  {
+    "word": "conclude"
+  },
+  {
+    "word": "conclusion"
+  },
+  {
+    "word": "condition"
+  },
+  {
+    "word": "conduct"
+  },
+  {
+    "word": "conference"
+  },
+  {
+    "word": "confident"
+  },
+  {
+    "word": "confidential"
+  },
+  {
+    "word": "confirm"
+  },
+  {
+    "word": "confirmation",
+    "pos": "n.",
+    "meaning": "確認",
+    "phonetic": "/ˌkɑːnfərˈmeɪʃn/",
+    "definition": "a statement that something is definite",
+    "example": "1. We received confirmation of the reservation.\n2. Please send written confirmation.",
+    "exampleZh": "1. 我們收到預訂確認。\n2. 請寄出書面確認。",
+    "id": "c9a54f06fe0b"
+  },
+  {
+    "word": "conflict"
+  },
+  {
+    "word": "conform"
+  },
+  {
+    "word": "connect"
+  },
+  {
+    "word": "connection"
+  },
+  {
+    "word": "consensus"
+  },
+  {
+    "word": "consent"
+  },
+  {
+    "word": "consequence"
+  },
+  {
+    "word": "consider"
+  },
+  {
+    "word": "considerable"
+  },
+  {
+    "word": "consist"
+  },
+  {
+    "word": "consistent"
+  },
+  {
+    "word": "constant"
+  },
+  {
+    "word": "construct"
+  },
+  {
+    "word": "construction"
+  },
+  {
+    "word": "consult"
+  },
+  {
+    "word": "consultant"
+  },
+  {
+    "word": "consume"
+  },
+  {
+    "word": "consumer"
+  },
+  {
+    "word": "contact"
+  },
+  {
+    "word": "contain"
+  },
+  {
+    "word": "container"
+  },
+  {
+    "word": "content"
+  },
+  {
+    "word": "contest"
+  },
+  {
+    "word": "context"
+  },
+  {
+    "word": "continue"
+  },
+  {
+    "word": "contract"
+  },
+  {
+    "word": "contractor"
+  },
+  {
+    "word": "contrary"
+  },
+  {
+    "word": "contrast"
+  },
+  {
+    "word": "contribute"
+  },
+  {
+    "word": "contribution"
+  },
+  {
+    "word": "control"
+  },
+  {
+    "word": "convenient"
+  },
+  {
+    "word": "convention"
+  },
+  {
+    "word": "conversation"
+  },
+  {
+    "word": "convert"
+  },
+  {
+    "word": "convince"
+  },
+  {
+    "word": "cooperate"
+  },
+  {
+    "word": "cooperation"
+  },
+  {
+    "word": "coordinate"
+  },
+  {
+    "word": "coordinator",
+    "pos": "n.",
+    "meaning": "協調人",
+    "phonetic": "/koʊˈɔːrdɪneɪtər/",
+    "definition": "a person who organizes people or activities",
+    "example": "1. The event coordinator checked the schedule.\n2. Ask the coordinator for a visitor badge.",
+    "exampleZh": "1. 活動協調人核對了時程。\n2. 向協調人索取訪客證。",
+    "id": "47c2341d653d"
+  },
+  {
+    "word": "copy"
+  },
+  {
+    "word": "corporate"
+  },
+  {
+    "word": "corporation"
+  },
+  {
+    "word": "correct"
+  },
+  {
+    "word": "correspond"
+  },
+  {
+    "word": "correspondence"
+  },
+  {
+    "word": "cost"
+  },
+  {
+    "word": "costly"
+  },
+  {
+    "word": "count"
+  },
+  {
+    "word": "counter"
+  },
+  {
+    "word": "counterpart"
+  },
+  {
+    "word": "coupon"
+  },
+  {
+    "word": "courier",
+    "pos": "n.",
+    "meaning": "快遞",
+    "phonetic": "/ˈkʊriər/",
+    "definition": "a person or company that delivers documents or parcels",
+    "example": "1. A courier will pick up the contract.\n2. Send the samples by courier.",
+    "exampleZh": "1. 快遞會來取合約。\n2. 用快遞寄出樣品。",
+    "id": "539c83858094"
+  },
+  {
+    "word": "course"
+  },
+  {
+    "word": "cover"
+  },
+  {
+    "word": "coverage"
+  },
+  {
+    "word": "create"
+  },
+  {
+    "word": "credit"
+  },
+  {
+    "word": "crew"
+  },
+  {
+    "word": "crisis"
+  },
+  {
+    "word": "criteria"
+  },
+  {
+    "word": "critical"
+  },
+  {
+    "word": "criticism"
+  },
+  {
+    "word": "criticize"
+  },
+  {
+    "word": "crucial"
+  },
+  {
+    "word": "culture"
+  },
+  {
+    "word": "currency"
+  },
+  {
+    "word": "current"
+  },
+  {
+    "word": "currently",
+    "pos": "adv.",
+    "meaning": "目前",
+    "phonetic": "/ˈkʌrəntli/",
+    "definition": "at the present time",
+    "example": "1. She is currently on leave.\n2. The position is currently open.",
+    "exampleZh": "1. 她目前正在休假。\n2. 這個職位目前出缺。",
+    "id": "1510c242e60e"
+  },
+  {
+    "word": "customer"
+  },
+  {
+    "word": "customs"
+  },
+  {
+    "word": "cut"
+  },
+  {
+    "word": "damage"
+  },
+  {
+    "word": "data"
+  },
+  {
+    "word": "date"
+  },
+  {
+    "word": "deadline"
+  },
+  {
+    "word": "deal"
+  },
+  {
+    "word": "dealer"
+  },
+  {
+    "word": "debt"
+  },
+  {
+    "word": "decide"
+  },
+  {
+    "word": "decision"
+  },
+  {
+    "word": "decline"
+  },
+  {
+    "word": "decrease"
+  },
+  {
+    "word": "dedicate"
+  },
+  {
+    "word": "deduct"
+  },
+  {
+    "word": "deduction",
+    "pos": "n.",
+    "meaning": "扣除額",
+    "phonetic": "/dɪˈdʌkʃn/",
+    "definition": "an amount taken away from a total, especially pay or tax",
+    "example": "1. Tax is a deduction from your salary.\n2. The invoice shows a deduction for the return.",
+    "exampleZh": "1. 稅金會從薪水裡扣除。\n2. 發票上有退貨的扣除額。",
+    "id": "9750b0394ef4"
+  },
+  {
+    "word": "default"
+  },
+  {
+    "word": "defect"
+  },
+  {
+    "word": "defective",
+    "pos": "adj.",
+    "meaning": "有瑕疵的",
+    "phonetic": "/dɪˈfektɪv/",
+    "definition": "having a fault and not working properly",
+    "example": "1. The defective printer was replaced.\n2. Customers may return defective goods.",
+    "exampleZh": "1. 有瑕疵的印表機已更換。\n2. 顧客可以退回瑕疵品。",
+    "id": "d9a5e3403123"
+  },
+  {
+    "word": "defend"
+  },
+  {
+    "word": "deficit"
+  },
+  {
+    "word": "define"
+  },
+  {
+    "word": "definite"
+  },
+  {
+    "word": "delay"
+  },
+  {
+    "word": "delegate"
+  },
+  {
+    "word": "delete",
+    "pos": "v.",
+    "meaning": "刪除",
+    "phonetic": "/dɪˈliːt/",
+    "definition": "to remove written or stored information",
+    "example": "1. Please delete the old file.\n2. I accidentally deleted the message.",
+    "exampleZh": "1. 請刪除舊檔案。\n2. 我不小心刪掉了那封信。",
+    "id": "5e7946340add"
+  },
+  {
+    "word": "deliver"
+  },
+  {
+    "word": "delivery"
+  },
+  {
+    "word": "demand"
+  },
+  {
+    "word": "demonstrate"
+  },
+  {
+    "word": "demonstration"
+  },
+  {
+    "word": "department"
+  },
+  {
+    "word": "departure"
+  },
+  {
+    "word": "depend"
+  },
+  {
+    "word": "deposit"
+  },
+  {
+    "word": "describe"
+  },
+  {
+    "word": "description"
+  },
+  {
+    "word": "design"
+  },
+  {
+    "word": "designate",
+    "pos": "v.",
+    "meaning": "指定",
+    "phonetic": "/ˈdezɪɡneɪt/",
+    "definition": "to choose someone or something for a role or purpose",
+    "example": "1. They designated Ms. Lin as team leader.\n2. This room is designated for meetings.",
+    "exampleZh": "1. 他們指定林小姐為隊長。\n2. 這間房間指定用於開會。",
+    "id": "c68709056ab1"
+  },
+  {
+    "word": "desire"
+  },
+  {
+    "word": "desk"
+  },
+  {
+    "word": "despite"
+  },
+  {
+    "word": "destination"
+  },
+  {
+    "word": "detail"
+  },
+  {
+    "word": "detailed",
+    "pos": "adj.",
+    "meaning": "詳細的",
+    "phonetic": "/ˈdiːteɪld/",
+    "definition": "including many facts or parts",
+    "example": "1. Please send a detailed report.\n2. The manual gives detailed instructions.",
+    "exampleZh": "1. 請寄一份詳細報告。\n2. 手冊裡有詳細說明。",
+    "id": "b6ead8a6d376"
+  },
+  {
+    "word": "detect"
+  },
+  {
+    "word": "determine"
+  },
+  {
+    "word": "develop"
+  },
+  {
+    "word": "development"
+  },
+  {
+    "word": "device"
+  },
+  {
+    "word": "devote"
+  },
+  {
+    "word": "diagram"
+  },
+  {
+    "word": "differ"
+  },
+  {
+    "word": "difference"
+  },
+  {
+    "word": "different"
+  },
+  {
+    "word": "difficult"
+  },
+  {
+    "word": "difficulty"
+  },
+  {
+    "word": "digital"
+  },
+  {
+    "word": "diligent"
+  },
+  {
+    "word": "dimension"
+  },
+  {
+    "word": "direct"
+  },
+  {
+    "word": "direction"
+  },
+  {
+    "word": "director"
+  },
+  {
+    "word": "directory"
+  },
+  {
+    "word": "disagree"
+  },
+  {
+    "word": "discount"
+  },
+  {
+    "word": "discover"
+  },
+  {
+    "word": "discuss"
+  },
+  {
+    "word": "discussion"
+  },
+  {
+    "word": "display"
+  },
+  {
+    "word": "dispose"
+  },
+  {
+    "word": "dispute"
+  },
+  {
+    "word": "disrupt"
+  },
+  {
+    "word": "distance"
+  },
+  {
+    "word": "distinct"
+  },
+  {
+    "word": "distribute"
+  },
+  {
+    "word": "distribution"
+  },
+  {
+    "word": "distributor",
+    "pos": "n.",
+    "meaning": "經銷商",
+    "phonetic": "/dɪˈstrɪbjətər/",
+    "definition": "a company that supplies goods to stores",
+    "example": "1. Our distributor covers southern Taiwan.\n2. The distributor shipped the parts today.",
+    "exampleZh": "1. 我們的經銷商負責台灣南部。\n2. 經銷商今天運出零件。",
+    "id": "927e6f38d8bd"
+  },
+  {
+    "word": "diverse"
+  },
+  {
+    "word": "divide"
+  },
+  {
+    "word": "division"
+  },
+  {
+    "word": "document"
+  },
+  {
+    "word": "domestic"
+  },
+  {
+    "word": "donate"
+  },
+  {
+    "word": "donation"
+  },
+  {
+    "word": "draft"
+  },
+  {
+    "word": "draw"
+  },
+  {
+    "word": "drive"
+  },
+  {
+    "word": "drop"
+  },
+  {
+    "word": "due"
+  },
+  {
+    "word": "duplicate",
+    "pos": "n.",
+    "meaning": "副本",
+    "phonetic": "/ˈduːplɪkət/",
+    "definition": "an exact copy of a document",
+    "example": "1. Keep a duplicate of the contract.\n2. He asked for a duplicate receipt.",
+    "exampleZh": "1. 留一份合約副本。\n2. 他要了一張收據副本。",
+    "id": "0bf3a5aed181"
+  },
+  {
+    "word": "during"
+  },
+  {
+    "word": "duty"
+  },
+  {
+    "word": "earn"
+  },
+  {
+    "word": "earnings",
+    "pos": "n.",
+    "meaning": "收入；盈餘",
+    "phonetic": "/ˈɜːrnɪŋz/",
+    "definition": "money received from work or business",
+    "example": "1. Quarterly earnings rose by five percent.\n2. Her earnings depend on sales.",
+    "exampleZh": "1. 季度盈餘上升了百分之五。\n2. 她的收入取決於銷售。",
+    "id": "55995c7d48ba"
+  },
+  {
+    "word": "ease"
+  },
+  {
+    "word": "economic"
+  },
+  {
+    "word": "economy"
+  },
+  {
+    "word": "edit"
+  },
+  {
+    "word": "edition"
+  },
+  {
+    "word": "editor"
+  },
+  {
+    "word": "educate"
+  },
+  {
+    "word": "education"
+  },
+  {
+    "word": "effect"
+  },
+  {
+    "word": "effective"
+  },
+  {
+    "word": "efficiency"
+  },
+  {
+    "word": "efficient"
+  },
+  {
+    "word": "effort"
+  },
+  {
+    "word": "either"
+  },
+  {
+    "word": "elect"
+  },
+  {
+    "word": "election"
+  },
+  {
+    "word": "electronic"
+  },
+  {
+    "word": "element"
+  },
+  {
+    "word": "eligible"
+  },
+  {
+    "word": "eliminate"
+  },
+  {
+    "word": "email"
+  },
+  {
+    "word": "embark",
+    "pos": "v.",
+    "meaning": "著手；啟程",
+    "phonetic": "/ɪmˈbɑːrk/",
+    "definition": "to begin a project or a journey",
+    "example": "1. We will embark on the project in May.\n2. Passengers embarked at eight.",
+    "exampleZh": "1. 我們五月會著手這項專案。\n2. 乘客八點登船。",
+    "id": "4ac400c2b572"
+  },
+  {
+    "word": "emerge"
+  },
+  {
+    "word": "emphasis"
+  },
+  {
+    "word": "emphasize"
+  },
+  {
+    "word": "employ"
+  },
+  {
+    "word": "employee"
+  },
+  {
+    "word": "employer"
+  },
+  {
+    "word": "employment"
+  },
+  {
+    "word": "empty"
+  },
+  {
+    "word": "enable"
+  },
+  {
+    "word": "enclose"
+  },
+  {
+    "word": "enclosure",
+    "pos": "n.",
+    "meaning": "附件",
+    "phonetic": "/ɪnˈkloʊʒər/",
+    "definition": "something included with a letter",
+    "example": "1. Please see the enclosure for the price list.\n2. The enclosure was missing from the envelope.",
+    "exampleZh": "1. 價目表請見附件。\n2. 信封裡的附件不見了。",
+    "id": "7e267294e375"
+  },
+  {
+    "word": "encounter"
+  },
+  {
+    "word": "encourage"
+  },
+  {
+    "word": "end"
+  },
+  {
+    "word": "endorse"
+  },
+  {
+    "word": "endorsement"
+  },
+  {
+    "word": "energy"
+  },
+  {
+    "word": "enforce"
+  },
+  {
+    "word": "engage"
+  },
+  {
+    "word": "engine"
+  },
+  {
+    "word": "engineer"
+  },
+  {
+    "word": "engineering"
+  },
+  {
+    "word": "enhance"
+  },
+  {
+    "word": "enjoy"
+  },
+  {
+    "word": "enough"
+  },
+  {
+    "word": "ensure"
+  },
+  {
+    "word": "enter"
+  },
+  {
+    "word": "enterprise"
+  },
+  {
+    "word": "entertain"
+  },
+  {
+    "word": "entertainment"
+  },
+  {
+    "word": "enthusiastic"
+  },
+  {
+    "word": "entire"
+  },
+  {
+    "word": "entitle"
+  },
+  {
+    "word": "entrance"
+  },
+  {
+    "word": "entrepreneur"
+  },
+  {
+    "word": "entry"
+  },
+  {
+    "word": "environment"
+  },
+  {
+    "word": "environmental"
+  },
+  {
+    "word": "equal"
+  },
+  {
+    "word": "equip"
+  },
+  {
+    "word": "equipment"
+  },
+  {
+    "word": "equivalent"
+  },
+  {
+    "word": "error"
+  },
+  {
+    "word": "especially"
+  },
+  {
+    "word": "essential"
+  },
+  {
+    "word": "establish"
+  },
+  {
+    "word": "establishment"
+  },
+  {
+    "word": "estate"
+  },
+  {
+    "word": "estimate"
+  },
+  {
+    "word": "evaluate"
+  },
+  {
+    "word": "evaluation"
+  },
+  {
+    "word": "even"
+  },
+  {
+    "word": "event"
+  },
+  {
+    "word": "eventually",
+    "pos": "adv.",
+    "meaning": "最終",
+    "phonetic": "/ɪˈventʃuəli/",
+    "definition": "after some time, in the end",
+    "example": "1. The shipment eventually arrived.\n2. She eventually accepted the offer.",
+    "exampleZh": "1. 那批貨最終送到了。\n2. 她最終接受了這個邀約。",
+    "id": "8c3c9f57e61e"
+  },
+  {
+    "word": "ever"
+  },
+  {
+    "word": "every"
+  },
+  {
+    "word": "evidence"
+  },
+  {
+    "word": "evident"
+  },
+  {
+    "word": "exact"
+  },
+  {
+    "word": "examine"
+  },
+  {
+    "word": "example"
+  },
+  {
+    "word": "exceed"
+  },
+  {
+    "word": "excellent"
+  },
+  {
+    "word": "except"
+  },
+  {
+    "word": "exception"
+  },
+  {
+    "word": "excess"
+  },
+  {
+    "word": "exchange"
+  },
+  {
+    "word": "exclude"
+  },
+  {
+    "word": "exclusive"
+  },
+  {
+    "word": "excuse"
+  },
+  {
+    "word": "execute"
+  },
+  {
+    "word": "executive"
+  },
+  {
+    "word": "exempt"
+  },
+  {
+    "word": "exercise"
+  },
+  {
+    "word": "exhibit"
+  },
+  {
+    "word": "exhibition"
+  },
+  {
+    "word": "exist"
+  },
+  {
+    "word": "existing",
+    "pos": "adj.",
+    "meaning": "現有的",
+    "phonetic": "/ɪɡˈzɪstɪŋ/",
+    "definition": "already present or in use",
+    "example": "1. The plan updates the existing policy.\n2. Existing customers get a discount.",
+    "exampleZh": "1. 這項計畫會更新現有政策。\n2. 現有顧客可享折扣。",
+    "id": "e154fcacf50d"
+  },
+  {
+    "word": "expand"
+  },
+  {
+    "word": "expansion"
+  },
+  {
+    "word": "expect"
+  },
+  {
+    "word": "expectation"
+  },
+  {
+    "word": "expense"
+  },
+  {
+    "word": "expensive"
+  },
+  {
+    "word": "experience"
+  },
+  {
+    "word": "experienced",
+    "pos": "adj.",
+    "meaning": "有經驗的",
+    "phonetic": "/ɪkˈspɪriənst/",
+    "definition": "having skill from doing something before",
+    "example": "1. We need an experienced driver.\n2. She is experienced in export sales.",
+    "exampleZh": "1. 我們需要一位有經驗的司機。\n2. 她對出口業務很有經驗。",
+    "id": "8258b87cd850"
+  },
+  {
+    "word": "experiment"
+  },
+  {
+    "word": "expert"
+  },
+  {
+    "word": "expire"
+  },
+  {
+    "word": "expiration"
+  },
+  {
+    "word": "explain"
+  },
+  {
+    "word": "explanation"
+  },
+  {
+    "word": "export"
+  },
+  {
+    "word": "expose"
+  },
+  {
+    "word": "express"
+  },
+  {
+    "word": "extend"
+  },
+  {
+    "word": "extension"
+  },
+  {
+    "word": "extensive"
+  },
+  {
+    "word": "external"
+  },
+  {
+    "word": "extra"
+  },
+  {
+    "word": "extract"
+  },
+  {
+    "word": "extreme"
+  },
+  {
+    "word": "facility"
+  },
+  {
+    "word": "factor"
+  },
+  {
+    "word": "factory"
+  },
+  {
+    "word": "fail"
+  },
+  {
+    "word": "failure"
+  },
+  {
+    "word": "fair"
+  },
+  {
+    "word": "familiar"
+  },
+  {
+    "word": "fare"
+  },
+  {
+    "word": "fashion"
+  },
+  {
+    "word": "fast"
+  },
+  {
+    "word": "fault"
+  },
+  {
+    "word": "favor"
+  },
+  {
+    "word": "favorable"
+  },
+  {
+    "word": "feature"
+  },
+  {
+    "word": "fee"
+  },
+  {
+    "word": "feedback"
+  },
+  {
+    "word": "few"
+  },
+  {
+    "word": "field"
+  },
+  {
+    "word": "figure"
+  },
+  {
+    "word": "file"
+  },
+  {
+    "word": "fill"
+  },
+  {
+    "word": "final"
+  },
+  {
+    "word": "finalize",
+    "pos": "v.",
+    "meaning": "定案；完成最後手續",
+    "phonetic": "/ˈfaɪnəlaɪz/",
+    "definition": "to complete the last details of a plan",
+    "example": "1. We will finalize the contract tomorrow.\n2. Please finalize the guest list.",
+    "exampleZh": "1. 我們明天會把合約定案。\n2. 請把來賓名單定下來。",
+    "id": "ca2baf49bc9f"
+  },
+  {
+    "word": "finance"
+  },
+  {
+    "word": "financial"
+  },
+  {
+    "word": "find"
+  },
+  {
+    "word": "finish"
+  },
+  {
+    "word": "firm"
+  },
+  {
+    "word": "first"
+  },
+  {
+    "word": "fiscal"
+  },
+  {
+    "word": "fit"
+  },
+  {
+    "word": "fix"
+  },
+  {
+    "word": "flexible"
+  },
+  {
+    "word": "flight"
+  },
+  {
+    "word": "floor"
+  },
+  {
+    "word": "flow"
+  },
+  {
+    "word": "focus"
+  },
+  {
+    "word": "follow"
+  },
+  {
+    "word": "following"
+  },
+  {
+    "word": "force"
+  },
+  {
+    "word": "forecast"
+  },
+  {
+    "word": "foreign"
+  },
+  {
+    "word": "form"
+  },
+  {
+    "word": "formal"
+  },
+  {
+    "word": "format"
+  },
+  {
+    "word": "former"
+  },
+  {
+    "word": "forth"
+  },
+  {
+    "word": "fortune"
+  },
+  {
+    "word": "forward"
+  },
+  {
+    "word": "found"
+  },
+  {
+    "word": "foundation"
+  },
+  {
+    "word": "frame"
+  },
+  {
+    "word": "free"
+  },
+  {
+    "word": "freight"
+  },
+  {
+    "word": "frequent"
+  },
+  {
+    "word": "frequently",
+    "pos": "adv.",
+    "meaning": "經常",
+    "phonetic": "/ˈfriːkwəntli/",
+    "definition": "often",
+    "example": "1. Clients frequently ask about delivery time.\n2. The copier frequently jams.",
+    "exampleZh": "1. 客戶經常詢問到貨時間。\n2. 影印機經常卡紙。",
+    "id": "ebf8a229a189"
+  },
+  {
+    "word": "fresh"
+  },
+  {
+    "word": "friend"
+  },
+  {
+    "word": "from"
+  },
+  {
+    "word": "front"
+  },
+  {
+    "word": "fulfill"
+  },
+  {
+    "word": "full"
+  },
+  {
+    "word": "function"
+  },
+  {
+    "word": "fund"
+  },
+  {
+    "word": "fundamental"
+  },
+  {
+    "word": "fundraiser",
+    "pos": "n.",
+    "meaning": "募款活動",
+    "phonetic": "/ˈfʌndreɪzər/",
+    "definition": "an event held to collect money for a cause",
+    "example": "1. The charity fundraiser is on Saturday.\n2. Employees joined the fundraiser.",
+    "exampleZh": "1. 慈善募款活動在星期六。\n2. 員工參加了募款活動。",
+    "id": "75e31c42a38d"
+  },
+  {
+    "word": "furnish"
+  },
+  {
+    "word": "furniture"
+  },
+  {
+    "word": "further"
+  },
+  {
+    "word": "future"
+  },
+  {
+    "word": "gain"
+  },
+  {
+    "word": "gap"
+  },
+  {
+    "word": "gather"
+  },
+  {
+    "word": "general"
+  },
+  {
+    "word": "generate"
+  },
+  {
+    "word": "generous"
+  },
+  {
+    "word": "get"
+  },
+  {
+    "word": "gift"
+  },
+  {
+    "word": "give"
+  },
+  {
+    "word": "global"
+  },
+  {
+    "word": "goal"
+  },
+  {
+    "word": "goods"
+  },
+  {
+    "word": "govern"
+  },
+  {
+    "word": "government"
+  },
+  {
+    "word": "grade"
+  },
+  {
+    "word": "gradual"
+  },
+  {
+    "word": "grant"
+  },
+  {
+    "word": "graph"
+  },
+  {
+    "word": "grateful"
+  },
+  {
+    "word": "great"
+  },
+  {
+    "word": "gross"
+  },
+  {
+    "word": "group"
+  },
+  {
+    "word": "grow"
+  },
+  {
+    "word": "growth"
+  },
+  {
+    "word": "guarantee"
+  },
+  {
+    "word": "guest"
+  },
+  {
+    "word": "guide"
+  },
+  {
+    "word": "guideline"
+  },
+  {
+    "word": "handle"
+  },
+  {
+    "word": "happen"
+  },
+  {
+    "word": "hard"
+  },
+  {
+    "word": "hardly"
+  },
+  {
+    "word": "hardware"
+  },
+  {
+    "word": "harm"
+  },
+  {
+    "word": "have"
+  },
+  {
+    "word": "hazard"
+  },
+  {
+    "word": "head"
+  },
+  {
+    "word": "headquarters"
+  },
+  {
+    "word": "health"
+  },
+  {
+    "word": "hear"
+  },
+  {
+    "word": "help"
+  },
+  {
+    "word": "hence"
+  },
+  {
+    "word": "hesitate"
+  },
+  {
+    "word": "hide"
+  },
+  {
+    "word": "high"
+  },
+  {
+    "word": "highlight"
+  },
+  {
+    "word": "hire"
+  },
+  {
+    "word": "history"
+  },
+  {
+    "word": "hold"
+  },
+  {
+    "word": "holiday"
+  },
+  {
+    "word": "home"
+  },
+  {
+    "word": "honest"
+  },
+  {
+    "word": "hope"
+  },
+  {
+    "word": "host"
+  },
+  {
+    "word": "hotel"
+  },
+  {
+    "word": "hour"
+  },
+  {
+    "word": "house"
+  },
+  {
+    "word": "housekeeping",
+    "pos": "n.",
+    "meaning": "房務",
+    "phonetic": "/ˈhaʊskiːpɪŋ/",
+    "definition": "the work of cleaning and preparing hotel rooms",
+    "example": "1. Housekeeping will clean the room at noon.\n2. Call housekeeping if you need more towels.",
+    "exampleZh": "1. 房務中午會打掃房間。\n2. 需要加毛巾請打給房務。",
+    "id": "27cb2ef427a9"
+  },
+  {
+    "word": "however"
+  },
+  {
+    "word": "human"
+  },
+  {
+    "word": "ideal"
+  },
+  {
+    "word": "identify"
+  },
+  {
+    "word": "ignore"
+  },
+  {
+    "word": "illegal",
+    "pos": "adj.",
+    "meaning": "非法的",
+    "phonetic": "/ɪˈliːɡl/",
+    "definition": "not allowed by law",
+    "example": "1. It is illegal to copy this software.\n2. The company was fined for illegal dumping.",
+    "exampleZh": "1. 複製這套軟體是違法的。\n2. 公司因非法棄置被罰款。",
+    "id": "3b9ac343465e"
+  },
+  {
+    "word": "image"
+  },
+  {
+    "word": "immediate"
+  },
+  {
+    "word": "immediately",
+    "pos": "adv.",
+    "meaning": "立刻",
+    "phonetic": "/ɪˈmiːdiətli/",
+    "definition": "at once, without delay",
+    "example": "1. Please reply immediately.\n2. The machine stopped immediately.",
+    "exampleZh": "1. 請立刻回覆。\n2. 機器立刻停了。",
+    "id": "160da4120e0d"
+  },
+  {
+    "word": "impact"
+  },
+  {
+    "word": "implement"
+  },
+  {
+    "word": "implication"
+  },
+  {
+    "word": "imply"
+  },
+  {
+    "word": "import"
+  },
+  {
+    "word": "importance"
+  },
+  {
+    "word": "important"
+  },
+  {
+    "word": "impose"
+  },
+  {
+    "word": "impress"
+  },
+  {
+    "word": "impression"
+  },
+  {
+    "word": "improve"
+  },
+  {
+    "word": "improvement"
+  },
+  {
+    "word": "incentive"
+  },
+  {
+    "word": "incident"
+  },
+  {
+    "word": "include"
+  },
+  {
+    "word": "income"
+  },
+  {
+    "word": "incorporate"
+  },
+  {
+    "word": "increase"
+  },
+  {
+    "word": "incur"
+  },
+  {
+    "word": "indeed"
+  },
+  {
+    "word": "independent"
+  },
+  {
+    "word": "indicate"
+  },
+  {
+    "word": "indication"
+  },
+  {
+    "word": "individual"
+  },
+  {
+    "word": "industry"
+  },
+  {
+    "word": "inflation"
+  },
+  {
+    "word": "influence"
+  },
+  {
+    "word": "inform"
+  },
+  {
+    "word": "information"
+  },
+  {
+    "word": "initial"
+  },
+  {
+    "word": "initiate"
+  },
+  {
+    "word": "initiative"
+  },
+  {
+    "word": "innovation"
+  },
+  {
+    "word": "innovative"
+  },
+  {
+    "word": "input"
+  },
+  {
+    "word": "inquire"
+  },
+  {
+    "word": "inquiry"
+  },
+  {
+    "word": "insert"
+  },
+  {
+    "word": "inside"
+  },
+  {
+    "word": "inspect"
+  },
+  {
+    "word": "inspection"
+  },
+  {
+    "word": "install"
+  },
+  {
+    "word": "installation"
+  },
+  {
+    "word": "instance"
+  },
+  {
+    "word": "instead"
+  },
+  {
+    "word": "institute"
+  },
+  {
+    "word": "institution"
+  },
+  {
+    "word": "instruct"
+  },
+  {
+    "word": "instruction"
+  },
+  {
+    "word": "instructor"
+  },
+  {
+    "word": "instrument"
+  },
+  {
+    "word": "insurance"
+  },
+  {
+    "word": "insure",
+    "pos": "v.",
+    "meaning": "投保",
+    "phonetic": "/ɪnˈʃʊr/",
+    "definition": "to buy insurance for something",
+    "example": "1. We insure all company vehicles.\n2. Did you insure the shipment?",
+    "exampleZh": "1. 我們為所有公司車輛投保。\n2. 這批貨有投保嗎？",
+    "id": "307245a4b802"
+  },
+  {
+    "word": "intend"
+  },
+  {
+    "word": "intention"
+  },
+  {
+    "word": "interest"
+  },
+  {
+    "word": "interested"
+  },
+  {
+    "word": "internal"
+  },
+  {
+    "word": "international"
+  },
+  {
+    "word": "interpret"
+  },
+  {
+    "word": "interrupt"
+  },
+  {
+    "word": "interval"
+  },
+  {
+    "word": "interview"
+  },
+  {
+    "word": "introduce"
+  },
+  {
+    "word": "introduction"
+  },
+  {
+    "word": "invent"
+  },
+  {
+    "word": "inventory"
+  },
+  {
+    "word": "invest"
+  },
+  {
+    "word": "investigate"
+  },
+  {
+    "word": "investigation"
+  },
+  {
+    "word": "investment"
+  },
+  {
+    "word": "investor",
+    "pos": "n.",
+    "meaning": "投資人",
+    "phonetic": "/ɪnˈvestər/",
+    "definition": "a person who puts money into a business",
+    "example": "1. The investor asked for a progress report.\n2. Foreign investors visited the plant.",
+    "exampleZh": "1. 投資人要求進度報告。\n2. 外國投資人參觀了工廠。",
+    "id": "54d7ca5c988c"
+  },
+  {
+    "word": "invite"
+  },
+  {
+    "word": "invoice",
+    "pos": "n.",
+    "meaning": "發票；請款單",
+    "phonetic": "/ˈɪnvɔɪs/",
+    "definition": "a document that lists goods or services and the amount due",
+    "example": "1. Please pay the invoice within thirty days.\n2. The invoice includes shipping charges.",
+    "exampleZh": "1. 請在三十天內支付這張請款單。\n2. 請款單包含運費。",
+    "id": "52cce9c2c4da"
+  },
+  {
+    "word": "involve"
+  },
+  {
+    "word": "issue"
+  },
+  {
+    "word": "item"
+  },
+  {
+    "word": "itinerary",
+    "pos": "n.",
+    "meaning": "行程表",
+    "phonetic": "/aɪˈtɪnəreri/",
+    "definition": "a plan of a trip, including times and places",
+    "example": "1. The itinerary lists three factory visits.\n2. I emailed you the updated itinerary.",
+    "exampleZh": "1. 行程表列了三場工廠參訪。\n2. 我把更新後的行程表寄給你了。",
+    "id": "c859a68732a7"
+  },
+  {
+    "word": "job"
+  },
+  {
+    "word": "join"
+  },
+  {
+    "word": "joint"
+  },
+  {
+    "word": "journal"
+  },
+  {
+    "word": "judge"
+  },
+  {
+    "word": "judgment"
+  },
+  {
+    "word": "just"
+  },
+  {
+    "word": "justify"
+  },
+  {
+    "word": "keep"
+  },
+  {
+    "word": "key"
+  },
+  {
+    "word": "kind"
+  },
+  {
+    "word": "knowledge"
+  },
+  {
+    "word": "label"
+  },
+  {
+    "word": "labor"
+  },
+  {
+    "word": "lack"
+  },
+  {
+    "word": "land"
+  },
+  {
+    "word": "landlord"
+  },
+  {
+    "word": "language"
+  },
+  {
+    "word": "large"
+  },
+  {
+    "word": "last"
+  },
+  {
+    "word": "late"
+  },
+  {
+    "word": "later"
+  },
+  {
+    "word": "latest"
+  },
+  {
+    "word": "launch"
+  },
+  {
+    "word": "law"
+  },
+  {
+    "word": "lawyer"
+  },
+  {
+    "word": "lay"
+  },
+  {
+    "word": "layoff",
+    "pos": "n.",
+    "meaning": "裁員",
+    "phonetic": "/ˈleɪɔːf/",
+    "definition": "the act of dismissing employees because of lack of work",
+    "example": "1. The layoff affected twenty workers.\n2. Rumors of a layoff worried the staff.",
+    "exampleZh": "1. 這次裁員影響了二十名員工。\n2. 裁員的傳言讓員工不安。",
+    "id": "b6b3b7e06fba"
+  },
+  {
+    "word": "lead"
+  },
+  {
+    "word": "leader"
+  },
+  {
+    "word": "leadership"
+  },
+  {
+    "word": "leaflet",
+    "pos": "n.",
+    "meaning": "傳單",
+    "phonetic": "/ˈliːflət/",
+    "definition": "a printed sheet that gives information",
+    "example": "1. They handed out leaflets at the fair.\n2. The leaflet explains the warranty.",
+    "exampleZh": "1. 他們在展場發送傳單。\n2. 傳單說明了保固內容。",
+    "id": "93ffe0331d52"
+  },
+  {
+    "word": "lean"
+  },
+  {
+    "word": "learn"
+  },
+  {
+    "word": "lease"
+  },
+  {
+    "word": "least"
+  },
+  {
+    "word": "leave"
+  },
+  {
+    "word": "lecture"
+  },
+  {
+    "word": "legal"
+  },
+  {
+    "word": "lend"
+  },
+  {
+    "word": "length"
+  },
+  {
+    "word": "less"
+  },
+  {
+    "word": "lesson"
+  },
+  {
+    "word": "let"
+  },
+  {
+    "word": "letter"
+  },
+  {
+    "word": "level"
+  },
+  {
+    "word": "liability"
+  },
+  {
+    "word": "license"
+  },
+  {
+    "word": "lie"
+  },
+  {
+    "word": "likely"
+  },
+  {
+    "word": "limit"
+  },
+  {
+    "word": "limitation"
+  },
+  {
+    "word": "limited",
+    "pos": "adj.",
+    "meaning": "有限的",
+    "phonetic": "/ˈlɪmɪtɪd/",
+    "definition": "small in amount or restricted",
+    "example": "1. Seating is limited.\n2. This offer is available for a limited time.",
+    "exampleZh": "1. 座位有限。\n2. 這個優惠只在有限時間內提供。",
+    "id": "ac70644c15da"
+  },
+  {
+    "word": "line"
+  },
+  {
+    "word": "link"
+  },
+  {
+    "word": "liquid"
+  },
+  {
+    "word": "list"
+  },
+  {
+    "word": "listen"
+  },
+  {
+    "word": "liter"
+  },
+  {
+    "word": "live"
+  },
+  {
+    "word": "load"
+  },
+  {
+    "word": "loan"
+  },
+  {
+    "word": "local"
+  },
+  {
+    "word": "locate"
+  },
+  {
+    "word": "location"
+  },
+  {
+    "word": "lock"
+  },
+  {
+    "word": "log"
+  },
+  {
+    "word": "logo"
+  },
+  {
+    "word": "long"
+  },
+  {
+    "word": "look"
+  },
+  {
+    "word": "lose"
+  },
+  {
+    "word": "loss"
+  },
+  {
+    "word": "lot"
+  },
+  {
+    "word": "low"
+  },
+  {
+    "word": "lower"
+  },
+  {
+    "word": "loyal"
+  },
+  {
+    "word": "loyalty"
+  },
+  {
+    "word": "luggage"
+  },
+  {
+    "word": "lunch"
+  },
+  {
+    "word": "luncheon",
+    "pos": "n.",
+    "meaning": "午宴",
+    "phonetic": "/ˈlʌntʃən/",
+    "definition": "a formal lunch, often for business",
+    "example": "1. The awards luncheon starts at noon.\n2. Clients were invited to a luncheon.",
+    "exampleZh": "1. 頒獎午宴中午開始。\n2. 客戶受邀參加午宴。",
+    "id": "6cac92711611"
+  },
+  {
+    "word": "machine"
+  },
+  {
+    "word": "machinery"
+  },
+  {
+    "word": "magazine"
+  },
+  {
+    "word": "mail"
+  },
+  {
+    "word": "main"
+  },
+  {
+    "word": "maintain"
+  },
+  {
+    "word": "maintenance"
+  },
+  {
+    "word": "major"
+  },
+  {
+    "word": "majority"
+  },
+  {
+    "word": "make"
+  },
+  {
+    "word": "manage"
+  },
+  {
+    "word": "management"
+  },
+  {
+    "word": "manager"
+  },
+  {
+    "word": "mandatory",
+    "pos": "adj.",
+    "meaning": "強制的",
+    "phonetic": "/ˈmændətɔːri/",
+    "definition": "required by a rule or law",
+    "example": "1. Safety training is mandatory.\n2. A signature is mandatory on this form.",
+    "exampleZh": "1. 安全訓練是強制的。\n2. 這份表格必須簽名。",
+    "id": "d73f414214cf"
+  },
+  {
+    "word": "manner"
+  },
+  {
+    "word": "manual"
+  },
+  {
+    "word": "manufacture"
+  },
+  {
+    "word": "manufacturer"
+  },
+  {
+    "word": "manufacturing",
+    "pos": "n.",
+    "meaning": "製造；製造業",
+    "phonetic": "/ˌmænjuˈfæktʃərɪŋ/",
+    "definition": "the business of making products in factories",
+    "example": "1. He works in manufacturing.\n2. Manufacturing costs increased this year.",
+    "exampleZh": "1. 他從事製造業。\n2. 今年製造成本上升了。",
+    "id": "7cae7ea6179a"
+  },
+  {
+    "word": "many"
+  },
+  {
+    "word": "margin"
+  },
+  {
+    "word": "mark"
+  },
+  {
+    "word": "market"
+  },
+  {
+    "word": "marketing",
+    "pos": "n.",
+    "meaning": "行銷",
+    "phonetic": "/ˈmɑːrkɪtɪŋ/",
+    "definition": "the work of promoting and selling products",
+    "example": "1. The marketing team launched a new ad.\n2. She has ten years of marketing experience.",
+    "exampleZh": "1. 行銷團隊推出了新廣告。\n2. 她有十年行銷經驗。",
+    "id": "60b1397d62d7"
+  },
+  {
+    "word": "mass"
+  },
+  {
+    "word": "master"
+  },
+  {
+    "word": "match"
+  },
+  {
+    "word": "material"
+  },
+  {
+    "word": "matter"
+  },
+  {
+    "word": "mature"
+  },
+  {
+    "word": "maximum"
+  },
+  {
+    "word": "mean"
+  },
+  {
+    "word": "means"
+  },
+  {
+    "word": "measure"
+  },
+  {
+    "word": "mechanic"
+  },
+  {
+    "word": "media"
+  },
+  {
+    "word": "medical"
+  },
+  {
+    "word": "medium"
+  },
+  {
+    "word": "meet"
+  },
+  {
+    "word": "meeting"
+  },
+  {
+    "word": "member"
+  },
+  {
+    "word": "membership"
+  },
+  {
+    "word": "memo",
+    "pos": "n.",
+    "meaning": "備忘錄",
+    "phonetic": "/ˈmemoʊ/",
+    "definition": "a short official note sent inside a company",
+    "example": "1. The memo explains the new hours.\n2. Please read the memo from accounting.",
+    "exampleZh": "1. 備忘錄說明了新的上班時間。\n2. 請閱讀會計部門的備忘錄。",
+    "id": "fe1db4996dd2"
+  },
+  {
+    "word": "memorandum",
+    "pos": "n.",
+    "meaning": "正式備忘錄",
+    "phonetic": "/ˌmeməˈrændəm/",
+    "definition": "a formal written note inside an organization",
+    "example": "1. A memorandum was sent to all managers.\n2. The memorandum outlines the agreement.",
+    "exampleZh": "1. 正式備忘錄已發給所有經理。\n2. 這份備忘錄概述了協議內容。",
+    "id": "975bcd8aef63"
+  },
+  {
+    "word": "mention"
+  },
+  {
+    "word": "menu"
+  },
+  {
+    "word": "merchandise"
+  },
+  {
+    "word": "merchant"
+  },
+  {
+    "word": "merge"
+  },
+  {
+    "word": "merger",
+    "pos": "n.",
+    "meaning": "合併",
+    "phonetic": "/ˈmɜːrdʒər/",
+    "definition": "the joining of two companies into one",
+    "example": "1. The merger will be completed in June.\n2. Employees worried about the merger.",
+    "exampleZh": "1. 這項合併將在六月完成。\n2. 員工擔心這次合併。",
+    "id": "b4e2361ae61e"
+  },
+  {
+    "word": "merit"
+  },
+  {
+    "word": "message"
+  },
+  {
+    "word": "method"
+  },
+  {
+    "word": "middle"
+  },
+  {
+    "word": "mileage",
+    "pos": "n.",
+    "meaning": "里程",
+    "phonetic": "/ˈmaɪlɪdʒ/",
+    "definition": "the distance a vehicle has traveled",
+    "example": "1. Please record the mileage after each trip.\n2. The rental fee depends on mileage.",
+    "exampleZh": "1. 每次出差後請記錄里程。\n2. 租金依里程計算。",
+    "id": "f2e5fd62842a"
+  },
+  {
+    "word": "minimum"
+  },
+  {
+    "word": "minor"
+  },
+  {
+    "word": "minute"
+  },
+  {
+    "word": "minutes",
+    "pos": "n.",
+    "meaning": "會議紀錄",
+    "phonetic": "/ˈmɪnɪts/",
+    "definition": "the written record of what was said at a meeting",
+    "example": "1. She took the minutes of the meeting.\n2. The minutes were approved yesterday.",
+    "exampleZh": "1. 她做了會議紀錄。\n2. 會議紀錄昨天已通過。",
+    "id": "552e8d08a8f7"
+  },
+  {
+    "word": "miss"
+  },
+  {
+    "word": "mission"
+  },
+  {
+    "word": "mistake"
+  },
+  {
+    "word": "mix"
+  },
+  {
+    "word": "mobile"
+  },
+  {
+    "word": "model"
+  },
+  {
+    "word": "moderate"
+  },
+  {
+    "word": "modern"
+  },
+  {
+    "word": "modify"
+  },
+  {
+    "word": "monitor"
+  },
+  {
+    "word": "month"
+  },
+  {
+    "word": "monthly"
+  },
+  {
+    "word": "morale"
+  },
+  {
+    "word": "more"
+  },
+  {
+    "word": "moreover"
+  },
+  {
+    "word": "mortgage"
+  },
+  {
+    "word": "most"
+  },
+  {
+    "word": "motivate"
+  },
+  {
+    "word": "motivation"
+  },
+  {
+    "word": "move"
+  },
+  {
+    "word": "much"
+  },
+  {
+    "word": "multiple"
+  },
+  {
+    "word": "must"
+  },
+  {
+    "word": "mutual"
+  },
+  {
+    "word": "name"
+  },
+  {
+    "word": "namely"
+  },
+  {
+    "word": "narrow"
+  },
+  {
+    "word": "nation"
+  },
+  {
+    "word": "national"
+  },
+  {
+    "word": "native"
+  },
+  {
+    "word": "natural"
+  },
+  {
+    "word": "nature"
+  },
+  {
+    "word": "near"
+  },
+  {
+    "word": "nearly"
+  },
+  {
+    "word": "necessary"
+  },
+  {
+    "word": "need"
+  },
+  {
+    "word": "negative"
+  },
+  {
+    "word": "negotiate"
+  },
+  {
+    "word": "negotiation"
+  },
+  {
+    "word": "neighbor"
+  },
+  {
+    "word": "neither"
+  },
+  {
+    "word": "net"
+  },
+  {
+    "word": "network"
+  },
+  {
+    "word": "never"
+  },
+  {
+    "word": "new"
+  },
+  {
+    "word": "news"
+  },
+  {
+    "word": "newsletter",
+    "pos": "n.",
+    "meaning": "通訊；電子報",
+    "phonetic": "/ˈnuːzletər/",
+    "definition": "a short regular report sent to members or customers",
+    "example": "1. The monthly newsletter comes out on Friday.\n2. Subscribe to our newsletter for updates.",
+    "exampleZh": "1. 每月通訊星期五發行。\n2. 訂閱電子報以取得最新消息。",
+    "id": "42118f0ead21"
+  },
+  {
+    "word": "next"
+  },
+  {
+    "word": "nominate"
+  },
+  {
+    "word": "nomination"
+  },
+  {
+    "word": "none"
+  },
+  {
+    "word": "nor"
+  },
+  {
+    "word": "normal"
+  },
+  {
+    "word": "note"
+  },
+  {
+    "word": "notice"
+  },
+  {
+    "word": "notify"
+  },
+  {
+    "word": "notion"
+  },
+  {
+    "word": "now"
+  },
+  {
+    "word": "number"
+  },
+  {
+    "word": "numerous"
+  },
+  {
+    "word": "obey"
+  },
+  {
+    "word": "object"
+  },
+  {
+    "word": "objective"
+  },
+  {
+    "word": "obligation"
+  },
+  {
+    "word": "observe"
+  },
+  {
+    "word": "obtain"
+  },
+  {
+    "word": "obvious"
+  },
+  {
+    "word": "occasion"
+  },
+  {
+    "word": "occupy"
+  },
+  {
+    "word": "occur"
+  },
+  {
+    "word": "offer"
+  },
+  {
+    "word": "office"
+  },
+  {
+    "word": "officer"
+  },
+  {
+    "word": "official"
+  },
+  {
+    "word": "often"
+  },
+  {
+    "word": "ongoing"
+  },
+  {
+    "word": "online"
+  },
+  {
+    "word": "only"
+  },
+  {
+    "word": "open"
+  },
+  {
+    "word": "opening",
+    "pos": "n.",
+    "meaning": "職缺；開幕",
+    "phonetic": "/ˈoʊpənɪŋ/",
+    "definition": "a job that is available, or the start of an event",
+    "example": "1. There is an opening in the sales department.\n2. The store opening drew a large crowd.",
+    "exampleZh": "1. 業務部有一個職缺。\n2. 商店開幕吸引了很多人。",
+    "id": "5fb7957e1770"
+  },
+  {
+    "word": "operate"
+  },
+  {
+    "word": "operation"
+  },
+  {
+    "word": "operator"
+  },
+  {
+    "word": "opinion"
+  },
+  {
+    "word": "opportunity"
+  },
+  {
+    "word": "oppose"
+  },
+  {
+    "word": "opposite"
+  },
+  {
+    "word": "option"
+  },
+  {
+    "word": "optional"
+  },
+  {
+    "word": "order"
+  },
+  {
+    "word": "ordinary"
+  },
+  {
+    "word": "organization"
+  },
+  {
+    "word": "organize"
+  },
+  {
+    "word": "orientation"
+  },
+  {
+    "word": "origin"
+  },
+  {
+    "word": "original"
+  },
+  {
+    "word": "other"
+  },
+  {
+    "word": "otherwise"
+  },
+  {
+    "word": "outcome"
+  },
+  {
+    "word": "outdated",
+    "pos": "adj.",
+    "meaning": "過時的",
+    "phonetic": "/ˌaʊtˈdeɪtɪd/",
+    "definition": "no longer useful or current",
+    "example": "1. The software is outdated.\n2. Please replace the outdated handbook.",
+    "exampleZh": "1. 這套軟體已經過時。\n2. 請更換過時的手冊。",
+    "id": "e35c5c24fe73"
+  },
+  {
+    "word": "outline"
+  },
+  {
+    "word": "outlook"
+  },
+  {
+    "word": "output"
+  },
+  {
+    "word": "outstanding"
+  },
+  {
+    "word": "over"
+  },
+  {
+    "word": "overall"
+  },
+  {
+    "word": "overcome"
+  },
+  {
+    "word": "overdue",
+    "pos": "adj.",
+    "meaning": "逾期的",
+    "phonetic": "/ˌoʊvərˈduː/",
+    "definition": "not paid or done by the expected time",
+    "example": "1. The payment is overdue.\n2. I returned the overdue library book.",
+    "exampleZh": "1. 這筆款項已逾期。\n2. 我歸還了逾期的圖書館書籍。",
+    "id": "e036aff3cb00"
+  },
+  {
+    "word": "overlook"
+  },
+  {
+    "word": "overseas"
+  },
+  {
+    "word": "oversee"
+  },
+  {
+    "word": "overtime",
+    "pos": "n.",
+    "meaning": "加班",
+    "phonetic": "/ˈoʊvərtaɪm/",
+    "definition": "time worked beyond regular hours",
+    "example": "1. She worked overtime on Thursday.\n2. Overtime pay is higher on holidays.",
+    "exampleZh": "1. 她星期四加班。\n2. 假日加班費比較高。",
+    "id": "d478e361021e"
+  },
+  {
+    "word": "owe"
+  },
+  {
+    "word": "own"
+  },
+  {
+    "word": "owner"
+  },
+  {
+    "word": "pace"
+  },
+  {
+    "word": "pack"
+  },
+  {
+    "word": "package"
+  },
+  {
+    "word": "packet"
+  },
+  {
+    "word": "page"
+  },
+  {
+    "word": "paid",
+    "pos": "adj.",
+    "meaning": "已付款的；有薪的",
+    "phonetic": "/peɪd/",
+    "definition": "already given money, or receiving pay",
+    "example": "1. All invoices have been paid.\n2. This is a paid internship.",
+    "exampleZh": "1. 所有請款單都已付款。\n2. 這是有薪實習。",
+    "id": "935b13e24741"
+  },
+  {
+    "word": "pamphlet",
+    "pos": "n.",
+    "meaning": "小冊子",
+    "phonetic": "/ˈpæmflət/",
+    "definition": "a thin book with information about a product or service",
+    "example": "1. The pamphlet describes the tour.\n2. Pick up a pamphlet at the front desk.",
+    "exampleZh": "1. 小冊子介紹了這趟行程。\n2. 請在櫃台拿一本小冊子。",
+    "id": "26be94696ecf"
+  },
+  {
+    "word": "panel"
+  },
+  {
+    "word": "paper"
+  },
+  {
+    "word": "parcel"
+  },
+  {
+    "word": "park"
+  },
+  {
+    "word": "part"
+  },
+  {
+    "word": "partial"
+  },
+  {
+    "word": "participant"
+  },
+  {
+    "word": "participate"
+  },
+  {
+    "word": "participation"
+  },
+  {
+    "word": "particular"
+  },
+  {
+    "word": "particularly",
+    "pos": "adv.",
+    "meaning": "尤其",
+    "phonetic": "/pərˈtɪkjələrli/",
+    "definition": "especially, more than others",
+    "example": "1. The delay was particularly long.\n2. I am particularly interested in this role.",
+    "exampleZh": "1. 這次延誤特別久。\n2. 我對這個職位特別有興趣。",
+    "id": "7220d39d11cc"
+  },
+  {
+    "word": "partner"
+  },
+  {
+    "word": "partnership"
+  },
+  {
+    "word": "party"
+  },
+  {
+    "word": "pass"
+  },
+  {
+    "word": "passenger"
+  },
+  {
+    "word": "passport"
+  },
+  {
+    "word": "password"
+  },
+  {
+    "word": "past"
+  },
+  {
+    "word": "patent"
+  },
+  {
+    "word": "patient"
+  },
+  {
+    "word": "patron"
+  },
+  {
+    "word": "pattern"
+  },
+  {
+    "word": "pay"
+  },
+  {
+    "word": "payment"
+  },
+  {
+    "word": "payroll",
+    "pos": "n.",
+    "meaning": "薪資作業；薪資名冊",
+    "phonetic": "/ˈpeɪroʊl/",
+    "definition": "the list of employees and the money paid to them",
+    "example": "1. Payroll is processed every Friday.\n2. New hires must be added to the payroll.",
+    "exampleZh": "1. 薪資每星期五作業。\n2. 新進人員必須加入薪資名冊。",
+    "id": "184f673e99e3"
+  },
+  {
+    "word": "peak"
+  },
+  {
+    "word": "penalty"
+  },
+  {
+    "word": "pending"
+  },
+  {
+    "word": "pension"
+  },
+  {
+    "word": "people"
+  },
+  {
+    "word": "per"
+  },
+  {
+    "word": "percent"
+  },
+  {
+    "word": "percentage"
+  },
+  {
+    "word": "perfect"
+  },
+  {
+    "word": "perform"
+  },
+  {
+    "word": "performance"
+  },
+  {
+    "word": "perhaps"
+  },
+  {
+    "word": "period"
+  },
+  {
+    "word": "permanent"
+  },
+  {
+    "word": "permission"
+  },
+  {
+    "word": "permit"
+  },
+  {
+    "word": "person"
+  },
+  {
+    "word": "personal"
+  },
+  {
+    "word": "personnel"
+  },
+  {
+    "word": "perspective"
+  },
+  {
+    "word": "persuade"
+  },
+  {
+    "word": "phase"
+  },
+  {
+    "word": "phone"
+  },
+  {
+    "word": "photocopy",
+    "pos": "n.",
+    "meaning": "影印本",
+    "phonetic": "/ˈfoʊtoʊkɑːpi/",
+    "definition": "a paper copy made by a photocopier",
+    "example": "1. Attach a photocopy of your license.\n2. I made a photocopy of the receipt.",
+    "exampleZh": "1. 請附上執照的影印本。\n2. 我影印了收據。",
+    "id": "8377ada44436"
+  },
+  {
+    "word": "pick"
+  },
+  {
+    "word": "piece"
+  },
+  {
+    "word": "place"
+  },
+  {
+    "word": "plan"
+  },
+  {
+    "word": "plane"
+  },
+  {
+    "word": "plant"
+  },
+  {
+    "word": "platform"
+  },
+  {
+    "word": "please"
+  },
+  {
+    "word": "pleasure"
+  },
+  {
+    "word": "plenty"
+  },
+  {
+    "word": "plus"
+  },
+  {
+    "word": "point"
+  },
+  {
+    "word": "policy"
+  },
+  {
+    "word": "polite"
+  },
+  {
+    "word": "poll"
+  },
+  {
+    "word": "popular"
+  },
+  {
+    "word": "population"
+  },
+  {
+    "word": "portion"
+  },
+  {
+    "word": "position"
+  },
+  {
+    "word": "positive"
+  },
+  {
+    "word": "possess"
+  },
+  {
+    "word": "possibility"
+  },
+  {
+    "word": "possible"
+  },
+  {
+    "word": "post"
+  },
+  {
+    "word": "postpone"
+  },
+  {
+    "word": "potential"
+  },
+  {
+    "word": "power"
+  },
+  {
+    "word": "practical"
+  },
+  {
+    "word": "practice"
+  },
+  {
+    "word": "praise"
+  },
+  {
+    "word": "precede"
+  },
+  {
+    "word": "precise"
+  },
+  {
+    "word": "predict"
+  },
+  {
+    "word": "prefer"
+  },
+  {
+    "word": "preference"
+  },
+  {
+    "word": "preliminary"
+  },
+  {
+    "word": "premium"
+  },
+  {
+    "word": "prepare"
+  },
+  {
+    "word": "presence"
+  },
+  {
+    "word": "present"
+  },
+  {
+    "word": "presentation"
+  },
+  {
+    "word": "preserve"
+  },
+  {
+    "word": "president"
+  },
+  {
+    "word": "press"
+  },
+  {
+    "word": "pressure"
+  },
+  {
+    "word": "prevent"
+  },
+  {
+    "word": "previous"
+  },
+  {
+    "word": "price"
+  },
+  {
+    "word": "primary"
+  },
+  {
+    "word": "prime"
+  },
+  {
+    "word": "principal"
+  },
+  {
+    "word": "print"
+  },
+  {
+    "word": "printer"
+  },
+  {
+    "word": "prior"
+  },
+  {
+    "word": "priority"
+  },
+  {
+    "word": "private"
+  },
+  {
+    "word": "prize"
+  },
+  {
+    "word": "probably"
+  },
+  {
+    "word": "problem"
+  },
+  {
+    "word": "procedure"
+  },
+  {
+    "word": "proceed"
+  },
+  {
+    "word": "process"
+  },
+  {
+    "word": "produce"
+  },
+  {
+    "word": "product"
+  },
+  {
+    "word": "production"
+  },
+  {
+    "word": "productive"
+  },
+  {
+    "word": "productivity"
+  },
+  {
+    "word": "profession"
+  },
+  {
+    "word": "professional"
+  },
+  {
+    "word": "professor"
+  },
+  {
+    "word": "profile"
+  },
+  {
+    "word": "profit"
+  },
+  {
+    "word": "profitable"
+  },
+  {
+    "word": "program"
+  },
+  {
+    "word": "progress"
+  },
+  {
+    "word": "prohibit"
+  },
+  {
+    "word": "project"
+  },
+  {
+    "word": "promise"
+  },
+  {
+    "word": "promote"
+  },
+  {
+    "word": "promotion"
+  },
+  {
+    "word": "prompt"
+  },
+  {
+    "word": "promptly",
+    "pos": "adv.",
+    "meaning": "迅速地；準時地",
+    "phonetic": "/ˈprɑːmptli/",
+    "definition": "quickly or at the right time",
+    "example": "1. Please reply promptly.\n2. The meeting started promptly at nine.",
+    "exampleZh": "1. 請迅速回覆。\n2. 會議九點準時開始。",
+    "id": "12732ab40e24"
+  },
+  {
+    "word": "proof"
+  },
+  {
+    "word": "proper"
+  },
+  {
+    "word": "property"
+  },
+  {
+    "word": "proportion"
+  },
+  {
+    "word": "proposal"
+  },
+  {
+    "word": "propose"
+  },
+  {
+    "word": "prospect"
+  },
+  {
+    "word": "prospective"
+  },
+  {
+    "word": "protect"
+  },
+  {
+    "word": "protection"
+  },
+  {
+    "word": "prove"
+  },
+  {
+    "word": "provide"
+  },
+  {
+    "word": "provided",
+    "pos": "conj.",
+    "meaning": "如果；只要",
+    "phonetic": "/prəˈvaɪdɪd/",
+    "definition": "on the condition that",
+    "example": "1. You may leave early provided the work is done.\n2. The refund is available provided you have a receipt.",
+    "exampleZh": "1. 只要工作做完，你可以提早離開。\n2. 只要有收據就可以退款。",
+    "id": "16fe62da62a8"
+  },
+  {
+    "word": "provider",
+    "pos": "n.",
+    "meaning": "供應者；業者",
+    "phonetic": "/prəˈvaɪdər/",
+    "definition": "a company that supplies a service",
+    "example": "1. We changed our internet provider.\n2. The training provider sent the materials.",
+    "exampleZh": "1. 我們換了網路業者。\n2. 訓練機構寄來了教材。",
+    "id": "31c8cecfe178"
+  },
+  {
+    "word": "public"
+  },
+  {
+    "word": "publication"
+  },
+  {
+    "word": "publicity"
+  },
+  {
+    "word": "publish"
+  },
+  {
+    "word": "publisher"
+  },
+  {
+    "word": "pull"
+  },
+  {
+    "word": "purchase"
+  },
+  {
+    "word": "purpose"
+  },
+  {
+    "word": "pursue"
+  },
+  {
+    "word": "qualification"
+  },
+  {
+    "word": "qualified",
+    "pos": "adj.",
+    "meaning": "合格的",
+    "phonetic": "/ˈkwɑːlɪfaɪd/",
+    "definition": "having the skills or certificates required",
+    "example": "1. Only qualified applicants will be interviewed.\n2. She is qualified to operate the machine.",
+    "exampleZh": "1. 只有合格的申請者會進入面試。\n2. 她有資格操作這台機器。",
+    "id": "5984d47aa56d"
+  },
+  {
+    "word": "qualify"
+  },
+  {
+    "word": "quality"
+  },
+  {
+    "word": "quantity"
+  },
+  {
+    "word": "quarter"
+  },
+  {
+    "word": "quarterly",
+    "pos": "adj.",
+    "meaning": "每季的",
+    "phonetic": "/ˈkwɔːrtərli/",
+    "definition": "happening four times a year",
+    "example": "1. We publish a quarterly report.\n2. The quarterly meeting is in April.",
+    "exampleZh": "1. 我們公布季度報告。\n2. 季度會議在四月。",
+    "id": "882283b2ddb3"
+  },
+  {
+    "word": "question"
+  },
+  {
+    "word": "questionnaire"
+  },
+  {
+    "word": "quick"
+  },
+  {
+    "word": "quickly",
+    "pos": "adv.",
+    "meaning": "快速地",
+    "phonetic": "/ˈkwɪkli/",
+    "definition": "in a short time",
+    "example": "1. The technician fixed it quickly.\n2. Sales grew quickly last year.",
+    "exampleZh": "1. 技術人員很快就修好了。\n2. 去年銷售成長得很快。",
+    "id": "76c2609a15fb"
+  },
+  {
+    "word": "quiet"
+  },
+  {
+    "word": "quit"
+  },
+  {
+    "word": "quite"
+  },
+  {
+    "word": "quota"
+  },
+  {
+    "word": "quote"
+  },
+  {
+    "word": "raise"
+  },
+  {
+    "word": "range"
+  },
+  {
+    "word": "rank"
+  },
+  {
+    "word": "rapid"
+  },
+  {
+    "word": "rare"
+  },
+  {
+    "word": "rate"
+  },
+  {
+    "word": "rather"
+  },
+  {
+    "word": "ratio"
+  },
+  {
+    "word": "raw"
+  },
+  {
+    "word": "reach"
+  },
+  {
+    "word": "react"
+  },
+  {
+    "word": "read"
+  },
+  {
+    "word": "ready"
+  },
+  {
+    "word": "real"
+  },
+  {
+    "word": "realize"
+  },
+  {
+    "word": "reason"
+  },
+  {
+    "word": "reasonable"
+  },
+  {
+    "word": "rebate",
+    "pos": "n.",
+    "meaning": "退款；折扣返還",
+    "phonetic": "/ˈriːbeɪt/",
+    "definition": "money returned after a purchase",
+    "example": "1. Customers can claim a mail-in rebate.\n2. The rebate will be sent next month.",
+    "exampleZh": "1. 顧客可以申請郵寄退款。\n2. 這筆退款下個月會寄出。",
+    "id": "0d40892db597"
+  },
+  {
+    "word": "receipt"
+  },
+  {
+    "word": "receive"
+  },
+  {
+    "word": "recent"
+  },
+  {
+    "word": "recently",
+    "pos": "adv.",
+    "meaning": "最近",
+    "phonetic": "/ˈriːsntli/",
+    "definition": "not long ago",
+    "example": "1. The office was recently renovated.\n2. I recently joined the marketing team.",
+    "exampleZh": "1. 辦公室最近翻新過。\n2. 我最近加入行銷團隊。",
+    "id": "62edb63f5028"
+  },
+  {
+    "word": "reception"
+  },
+  {
+    "word": "receptionist",
+    "pos": "n.",
+    "meaning": "接待員",
+    "phonetic": "/rɪˈsepʃənɪst/",
+    "definition": "a person who greets visitors and answers calls",
+    "example": "1. The receptionist will give you a badge.\n2. Ask the receptionist for directions.",
+    "exampleZh": "1. 接待員會給你識別證。\n2. 請接待員指路。",
+    "id": "939911934bef"
+  },
+  {
+    "word": "recipe"
+  },
+  {
+    "word": "recipient"
+  },
+  {
+    "word": "recognize"
+  },
+  {
+    "word": "recommend"
+  },
+  {
+    "word": "recommendation"
+  },
+  {
+    "word": "record"
+  },
+  {
+    "word": "recover"
+  },
+  {
+    "word": "recruit"
+  },
+  {
+    "word": "recruiter",
+    "pos": "n.",
+    "meaning": "招募人員",
+    "phonetic": "/rɪˈkruːtər/",
+    "definition": "a person whose job is to find new employees",
+    "example": "1. The recruiter called me yesterday.\n2. A recruiter reviewed her resume.",
+    "exampleZh": "1. 招募人員昨天打電話給我。\n2. 招募人員看了她的履歷。",
+    "id": "b22d32e8dcf1"
+  },
+  {
+    "word": "recruitment",
+    "pos": "n.",
+    "meaning": "招募",
+    "phonetic": "/rɪˈkruːtmənt/",
+    "definition": "the process of finding and hiring staff",
+    "example": "1. Recruitment for the new plant has started.\n2. The recruitment fair is next week.",
+    "exampleZh": "1. 新廠的招募已經開始。\n2. 招募博覽會在下週。",
+    "id": "c1ecfe5677d4"
+  },
+  {
+    "word": "reduce"
+  },
+  {
+    "word": "reduction"
+  },
+  {
+    "word": "refer"
+  },
+  {
+    "word": "reference"
+  },
+  {
+    "word": "reflect"
+  },
+  {
+    "word": "refund"
+  },
+  {
+    "word": "refuse"
+  },
+  {
+    "word": "regard"
+  },
+  {
+    "word": "regarding"
+  },
+  {
+    "word": "regardless"
+  },
+  {
+    "word": "region"
+  },
+  {
+    "word": "regional"
+  },
+  {
+    "word": "register"
+  },
+  {
+    "word": "registration"
+  },
+  {
+    "word": "regular"
+  },
+  {
+    "word": "regulate"
+  },
+  {
+    "word": "regulation"
+  },
+  {
+    "word": "reimburse",
+    "pos": "v.",
+    "meaning": "報銷；補貼",
+    "phonetic": "/ˌriːɪmˈbɜːrs/",
+    "definition": "to pay someone back for money they spent",
+    "example": "1. The company will reimburse your taxi fare.\n2. Submit receipts so we can reimburse you.",
+    "exampleZh": "1. 公司會補貼你的計程車費。\n2. 請附上收據，我們才能報銷。",
+    "id": "f4a7f9aeb97b"
+  },
+  {
+    "word": "reimbursement",
+    "pos": "n.",
+    "meaning": "報銷",
+    "phonetic": "/ˌriːɪmˈbɜːrsmənt/",
+    "definition": "money paid back for an expense",
+    "example": "1. Reimbursement takes about ten days.\n2. Travel reimbursement requires a receipt.",
+    "exampleZh": "1. 報銷大約需要十天。\n2. 交通費報銷需要收據。",
+    "id": "11e51a5c1c2b"
+  },
+  {
+    "word": "reject"
+  },
+  {
+    "word": "relate"
+  },
+  {
+    "word": "relation"
+  },
+  {
+    "word": "relationship"
+  },
+  {
+    "word": "relative"
+  },
+  {
+    "word": "release"
+  },
+  {
+    "word": "relevant"
+  },
+  {
+    "word": "reliable"
+  },
+  {
+    "word": "relief"
+  },
+  {
+    "word": "rely"
+  },
+  {
+    "word": "remain"
+  },
+  {
+    "word": "remaining",
+    "pos": "adj.",
+    "meaning": "剩餘的",
+    "phonetic": "/rɪˈmeɪnɪŋ/",
+    "definition": "still left",
+    "example": "1. The remaining tickets are in the back row.\n2. Please finish the remaining tasks today.",
+    "exampleZh": "1. 剩下的票在後排。\n2. 請今天完成剩下的工作。",
+    "id": "bad3a3ed90c7"
+  },
+  {
+    "word": "remark"
+  },
+  {
+    "word": "remind"
+  },
+  {
+    "word": "reminder"
+  },
+  {
+    "word": "remote"
+  },
+  {
+    "word": "remove"
+  },
+  {
+    "word": "renovation",
+    "pos": "n.",
+    "meaning": "翻修",
+    "phonetic": "/ˌrenəˈveɪʃn/",
+    "definition": "the work of repairing and improving a building",
+    "example": "1. The lobby is closed for renovation.\n2. The renovation will take two months.",
+    "exampleZh": "1. 大廳因翻修而關閉。\n2. 翻修要花兩個月。",
+    "id": "04d70c521050"
+  },
+  {
+    "word": "rent"
+  },
+  {
+    "word": "rental"
+  },
+  {
+    "word": "repair"
+  },
+  {
+    "word": "repeat"
+  },
+  {
+    "word": "replace"
+  },
+  {
+    "word": "replacement"
+  },
+  {
+    "word": "reply"
+  },
+  {
+    "word": "report"
+  },
+  {
+    "word": "represent"
+  },
+  {
+    "word": "representative"
+  },
+  {
+    "word": "reputation"
+  },
+  {
+    "word": "request"
+  },
+  {
+    "word": "require"
+  },
+  {
+    "word": "requirement"
+  },
+  {
+    "word": "research"
+  },
+  {
+    "word": "reservation"
+  },
+  {
+    "word": "reserve"
+  },
+  {
+    "word": "resident"
+  },
+  {
+    "word": "resign"
+  },
+  {
+    "word": "resignation"
+  },
+  {
+    "word": "resolve"
+  },
+  {
+    "word": "resource"
+  },
+  {
+    "word": "respect"
+  },
+  {
+    "word": "respective"
+  },
+  {
+    "word": "respond"
+  },
+  {
+    "word": "response"
+  },
+  {
+    "word": "responsibility"
+  },
+  {
+    "word": "responsible"
+  },
+  {
+    "word": "rest"
+  },
+  {
+    "word": "restaurant"
+  },
+  {
+    "word": "restore"
+  },
+  {
+    "word": "restrict"
+  },
+  {
+    "word": "restriction"
+  },
+  {
+    "word": "result"
+  },
+  {
+    "word": "resume"
+  },
+  {
+    "word": "retail"
+  },
+  {
+    "word": "retailer",
+    "pos": "n.",
+    "meaning": "零售商",
+    "phonetic": "/ˈriːteɪlər/",
+    "definition": "a business that sells goods to the public",
+    "example": "1. The retailer ordered more stock.\n2. Small retailers joined the promotion.",
+    "exampleZh": "1. 零售商追加了庫存。\n2. 小型零售商參加了這次促銷。",
+    "id": "ecda80e5e7a2"
+  },
+  {
+    "word": "retain"
+  },
+  {
+    "word": "retire"
+  },
+  {
+    "word": "retirement"
+  },
+  {
+    "word": "return"
+  },
+  {
+    "word": "reveal"
+  },
+  {
+    "word": "revenue"
+  },
+  {
+    "word": "review"
+  },
+  {
+    "word": "revise"
+  },
+  {
+    "word": "revision"
+  },
+  {
+    "word": "reward"
+  },
+  {
+    "word": "right"
+  },
+  {
+    "word": "rise"
+  },
+  {
+    "word": "risk"
+  },
+  {
+    "word": "role"
+  },
+  {
+    "word": "room"
+  },
+  {
+    "word": "rough"
+  },
+  {
+    "word": "round"
+  },
+  {
+    "word": "route"
+  },
+  {
+    "word": "routine"
+  },
+  {
+    "word": "row"
+  },
+  {
+    "word": "rule"
+  },
+  {
+    "word": "run"
+  },
+  {
+    "word": "safe"
+  },
+  {
+    "word": "safety"
+  },
+  {
+    "word": "salary"
+  },
+  {
+    "word": "sale"
+  },
+  {
+    "word": "sales",
+    "pos": "n.",
+    "meaning": "銷售；業績",
+    "phonetic": "/seɪlz/",
+    "definition": "the activity or amount of selling goods",
+    "example": "1. Sales increased in the third quarter.\n2. She transferred to the sales department.",
+    "exampleZh": "1. 第三季業績上升了。\n2. 她調到業務部門。",
+    "id": "ccb14ff0075a"
+  },
+  {
+    "word": "sample"
+  },
+  {
+    "word": "satisfy"
+  },
+  {
+    "word": "satisfaction"
+  },
+  {
+    "word": "satisfactory"
+  },
+  {
+    "word": "save"
+  },
+  {
+    "word": "scale"
+  },
+  {
+    "word": "scan"
+  },
+  {
+    "word": "scanner",
+    "pos": "n.",
+    "meaning": "掃描器",
+    "phonetic": "/ˈskænər/",
+    "definition": "a machine that copies a document into a computer",
+    "example": "1. The scanner is next to the printer.\n2. Use the scanner to send the form.",
+    "exampleZh": "1. 掃描器在印表機旁邊。\n2. 用掃描器把表格送出。",
+    "id": "a044c0e17382"
+  },
+  {
+    "word": "schedule"
+  },
+  {
+    "word": "scheme"
+  },
+  {
+    "word": "scholar"
+  },
+  {
+    "word": "scholarship"
+  },
+  {
+    "word": "scope"
+  },
+  {
+    "word": "score"
+  },
+  {
+    "word": "search"
+  },
+  {
+    "word": "season"
+  },
+  {
+    "word": "seasonal",
+    "pos": "adj.",
+    "meaning": "季節性的",
+    "phonetic": "/ˈsiːzənl/",
+    "definition": "related to or happening in a particular season",
+    "example": "1. The shop hires seasonal workers.\n2. Seasonal discounts start in July.",
+    "exampleZh": "1. 這家店會雇用季節性員工。\n2. 季節折扣七月開始。",
+    "id": "6d7c27f3e9a5"
+  },
+  {
+    "word": "seat"
+  },
+  {
+    "word": "second"
+  },
+  {
+    "word": "section"
+  },
+  {
+    "word": "sector"
+  },
+  {
+    "word": "secure"
+  },
+  {
+    "word": "security"
+  },
+  {
+    "word": "see"
+  },
+  {
+    "word": "seek"
+  },
+  {
+    "word": "seem"
+  },
+  {
+    "word": "select"
+  },
+  {
+    "word": "selection"
+  },
+  {
+    "word": "sell"
+  },
+  {
+    "word": "seminar"
+  },
+  {
+    "word": "send"
+  },
+  {
+    "word": "senior"
+  },
+  {
+    "word": "sense"
+  },
+  {
+    "word": "sensitive"
+  },
+  {
+    "word": "separate"
+  },
+  {
+    "word": "sequence"
+  },
+  {
+    "word": "series"
+  },
+  {
+    "word": "serious"
+  },
+  {
+    "word": "serve"
+  },
+  {
+    "word": "service"
+  },
+  {
+    "word": "session"
+  },
+  {
+    "word": "set"
+  },
+  {
+    "word": "settle"
+  },
+  {
+    "word": "settlement"
+  },
+  {
+    "word": "several"
+  },
+  {
+    "word": "share"
+  },
+  {
+    "word": "shareholder"
+  },
+  {
+    "word": "sheet"
+  },
+  {
+    "word": "shelf"
+  },
+  {
+    "word": "shift"
+  },
+  {
+    "word": "ship"
+  },
+  {
+    "word": "shipment",
+    "pos": "n.",
+    "meaning": "一批貨物；出貨",
+    "phonetic": "/ˈʃɪpmənt/",
+    "definition": "a load of goods sent together",
+    "example": "1. The shipment left the warehouse yesterday.\n2. We are waiting for a shipment of parts.",
+    "exampleZh": "1. 這批貨昨天離開倉庫。\n2. 我們在等一批零件到貨。",
+    "id": "cfbc3b500833"
+  },
+  {
+    "word": "shipping",
+    "pos": "n.",
+    "meaning": "運送；運費",
+    "phonetic": "/ˈʃɪpɪŋ/",
+    "definition": "the act or cost of sending goods",
+    "example": "1. Shipping is free on large orders.\n2. Shipping delays affected the schedule.",
+    "exampleZh": "1. 大額訂單免運費。\n2. 運送延誤會影響時程。",
+    "id": "1034b3d684a9"
+  },
+  {
+    "word": "shop"
+  },
+  {
+    "word": "short"
+  },
+  {
+    "word": "shortage"
+  },
+  {
+    "word": "shortly"
+  },
+  {
+    "word": "show"
+  },
+  {
+    "word": "shrink"
+  },
+  {
+    "word": "shut"
+  },
+  {
+    "word": "sign"
+  },
+  {
+    "word": "signature"
+  },
+  {
+    "word": "significant"
+  },
+  {
+    "word": "similar"
+  },
+  {
+    "word": "simple"
+  },
+  {
+    "word": "since"
+  },
+  {
+    "word": "single"
+  },
+  {
+    "word": "site"
+  },
+  {
+    "word": "situation"
+  },
+  {
+    "word": "skill"
+  },
+  {
+    "word": "skilled"
+  },
+  {
+    "word": "slight"
+  },
+  {
+    "word": "slogan"
+  },
+  {
+    "word": "slow"
+  },
+  {
+    "word": "small"
+  },
+  {
+    "word": "social"
+  },
+  {
+    "word": "software"
+  },
+  {
+    "word": "sold",
+    "pos": "v.",
+    "meaning": "出售（過去式）",
+    "phonetic": "/soʊld/",
+    "definition": "the past form of sell",
+    "example": "1. We sold every ticket.\n2. The company sold its old equipment.",
+    "exampleZh": "1. 票全都賣完了。\n2. 公司賣掉了舊設備。",
+    "id": "b67bb4fc1816"
+  },
+  {
+    "word": "sole"
+  },
+  {
+    "word": "solid"
+  },
+  {
+    "word": "solution"
+  },
+  {
+    "word": "solve"
+  },
+  {
+    "word": "some"
+  },
+  {
+    "word": "soon"
+  },
+  {
+    "word": "sort"
+  },
+  {
+    "word": "source"
+  },
+  {
+    "word": "space"
+  },
+  {
+    "word": "speak"
+  },
+  {
+    "word": "special"
+  },
+  {
+    "word": "specialize"
+  },
+  {
+    "word": "specific"
+  },
+  {
+    "word": "specification",
+    "pos": "n.",
+    "meaning": "規格",
+    "phonetic": "/ˌspesɪfɪˈkeɪʃn/",
+    "definition": "a detailed description of what is required",
+    "example": "1. The product meets the specification.\n2. Please check the specification before ordering.",
+    "exampleZh": "1. 這項產品符合規格。\n2. 下單前請先看規格。",
+    "id": "2b93cefe6757"
+  },
+  {
+    "word": "specify"
+  },
+  {
+    "word": "speech"
+  },
+  {
+    "word": "spend"
+  },
+  {
+    "word": "sponsor"
+  },
+  {
+    "word": "sponsorship"
+  },
+  {
+    "word": "spot"
+  },
+  {
+    "word": "spread"
+  },
+  {
+    "word": "stable"
+  },
+  {
+    "word": "staff"
+  },
+  {
+    "word": "stage"
+  },
+  {
+    "word": "stand"
+  },
+  {
+    "word": "standard"
+  },
+  {
+    "word": "start"
+  },
+  {
+    "word": "state"
+  },
+  {
+    "word": "statement"
+  },
+  {
+    "word": "station"
+  },
+  {
+    "word": "stationery"
+  },
+  {
+    "word": "statistic"
+  },
+  {
+    "word": "status"
+  },
+  {
+    "word": "stay"
+  },
+  {
+    "word": "steady"
+  },
+  {
+    "word": "step"
+  },
+  {
+    "word": "still"
+  },
+  {
+    "word": "stock"
+  },
+  {
+    "word": "storage"
+  },
+  {
+    "word": "store"
+  },
+  {
+    "word": "strategy"
+  },
+  {
+    "word": "strength"
+  },
+  {
+    "word": "strict"
+  },
+  {
+    "word": "strike"
+  },
+  {
+    "word": "strong"
+  },
+  {
+    "word": "structure"
+  },
+  {
+    "word": "study"
+  },
+  {
+    "word": "subject"
+  },
+  {
+    "word": "submit"
+  },
+  {
+    "word": "subsequent"
+  },
+  {
+    "word": "subsidiary",
+    "pos": "n.",
+    "meaning": "子公司",
+    "phonetic": "/səbˈsɪdieri/",
+    "definition": "a company controlled by a larger company",
+    "example": "1. The firm has a subsidiary in Korea.\n2. The subsidiary handles local sales.",
+    "exampleZh": "1. 這家公司在韓國有子公司。\n2. 子公司負責當地銷售。",
+    "id": "40d5d2140ea6"
+  },
+  {
+    "word": "subsidy"
+  },
+  {
+    "word": "substance"
+  },
+  {
+    "word": "substantial"
+  },
+  {
+    "word": "substitute"
+  },
+  {
+    "word": "succeed"
+  },
+  {
+    "word": "success"
+  },
+  {
+    "word": "successful"
+  },
+  {
+    "word": "such"
+  },
+  {
+    "word": "sufficient"
+  },
+  {
+    "word": "suggest"
+  },
+  {
+    "word": "suggestion"
+  },
+  {
+    "word": "suit"
+  },
+  {
+    "word": "suitable"
+  },
+  {
+    "word": "sum"
+  },
+  {
+    "word": "summarize"
+  },
+  {
+    "word": "summary"
+  },
+  {
+    "word": "supervise"
+  },
+  {
+    "word": "supervisor"
+  },
+  {
+    "word": "supplier",
+    "pos": "n.",
+    "meaning": "供應商",
+    "phonetic": "/səˈplaɪər/",
+    "definition": "a company that provides goods or materials",
+    "example": "1. Our supplier raised its prices.\n2. We need a backup supplier.",
+    "exampleZh": "1. 供應商調高了價格。\n2. 我們需要備用的供應商。",
+    "id": "ab56da2f872b"
+  },
+  {
+    "word": "supply"
+  },
+  {
+    "word": "support"
+  },
+  {
+    "word": "suppose"
+  },
+  {
+    "word": "sure"
+  },
+  {
+    "word": "surplus"
+  },
+  {
+    "word": "survey"
+  },
+  {
+    "word": "survive"
+  },
+  {
+    "word": "suspect"
+  },
+  {
+    "word": "suspend"
+  },
+  {
+    "word": "sustain"
+  },
+  {
+    "word": "system"
+  },
+  {
+    "word": "table"
+  },
+  {
+    "word": "take"
+  },
+  {
+    "word": "talent"
+  },
+  {
+    "word": "target"
+  },
+  {
+    "word": "tariff",
+    "pos": "n.",
+    "meaning": "關稅",
+    "phonetic": "/ˈtærɪf/",
+    "definition": "a tax on goods coming into a country",
+    "example": "1. The new tariff increased import costs.\n2. Tariffs apply to these parts.",
+    "exampleZh": "1. 新關稅提高了進口成本。\n2. 這些零件要課關稅。",
+    "id": "ed69f7915552"
+  },
+  {
+    "word": "task"
+  },
+  {
+    "word": "tax"
+  },
+  {
+    "word": "team"
+  },
+  {
+    "word": "technical"
+  },
+  {
+    "word": "technique"
+  },
+  {
+    "word": "technology"
+  },
+  {
+    "word": "telephone"
+  },
+  {
+    "word": "temporary"
+  },
+  {
+    "word": "tenant"
+  },
+  {
+    "word": "tend"
+  },
+  {
+    "word": "term"
+  },
+  {
+    "word": "terminal"
+  },
+  {
+    "word": "terminate",
+    "pos": "v.",
+    "meaning": "終止",
+    "phonetic": "/ˈtɜːrmɪneɪt/",
+    "definition": "to end something officially",
+    "example": "1. Either party may terminate the contract.\n2. They decided to terminate the project.",
+    "exampleZh": "1. 任一方都可以終止合約。\n2. 他們決定終止這項專案。",
+    "id": "4faec1172000"
+  },
+  {
+    "word": "terms",
+    "pos": "n.",
+    "meaning": "條款",
+    "phonetic": "/tɜːrmz/",
+    "definition": "the conditions of an agreement",
+    "example": "1. Please read the terms before you sign.\n2. The payment terms are thirty days.",
+    "exampleZh": "1. 簽名前請閱讀條款。\n2. 付款條件是三十天。",
+    "id": "6cf617cff2f5"
+  },
+  {
+    "word": "territory"
+  },
+  {
+    "word": "test"
+  },
+  {
+    "word": "text"
+  },
+  {
+    "word": "thank"
+  },
+  {
+    "word": "therefore"
+  },
+  {
+    "word": "thing"
+  },
+  {
+    "word": "think"
+  },
+  {
+    "word": "thorough"
+  },
+  {
+    "word": "though"
+  },
+  {
+    "word": "through"
+  },
+  {
+    "word": "throughout"
+  },
+  {
+    "word": "thus"
+  },
+  {
+    "word": "ticket"
+  },
+  {
+    "word": "time"
+  },
+  {
+    "word": "timely",
+    "pos": "adj.",
+    "meaning": "及時的",
+    "phonetic": "/ˈtaɪmli/",
+    "definition": "happening at a useful or suitable time",
+    "example": "1. Thank you for your timely reply.\n2. Timely delivery is important to our clients.",
+    "exampleZh": "1. 謝謝你及時回覆。\n2. 及時交貨對客戶很重要。",
+    "id": "4fb4cf93a230"
+  },
+  {
+    "word": "timetable"
+  },
+  {
+    "word": "tip"
+  },
+  {
+    "word": "title"
+  },
+  {
+    "word": "today"
+  },
+  {
+    "word": "together"
+  },
+  {
+    "word": "tomorrow"
+  },
+  {
+    "word": "tone"
+  },
+  {
+    "word": "tool"
+  },
+  {
+    "word": "top"
+  },
+  {
+    "word": "topic"
+  },
+  {
+    "word": "total"
+  },
+  {
+    "word": "touch"
+  },
+  {
+    "word": "tour"
+  },
+  {
+    "word": "toward"
+  },
+  {
+    "word": "track"
+  },
+  {
+    "word": "trade"
+  },
+  {
+    "word": "trademark"
+  },
+  {
+    "word": "tradition"
+  },
+  {
+    "word": "traffic"
+  },
+  {
+    "word": "train"
+  },
+  {
+    "word": "trainee",
+    "pos": "n.",
+    "meaning": "受訓人員",
+    "phonetic": "/ˌtreɪˈniː/",
+    "definition": "a person who is learning a job",
+    "example": "1. Each trainee has a mentor.\n2. The trainee started on Monday.",
+    "exampleZh": "1. 每位受訓人員都有一位導師。\n2. 受訓人員星期一開始上班。",
+    "id": "c4269b692af8"
+  },
+  {
+    "word": "training",
+    "pos": "n.",
+    "meaning": "訓練",
+    "phonetic": "/ˈtreɪnɪŋ/",
+    "definition": "the process of teaching people job skills",
+    "example": "1. New staff attend safety training.\n2. The training lasts three days.",
+    "exampleZh": "1. 新進人員要上安全訓練。\n2. 訓練為期三天。",
+    "id": "a77de336fdcf"
+  },
+  {
+    "word": "transaction"
+  },
+  {
+    "word": "transfer"
+  },
+  {
+    "word": "transform"
+  },
+  {
+    "word": "transit"
+  },
+  {
+    "word": "translate"
+  },
+  {
+    "word": "translation"
+  },
+  {
+    "word": "transport"
+  },
+  {
+    "word": "transportation"
+  },
+  {
+    "word": "travel"
+  },
+  {
+    "word": "traveler"
+  },
+  {
+    "word": "treat"
+  },
+  {
+    "word": "treatment"
+  },
+  {
+    "word": "trend"
+  },
+  {
+    "word": "trial"
+  },
+  {
+    "word": "trip"
+  },
+  {
+    "word": "trouble"
+  },
+  {
+    "word": "truck"
+  },
+  {
+    "word": "true"
+  },
+  {
+    "word": "trust"
+  },
+  {
+    "word": "try"
+  },
+  {
+    "word": "turn"
+  },
+  {
+    "word": "turnover",
+    "pos": "n.",
+    "meaning": "營業額；人員流動率",
+    "phonetic": "/ˈtɜːrnoʊvər/",
+    "definition": "the amount of business done, or the rate at which staff leave",
+    "example": "1. Annual turnover reached ten million.\n2. High staff turnover is a problem.",
+    "exampleZh": "1. 年營業額達到一千萬。\n2. 員工流動率太高是個問題。",
+    "id": "e120d2329e24"
+  },
+  {
+    "word": "twice"
+  },
+  {
+    "word": "type"
+  },
+  {
+    "word": "typical"
+  },
+  {
+    "word": "unable",
+    "pos": "adj.",
+    "meaning": "無法",
+    "phonetic": "/ʌnˈeɪbl/",
+    "definition": "not able to do something",
+    "example": "1. I am unable to attend the meeting.\n2. The system was unable to process the card.",
+    "exampleZh": "1. 我無法出席會議。\n2. 系統無法處理這張卡片。",
+    "id": "2dd8806edf90"
+  },
+  {
+    "word": "under"
+  },
+  {
+    "word": "undergo"
+  },
+  {
+    "word": "understand"
+  },
+  {
+    "word": "undertake"
+  },
+  {
+    "word": "unemployment"
+  },
+  {
+    "word": "unexpected",
+    "pos": "adj.",
+    "meaning": "意外的",
+    "phonetic": "/ˌʌnɪkˈspektɪd/",
+    "definition": "not expected and therefore surprising",
+    "example": "1. An unexpected delay held up the flight.\n2. We had an unexpected visitor.",
+    "exampleZh": "1. 一場意外的延誤耽擱了班機。\n2. 我們有一位意外的訪客。",
+    "id": "ab8be5b855fc"
+  },
+  {
+    "word": "union"
+  },
+  {
+    "word": "unique"
+  },
+  {
+    "word": "unit"
+  },
+  {
+    "word": "unless"
+  },
+  {
+    "word": "until"
+  },
+  {
+    "word": "update"
+  },
+  {
+    "word": "upgrade"
+  },
+  {
+    "word": "upon"
+  },
+  {
+    "word": "upper"
+  },
+  {
+    "word": "upset"
+  },
+  {
+    "word": "urban"
+  },
+  {
+    "word": "urge"
+  },
+  {
+    "word": "urgent"
+  },
+  {
+    "word": "use"
+  },
+  {
+    "word": "used"
+  },
+  {
+    "word": "useful"
+  },
+  {
+    "word": "user"
+  },
+  {
+    "word": "usual"
+  },
+  {
+    "word": "usually"
+  },
+  {
+    "word": "utility"
+  },
+  {
+    "word": "utilize"
+  },
+  {
+    "word": "vacancy"
+  },
+  {
+    "word": "vacant"
+  },
+  {
+    "word": "vacation"
+  },
+  {
+    "word": "valid"
+  },
+  {
+    "word": "valuable"
+  },
+  {
+    "word": "value"
+  },
+  {
+    "word": "variety"
+  },
+  {
+    "word": "various"
+  },
+  {
+    "word": "vary"
+  },
+  {
+    "word": "vehicle"
+  },
+  {
+    "word": "vendor"
+  },
+  {
+    "word": "venture"
+  },
+  {
+    "word": "verbal"
+  },
+  {
+    "word": "verify",
+    "pos": "v.",
+    "meaning": "查證",
+    "phonetic": "/ˈverɪfaɪ/",
+    "definition": "to check that something is true or correct",
+    "example": "1. Please verify your email address.\n2. The clerk verified my identification.",
+    "exampleZh": "1. 請查證你的電子郵件地址。\n2. 櫃員核對了我的身分證件。",
+    "id": "e409c5905380"
+  },
+  {
+    "word": "version"
+  },
+  {
+    "word": "via"
+  },
+  {
+    "word": "vice"
+  },
+  {
+    "word": "view"
+  },
+  {
+    "word": "violate"
+  },
+  {
+    "word": "violation"
+  },
+  {
+    "word": "virtual"
+  },
+  {
+    "word": "visa"
+  },
+  {
+    "word": "visible"
+  },
+  {
+    "word": "visit"
+  },
+  {
+    "word": "visitor"
+  },
+  {
+    "word": "visual"
+  },
+  {
+    "word": "vital"
+  },
+  {
+    "word": "volume"
+  },
+  {
+    "word": "voluntary"
+  },
+  {
+    "word": "volunteer"
+  },
+  {
+    "word": "vote"
+  },
+  {
+    "word": "voucher"
+  },
+  {
+    "word": "wage"
+  },
+  {
+    "word": "wait"
+  },
+  {
+    "word": "waive",
+    "pos": "v.",
+    "meaning": "免除；放棄",
+    "phonetic": "/weɪv/",
+    "definition": "to choose not to require a payment or right",
+    "example": "1. The hotel agreed to waive the fee.\n2. You may waive your right to a refund.",
+    "exampleZh": "1. 旅館同意免除這筆費用。\n2. 你可以放棄退款的權利。",
+    "id": "2ea8d749530e"
+  },
+  {
+    "word": "waiver",
+    "pos": "n.",
+    "meaning": "棄權書；免除",
+    "phonetic": "/ˈweɪvər/",
+    "definition": "an official decision not to apply a rule or fee",
+    "example": "1. Sign the waiver before the tour.\n2. They granted a fee waiver.",
+    "exampleZh": "1. 參加行程前請簽署棄權書。\n2. 他們核准了費用免除。",
+    "id": "f38b4702390e"
+  },
+  {
+    "word": "walk"
+  },
+  {
+    "word": "want"
+  },
+  {
+    "word": "warehouse"
+  },
+  {
+    "word": "warn"
+  },
+  {
+    "word": "warning",
+    "pos": "n.",
+    "meaning": "警告",
+    "phonetic": "/ˈwɔːrnɪŋ/",
+    "definition": "a statement that something bad may happen",
+    "example": "1. The machine gave a warning sound.\n2. He received a written warning.",
+    "exampleZh": "1. 機器發出了警告聲。\n2. 他收到書面警告。",
+    "id": "cb5ffec2e558"
+  },
+  {
+    "word": "warrant"
+  },
+  {
+    "word": "warranty"
+  },
+  {
+    "word": "waste"
+  },
+  {
+    "word": "watch"
+  },
+  {
+    "word": "way"
+  },
+  {
+    "word": "weak"
+  },
+  {
+    "word": "wealth"
+  },
+  {
+    "word": "wear"
+  },
+  {
+    "word": "website"
+  },
+  {
+    "word": "week"
+  },
+  {
+    "word": "weekly"
+  },
+  {
+    "word": "weigh"
+  },
+  {
+    "word": "weight"
+  },
+  {
+    "word": "welcome"
+  },
+  {
+    "word": "welfare"
+  },
+  {
+    "word": "well"
+  },
+  {
+    "word": "whereas"
+  },
+  {
+    "word": "whether"
+  },
+  {
+    "word": "whole"
+  },
+  {
+    "word": "wholesale"
+  },
+  {
+    "word": "wide"
+  },
+  {
+    "word": "widespread"
+  },
+  {
+    "word": "will"
+  },
+  {
+    "word": "willing"
+  },
+  {
+    "word": "win"
+  },
+  {
+    "word": "wish"
+  },
+  {
+    "word": "withdraw"
+  },
+  {
+    "word": "withdrawal",
+    "pos": "n.",
+    "meaning": "提款；退出",
+    "phonetic": "/wɪðˈdrɔːəl/",
+    "definition": "the act of taking money out or leaving an activity",
+    "example": "1. There is a daily limit on cash withdrawal.\n2. Her withdrawal from the race surprised us.",
+    "exampleZh": "1. 現金提款有每日上限。\n2. 她退出比賽讓我們很意外。",
+    "id": "53beff7e7409"
+  },
+  {
+    "word": "within"
+  },
+  {
+    "word": "witness"
+  },
+  {
+    "word": "word"
+  },
+  {
+    "word": "work"
+  },
+  {
+    "word": "worker"
+  },
+  {
+    "word": "workforce"
+  },
+  {
+    "word": "workload",
+    "pos": "n.",
+    "meaning": "工作量",
+    "phonetic": "/ˈwɜːrkloʊd/",
+    "definition": "the amount of work a person has to do",
+    "example": "1. My workload increased this month.\n2. They hired help to share the workload.",
+    "exampleZh": "1. 我這個月的工作量增加了。\n2. 他們雇人來分擔工作量。",
+    "id": "b32bf64caf96"
+  },
+  {
+    "word": "workplace"
+  },
+  {
+    "word": "workshop"
+  },
+  {
+    "word": "world"
+  },
+  {
+    "word": "worth"
+  },
+  {
+    "word": "write"
+  },
+  {
+    "word": "year"
+  },
+  {
+    "word": "yearly"
+  },
+  {
+    "word": "yet"
+  },
+  {
+    "word": "yield"
+  },
+  {
+    "word": "zone"
+  },
+  {
+    "word": "amenity",
+    "pos": "n.",
+    "meaning": "便利設施",
+    "phonetic": "/əˈmenəti/",
+    "definition": "a feature that makes a place more comfortable",
+    "example": "1. The hotel amenity guests like most is the pool.\n2. Free parking is a useful amenity.",
+    "exampleZh": "1. 旅客最喜歡的旅館設施是泳池。\n2. 免費停車是一項實用的便利設施。",
+    "id": "6b70f99b5953"
+  },
+  {
+    "word": "deductible",
+    "pos": "n.",
+    "meaning": "自負額",
+    "phonetic": "/dɪˈdʌktəbl/",
+    "definition": "the amount you pay yourself before insurance pays",
+    "example": "1. The insurance deductible is five hundred dollars.\n2. A lower deductible means a higher premium.",
+    "exampleZh": "1. 保險自負額是五百元。\n2. 較低的自負額表示保費較高。",
+    "id": "29159f9eb258"
+  },
+  {
+    "word": "severance",
+    "pos": "n.",
+    "meaning": "資遣費",
+    "phonetic": "/ˈsevərəns/",
+    "definition": "money paid to an employee when a job ends",
+    "example": "1. She received severance after the layoff.\n2. The contract explains the severance pay.",
+    "exampleZh": "1. 裁員後她領到資遣費。\n2. 合約說明了資遣費。",
+    "id": "accbf6032bdc"
+  },
+  {
+    "word": "cubicle",
+    "pos": "n.",
+    "meaning": "辦公隔間",
+    "phonetic": "/ˈkjuːbɪkl/",
+    "definition": "a small partly enclosed office space",
+    "example": "1. His cubicle is near the window.\n2. The new office has fewer cubicles.",
+    "exampleZh": "1. 他的隔間靠近窗戶。\n2. 新辦公室的隔間比較少。",
+    "id": "059b2f96de4c"
+  },
+  {
+    "word": "backlog",
+    "pos": "n.",
+    "meaning": "積壓的工作",
+    "phonetic": "/ˈbæklɔːɡ/",
+    "definition": "work that has piled up and is not finished",
+    "example": "1. There is a backlog of orders.\n2. The team cleared the backlog in a week.",
+    "exampleZh": "1. 訂單有積壓。\n2. 團隊一週內清完了積壓的工作。",
+    "id": "1fb2796bb311"
+  },
+  {
+    "word": "installment",
+    "pos": "n.",
+    "meaning": "分期付款",
+    "phonetic": "/ɪnˈstɔːlmənt/",
+    "definition": "one of several payments made over time",
+    "example": "1. The first installment is due today.\n2. You can pay in twelve installments.",
+    "exampleZh": "1. 第一期款今天到期。\n2. 你可以分十二期付款。",
+    "id": "f1b496dd15cc"
+  },
+  {
+    "word": "consignee",
+    "pos": "n.",
+    "meaning": "收貨人",
+    "phonetic": "/ˌkɑːnsaɪˈniː/",
+    "definition": "the person or company that receives a shipment",
+    "example": "1. Write the consignee's address clearly.\n2. The consignee refused the damaged goods.",
+    "exampleZh": "1. 請把收貨人地址寫清楚。\n2. 收貨人拒收受損的貨物。",
+    "id": "49f5fb0d7ad9"
+  },
+  {
+    "word": "consignment",
+    "pos": "n.",
+    "meaning": "託運貨物",
+    "phonetic": "/kənˈsaɪnmənt/",
+    "definition": "a quantity of goods sent to someone",
+    "example": "1. The consignment arrived this morning.\n2. A consignment of books was delayed.",
+    "exampleZh": "1. 這批託運貨物今天早上到了。\n2. 一批書的貨運延誤了。",
+    "id": "65238b39cc1a"
+  },
+  {
+    "word": "carousel",
+    "pos": "n.",
+    "meaning": "行李轉盤",
+    "phonetic": "/ˈkærəsel/",
+    "definition": "a moving belt where passengers collect luggage",
+    "example": "1. Our bags are on carousel three.\n2. Wait by the carousel after you land.",
+    "exampleZh": "1. 我們的行李在三號轉盤。\n2. 降落後在行李轉盤旁等候。",
+    "id": "97c2ab5bd4a8"
+  },
+  {
+    "word": "appetizer",
+    "pos": "n.",
+    "meaning": "開胃菜",
+    "phonetic": "/ˈæpɪtaɪzər/",
+    "definition": "a small dish served before the main course",
+    "example": "1. We ordered soup as an appetizer.\n2. The appetizer came with the set lunch.",
+    "exampleZh": "1. 我們點了湯當開胃菜。\n2. 套餐附了一道開胃菜。",
+    "id": "d39642645f0e"
+  },
+  {
+    "word": "entree",
+    "pos": "n.",
+    "meaning": "主菜",
+    "phonetic": "/ˈɑːntreɪ/",
+    "definition": "the main dish of a meal",
+    "example": "1. The entree is grilled fish.\n2. Guests may choose any entree.",
+    "exampleZh": "1. 主菜是烤魚。\n2. 來賓可以任選主菜。",
+    "id": "98c0076a2391"
+  },
+  {
+    "word": "inbox",
+    "pos": "n.",
+    "meaning": "收件匣",
+    "phonetic": "/ˈɪnbɑːks/",
+    "definition": "the place where new email messages arrive",
+    "example": "1. I have twenty messages in my inbox.\n2. Please check your inbox for the ticket.",
+    "exampleZh": "1. 我的收件匣有二十封信。\n2. 請到收件匣查看機票。",
+    "id": "84335593fb4f"
+  },
+  {
+    "word": "keynote",
+    "pos": "n.",
+    "meaning": "主題演講",
+    "phonetic": "/ˈkiːnoʊt/",
+    "definition": "the main speech at a conference",
+    "example": "1. The keynote begins at ten.\n2. A famous designer gave the keynote.",
+    "exampleZh": "1. 主題演講十點開始。\n2. 一位知名設計師發表主題演講。",
+    "id": "77d989b8072e"
+  },
+  {
+    "word": "liaison",
+    "pos": "n.",
+    "meaning": "聯絡人",
+    "phonetic": "/liˈeɪzɑːn/",
+    "definition": "a person who keeps two groups in contact",
+    "example": "1. She is the liaison between the two offices.\n2. Please speak to our liaison in Tokyo.",
+    "exampleZh": "1. 她是兩邊辦公室的聯絡人。\n2. 請跟我們在東京的聯絡人說。",
+    "id": "c8f076f557f9"
+  },
+  {
+    "word": "procure",
+    "pos": "v.",
+    "meaning": "採購",
+    "phonetic": "/prəˈkjʊr/",
+    "definition": "to obtain something, especially for a company",
+    "example": "1. We procure parts from three suppliers.\n2. The department will procure new laptops.",
+    "exampleZh": "1. 我們向三家供應商採購零件。\n2. 這個部門會採購新的筆電。",
+    "id": "f47445d570d7"
+  },
+  {
+    "word": "renovate",
+    "pos": "v.",
+    "meaning": "翻新",
+    "phonetic": "/ˈrenəveɪt/",
+    "definition": "to repair and improve a building",
+    "example": "1. They plan to renovate the lobby.\n2. The cafe was renovated last year.",
+    "exampleZh": "1. 他們計畫翻新大廳。\n2. 這家咖啡店去年翻新過。",
+    "id": "b0e6361776c6"
+  },
+  {
+    "word": "realtor",
+    "pos": "n.",
+    "meaning": "房屋仲介",
+    "phonetic": "/ˈriːəltər/",
+    "definition": "a person who helps people buy and sell property",
+    "example": "1. The realtor showed us three apartments.\n2. Ask a realtor about the local market.",
+    "exampleZh": "1. 房屋仲介帶我們看了三間公寓。\n2. 可以向房屋仲介詢問當地行情。",
+    "id": "fbe20e5e9b7a"
+  }
+]

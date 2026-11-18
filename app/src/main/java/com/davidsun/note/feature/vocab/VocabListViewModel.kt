@@ -7,6 +7,8 @@ import com.davidsun.note.domain.model.VocabEntry
 import com.davidsun.note.domain.repository.VocabRepository
 import com.davidsun.note.domain.vocab.VocabPicker
 import com.davidsun.note.domain.vocab.VocabSamples
+import com.davidsun.note.domain.vocab.VocabSpeaker
+import com.davidsun.note.domain.vocab.vocabPronunciation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,21 +23,27 @@ import javax.inject.Inject
 class VocabListViewModel @Inject constructor(
     private val repository: VocabRepository,
     private val samples: VocabSamples,
+    private val speaker: VocabSpeaker,
     private val savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
     private val entries = MutableStateFlow<List<VocabEntry>?>(null)
     private val failed = MutableStateFlow(false)
     private val sample = MutableStateFlow<List<String>?>(null)
     private val query = savedStateHandle.getStateFlow(QUERY_KEY, "")
+    private val searchOpen = savedStateHandle.getStateFlow(SEARCH_KEY, false)
+    private val showChinese = savedStateHandle.getStateFlow(CHINESE_KEY, true)
+    private val showEnglish = savedStateHandle.getStateFlow(ENGLISH_KEY, true)
 
     val uiState: StateFlow<VocabListUiState> = combine(
         entries,
         failed,
-        query,
         sample,
         repository.masteredIds(),
-    ) { loaded, loadFailed, currentQuery, currentSample, mastered ->
-        mapState(loaded, loadFailed, currentQuery, currentSample, mastered)
+        combine(query, searchOpen, showChinese, showEnglish) { currentQuery, open, chinese, english ->
+            ListChrome(currentQuery, open, chinese, english)
+        },
+    ) { loaded, loadFailed, currentSample, mastered, chrome ->
+        mapState(loaded, loadFailed, currentSample, mastered, chrome)
     }.stateIn(
         viewModelScope,
         SharingStarted.WhileSubscribed(5_000),
@@ -61,9 +69,27 @@ class VocabListViewModel @Inject constructor(
         savedStateHandle[QUERY_KEY] = value
     }
 
+    fun onSearchOpenChange(open: Boolean) {
+        savedStateHandle[SEARCH_KEY] = open
+        if (!open) savedStateHandle[QUERY_KEY] = ""
+    }
+
+    fun onToggleChinese() {
+        val next = !showChinese.value
+        if (!next && !showEnglish.value) savedStateHandle[ENGLISH_KEY] = true
+        savedStateHandle[CHINESE_KEY] = next
+    }
+
+    fun onToggleEnglish() {
+        val next = !showEnglish.value
+        if (!next && !showChinese.value) savedStateHandle[CHINESE_KEY] = true
+        savedStateHandle[ENGLISH_KEY] = next
+    }
+
     fun onRefresh() {
         if (entries.value == null) return
         savedStateHandle[QUERY_KEY] = ""
+        savedStateHandle[SEARCH_KEY] = false
         viewModelScope.launch {
             try {
                 sample.value = samples.refresh()
@@ -73,6 +99,12 @@ class VocabListViewModel @Inject constructor(
                 Unit
             }
         }
+    }
+
+    fun onSpeak(word: String) {
+        val spoken = vocabPronunciation(word)
+        if (spoken.isBlank()) return
+        speaker.speak(spoken)
     }
 
     fun onMasteredChange(id: String, mastered: Boolean) {
@@ -90,21 +122,26 @@ class VocabListViewModel @Inject constructor(
     private fun mapState(
         loaded: List<VocabEntry>?,
         loadFailed: Boolean,
-        currentQuery: String,
         sample: List<String>?,
         mastered: Set<String>,
+        chrome: ListChrome,
     ): VocabListUiState {
         if (loadFailed) return VocabListUiState(isLoading = false, loadFailed = true)
         if (loaded == null || sample == null) return VocabListUiState()
         val byId = loaded.associateBy { entry -> entry.id }
-        val visible = if (currentQuery.isBlank()) {
+        val visible = if (chrome.query.isBlank()) {
             sample.take(VocabPicker.SAMPLE_SIZE).mapNotNull { id -> byId[id] }
         } else {
-            VocabPicker.search(loaded, currentQuery)
+            VocabPicker.search(loaded, chrome.query)
         }
+        val showChinese = chrome.showChinese || !chrome.showEnglish
+        val showEnglish = chrome.showEnglish || !showChinese
         return VocabListUiState(
             isLoading = false,
-            query = currentQuery,
+            query = chrome.query,
+            searchOpen = chrome.searchOpen,
+            showChinese = showChinese,
+            showEnglish = showEnglish,
             items = visible.map { entry ->
                 VocabItemUi(
                     id = entry.id,
@@ -112,12 +149,29 @@ class VocabListViewModel @Inject constructor(
                     partOfSpeech = entry.partOfSpeech,
                     meaning = entry.meaning,
                     mastered = entry.id in mastered,
+                    level = entry.level,
+                    toeic = entry.toeic,
                 )
             },
         )
     }
 
+    override fun onCleared() {
+        speaker.stop()
+        super.onCleared()
+    }
+
+    private data class ListChrome(
+        val query: String,
+        val searchOpen: Boolean,
+        val showChinese: Boolean,
+        val showEnglish: Boolean,
+    )
+
     private companion object {
         const val QUERY_KEY = "vocabQuery"
+        const val SEARCH_KEY = "vocabSearchOpen"
+        const val CHINESE_KEY = "vocabShowChinese"
+        const val ENGLISH_KEY = "vocabShowEnglish"
     }
 }

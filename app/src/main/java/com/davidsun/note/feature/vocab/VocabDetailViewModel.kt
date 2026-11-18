@@ -46,6 +46,7 @@ class VocabDetailViewModel @Inject constructor(
                 example = item.example,
                 exampleZh = item.exampleZh,
                 mastered = item.id in mastered,
+                toeic = item.toeic,
             )
         }
     }.stateIn(
@@ -75,8 +76,8 @@ class VocabDetailViewModel @Inject constructor(
         speakPrepared(entry.value?.definition.orEmpty())
     }
 
-    fun onSpeakExample() {
-        speakPrepared(entry.value?.example.orEmpty())
+    fun onSpeakExample(line: String) {
+        speakPrepared(exampleLineSpeech(line))
     }
 
     private fun speakPrepared(text: String) {

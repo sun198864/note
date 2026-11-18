@@ -12,14 +12,17 @@ data class VocabProgressSummary(
     val mastered: Int,
     val total: Int,
     val levels: List<VocabLevelCount>,
+    val toeicMastered: Int,
+    val toeicTotal: Int,
 )
 
 object VocabProgress {
     fun summary(entries: List<VocabEntry>, masteredIds: Set<String>): VocabProgressSummary {
         val knownIds = entries.map { entry -> entry.id }.toSet()
         val mastered = masteredIds.intersect(knownIds)
-        val totals = entries.groupingBy { entry -> entry.level }.eachCount()
-        val done = entries
+        val graded = entries.filter { entry -> entry.level in 1..6 }
+        val totals = graded.groupingBy { entry -> entry.level }.eachCount()
+        val done = graded
             .filter { entry -> entry.id in mastered }
             .groupingBy { entry -> entry.level }
             .eachCount()
@@ -30,10 +33,13 @@ object VocabProgress {
                 total = totals.getValue(level),
             )
         }
+        val toeic = entries.filter { entry -> entry.toeic }
         return VocabProgressSummary(
-            mastered = mastered.size,
-            total = entries.size,
+            mastered = graded.count { entry -> entry.id in mastered },
+            total = graded.size,
             levels = levels,
+            toeicMastered = toeic.count { entry -> entry.id in mastered },
+            toeicTotal = toeic.size,
         )
     }
 
@@ -46,7 +52,7 @@ object VocabProgress {
         val needle = query.trim()
         if (needle.isEmpty()) {
             return mastered.sortedWith(
-                compareBy({ entry -> entry.level }, { entry -> entry.word.lowercase() }),
+                compareBy({ entry -> levelOrder(entry) }, { entry -> entry.word.lowercase() }),
             )
         }
         val ranked = VocabPicker.search(mastered, needle)
@@ -56,4 +62,7 @@ object VocabProgress {
             .sortedBy { entry -> entry.word.lowercase() }
         return ranked + byMeaning
     }
+
+    private fun levelOrder(entry: VocabEntry): Int =
+        if (entry.level in 1..6) entry.level else Int.MAX_VALUE
 }

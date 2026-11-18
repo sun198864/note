@@ -1,6 +1,10 @@
 package com.davidsun.note.feature.vocab
 
 import android.content.res.Configuration
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.shrinkVertically
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,6 +18,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.Checklist
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Refresh
@@ -31,10 +36,17 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.ImeAction
@@ -56,7 +68,6 @@ fun VocabListScreen(
     modifier: Modifier = Modifier,
     bottomBar: @Composable () -> Unit = {},
 ) {
-    val focusManager = LocalFocusManager.current
     val ready = !state.isLoading && !state.loadFailed
     Scaffold(
         modifier = modifier.fillMaxSize(),
@@ -78,6 +89,46 @@ fun VocabListScreen(
                 },
                 actions = {
                     if (ready) {
+                        VocabScriptToggle(
+                            label = stringResource(R.string.vocab_script_chinese),
+                            shown = state.showChinese,
+                            description = stringResource(
+                                if (state.showChinese) {
+                                    R.string.vocab_hide_chinese
+                                } else {
+                                    R.string.vocab_show_chinese
+                                },
+                            ),
+                            onClick = actions.onToggleChinese,
+                        )
+                        VocabScriptToggle(
+                            label = stringResource(R.string.vocab_script_english),
+                            shown = state.showEnglish,
+                            description = stringResource(
+                                if (state.showEnglish) {
+                                    R.string.vocab_hide_english
+                                } else {
+                                    R.string.vocab_show_english
+                                },
+                            ),
+                            onClick = actions.onToggleEnglish,
+                        )
+                        IconButton(onClick = { actions.onSearchOpenChange(!state.searchOpen) }) {
+                            Icon(
+                                imageVector = if (state.searchOpen) {
+                                    Icons.Filled.Close
+                                } else {
+                                    Icons.Filled.Search
+                                },
+                                contentDescription = stringResource(
+                                    if (state.searchOpen) {
+                                        R.string.vocab_close_search
+                                    } else {
+                                        R.string.vocab_search_hint
+                                    },
+                                ),
+                            )
+                        }
                         IconButton(onClick = actions.onRefresh) {
                             Icon(
                                 imageVector = Icons.Filled.Refresh,
@@ -119,35 +170,19 @@ fun VocabListScreen(
                     .fillMaxSize()
                     .padding(innerPadding),
             ) {
-                OutlinedTextField(
-                    value = state.query,
-                    onValueChange = actions.onQueryChange,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 8.dp),
-                    singleLine = true,
-                    placeholder = { Text(text = stringResource(R.string.vocab_search_hint)) },
-                    leadingIcon = {
-                        Icon(
-                            imageVector = Icons.Filled.Search,
-                            contentDescription = null,
-                        )
-                    },
-                    trailingIcon = if (state.query.isNotEmpty()) {
-                        {
-                            IconButton(onClick = { actions.onQueryChange("") }) {
-                                Icon(
-                                    imageVector = Icons.Filled.Close,
-                                    contentDescription = stringResource(R.string.vocab_clear_search),
-                                )
-                            }
-                        }
-                    } else {
-                        null
-                    },
-                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
-                    keyboardActions = KeyboardActions(onSearch = { focusManager.clearFocus() }),
-                )
+                AnimatedVisibility(
+                    visible = state.searchOpen,
+                    enter = expandVertically(),
+                    exit = shrinkVertically(),
+                ) {
+                    VocabSearchField(
+                        query = state.query,
+                        onQueryChange = actions.onQueryChange,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp, vertical = 8.dp),
+                    )
+                }
                 if (state.items.isNotEmpty()) {
                     Text(
                         text = if (state.query.isBlank()) {
@@ -188,10 +223,13 @@ fun VocabListScreen(
                         items(items = state.items, key = { item -> item.id }) { item ->
                             VocabRow(
                                 item = item,
+                                showWord = state.showEnglish,
+                                showMeaning = state.showChinese,
                                 onClick = { actions.onItemClick(item.id) },
                                 onMasteredChange = { mastered ->
                                     actions.onMasteredChange(item.id, mastered)
                                 },
+                                onSpeak = { actions.onSpeak(item.word) },
                             )
                         }
                     }
@@ -202,27 +240,123 @@ fun VocabListScreen(
 }
 
 @Composable
+private fun VocabScriptToggle(
+    label: String,
+    shown: Boolean,
+    description: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val slash = MaterialTheme.colorScheme.onSurface
+    IconButton(
+        onClick = onClick,
+        modifier = modifier.semantics { contentDescription = description },
+    ) {
+        Box(contentAlignment = Alignment.Center) {
+            Text(
+                text = label,
+                modifier = Modifier.clearAndSetSemantics { },
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.onSurface,
+            )
+            if (!shown) {
+                Canvas(modifier = Modifier.matchParentSize()) {
+                    drawLine(
+                        color = slash,
+                        start = Offset(0f, size.height * 0.15f),
+                        end = Offset(size.width, size.height * 0.85f),
+                        strokeWidth = 2.dp.toPx(),
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun VocabSearchField(
+    query: String,
+    onQueryChange: (String) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val focusRequester = remember { FocusRequester() }
+    val focusManager = LocalFocusManager.current
+    LaunchedEffect(Unit) {
+        focusRequester.requestFocus()
+    }
+    OutlinedTextField(
+        value = query,
+        onValueChange = onQueryChange,
+        modifier = modifier.focusRequester(focusRequester),
+        singleLine = true,
+        placeholder = { Text(text = stringResource(R.string.vocab_search_hint)) },
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Filled.Search,
+                contentDescription = null,
+            )
+        },
+        trailingIcon = if (query.isNotEmpty()) {
+            {
+                IconButton(onClick = { onQueryChange("") }) {
+                    Icon(
+                        imageVector = Icons.Filled.Close,
+                        contentDescription = stringResource(R.string.vocab_clear_search),
+                    )
+                }
+            }
+        } else {
+            null
+        },
+        keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+        keyboardActions = KeyboardActions(onSearch = { focusManager.clearFocus() }),
+    )
+}
+
+@Composable
 fun VocabRow(
     item: VocabItemUi,
     onClick: () -> Unit,
     onMasteredChange: (Boolean) -> Unit,
+    onSpeak: () -> Unit,
     modifier: Modifier = Modifier,
+    showWord: Boolean = true,
+    showMeaning: Boolean = true,
 ) {
     val meaning = item.meaning.ifBlank { stringResource(R.string.vocab_no_meaning) }
     val masteredDescription = stringResource(
         if (item.mastered) R.string.vocab_mastered_on else R.string.vocab_mastered_off,
     )
+    val speakDescription = if (showWord) {
+        stringResource(R.string.vocab_speak_word, item.word)
+    } else {
+        stringResource(R.string.vocab_speak)
+    }
     Card(
         onClick = onClick,
         modifier = modifier.fillMaxWidth(),
     ) {
         Row(
-            modifier = Modifier.padding(start = 16.dp, top = 4.dp, bottom = 4.dp),
+            modifier = Modifier.padding(top = 4.dp, bottom = 4.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
+            IconButton(onClick = onSpeak) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.VolumeUp,
+                    contentDescription = speakDescription,
+                    tint = MaterialTheme.colorScheme.primary,
+                )
+            }
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = item.word,
+                    modifier = if (showWord) {
+                        Modifier
+                    } else {
+                        Modifier
+                            .alpha(0f)
+                            .clearAndSetSemantics { }
+                    },
                     style = MaterialTheme.typography.titleMedium,
                     color = if (item.mastered) {
                         MaterialTheme.colorScheme.onSurfaceVariant
@@ -233,14 +367,26 @@ fun VocabRow(
                     overflow = TextOverflow.Ellipsis,
                 )
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        text = item.partOfSpeech,
-                        style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.primary,
-                    )
+                    if (item.partOfSpeech.isNotBlank()) {
+                        Text(
+                            text = item.partOfSpeech,
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.primary,
+                        )
+                    }
                     Text(
                         text = meaning,
-                        modifier = Modifier.padding(start = 8.dp),
+                        modifier = Modifier
+                            .padding(start = if (item.partOfSpeech.isNotBlank()) 8.dp else 0.dp)
+                            .then(
+                                if (showMeaning) {
+                                    Modifier
+                                } else {
+                                    Modifier
+                                        .alpha(0f)
+                                        .clearAndSetSemantics { }
+                                },
+                            ),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         maxLines = 2,
@@ -275,7 +421,20 @@ private fun VocabListScreenPreview() {
 private fun VocabListLargeFontPreview() {
     NoteTheme(fontScale = FontScale.LARGE) {
         VocabListScreen(
-            state = previewVocabListState(),
+            state = previewVocabListState().copy(showEnglish = false),
+            actions = previewVocabListActions(),
+            bottomBar = { NoteBottomBar(selected = AppTab.Vocab, onSelect = {}) },
+        )
+    }
+}
+
+@Preview(name = "Search open", showBackground = true, widthDp = 360, heightDp = 800)
+@Preview(name = "Search open dark", showBackground = true, widthDp = 360, heightDp = 800, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun VocabListSearchOpenPreview() {
+    NoteTheme {
+        VocabListScreen(
+            state = previewVocabListState().copy(searchOpen = true, query = "ab"),
             actions = previewVocabListActions(),
             bottomBar = { NoteBottomBar(selected = AppTab.Vocab, onSelect = {}) },
         )
@@ -287,9 +446,24 @@ private fun VocabListLargeFontPreview() {
 private fun VocabListSearchEmptyPreview() {
     NoteTheme {
         VocabListScreen(
-            state = VocabListUiState(isLoading = false, query = "zzzz"),
+            state = VocabListUiState(isLoading = false, searchOpen = true, query = "zzzz"),
             actions = previewVocabListActions(),
             bottomBar = { NoteBottomBar(selected = AppTab.Vocab, onSelect = {}) },
+        )
+    }
+}
+
+@Preview(name = "Light", showBackground = true)
+@Preview(name = "Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun VocabSearchFieldPreview() {
+    NoteTheme {
+        VocabSearchField(
+            query = "ab",
+            onQueryChange = {},
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
         )
     }
 }
@@ -303,6 +477,7 @@ private fun VocabRowPreview() {
             item = VocabItemUi("1", "abandon", "v.", "放棄", mastered = true),
             onClick = {},
             onMasteredChange = {},
+            onSpeak = {},
             modifier = Modifier.padding(16.dp),
         )
     }
@@ -317,10 +492,52 @@ private fun previewVocabListState() = VocabListUiState(
     ),
 )
 
+@Preview(name = "Light", showBackground = true)
+@Preview(name = "Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun VocabScriptTogglePreview() {
+    NoteTheme {
+        Row(modifier = Modifier.padding(16.dp)) {
+            VocabScriptToggle(
+                label = "中",
+                shown = true,
+                description = "隱藏中文",
+                onClick = {},
+            )
+            VocabScriptToggle(
+                label = "英",
+                shown = false,
+                description = "顯示英文",
+                onClick = {},
+            )
+        }
+    }
+}
+
+@Preview(name = "English hidden", showBackground = true)
+@Composable
+private fun VocabRowEnglishHiddenPreview() {
+    NoteTheme {
+        VocabRow(
+            item = VocabItemUi("1", "abandon", "v.", "放棄", mastered = false, level = 4, toeic = true),
+            showWord = false,
+            showMeaning = true,
+            onClick = {},
+            onMasteredChange = {},
+            onSpeak = {},
+            modifier = Modifier.padding(16.dp),
+        )
+    }
+}
+
 private fun previewVocabListActions() = VocabListActions(
     onQueryChange = {},
+    onSearchOpenChange = {},
     onRefresh = {},
     onMasteredChange = { _, _ -> },
     onItemClick = {},
     onOpenProgress = {},
+    onSpeak = {},
+    onToggleChinese = {},
+    onToggleEnglish = {},
 )

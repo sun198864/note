@@ -2,6 +2,7 @@ package com.davidsun.note.data.vocab
 
 import android.content.Context
 import com.davidsun.note.domain.model.VocabEntry
+import com.davidsun.note.domain.vocab.mergeVocabBanks
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -22,18 +23,20 @@ class VocabCatalog @Inject constructor(
         }
     }
 
-    private fun read(): List<VocabEntry> {
-        val text = context.assets.open(ASSET).bufferedReader().use { reader -> reader.readText() }
+    private fun read(): List<VocabEntry> =
+        mergeVocabBanks(readAsset(LEVEL_ASSET), readAsset(TOEIC_ASSET))
+
+    private fun readAsset(name: String): List<VocabEntry> {
+        val text = context.assets.open(name).bufferedReader().use { reader -> reader.readText() }
         val array = JSONArray(text)
         return buildList {
             for (index in 0 until array.length()) {
                 val item = array.getJSONObject(index)
-                val id = item.optString("id")
                 val word = item.optString("word")
-                if (id.isBlank() || word.isBlank()) continue
+                if (word.isBlank()) continue
                 add(
                     VocabEntry(
-                        id = id,
+                        id = item.optString("id"),
                         word = word,
                         partOfSpeech = item.optString("pos"),
                         level = item.optInt("level"),
@@ -49,6 +52,7 @@ class VocabCatalog @Inject constructor(
     }
 
     private companion object {
-        const val ASSET = "vocab.json"
+        const val LEVEL_ASSET = "vocab.json"
+        const val TOEIC_ASSET = "toeic.json"
     }
 }

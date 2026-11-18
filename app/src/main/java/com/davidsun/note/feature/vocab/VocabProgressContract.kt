@@ -12,8 +12,11 @@ data class VocabProgressUiState(
     val query: String = "",
     val mastered: Int = 0,
     val total: Int = 0,
+    val toeicMastered: Int = 0,
+    val toeicTotal: Int = 0,
     val levels: List<VocabLevelProgressUi> = emptyList(),
     val items: List<VocabItemUi> = emptyList(),
+    val barsExpanded: Boolean = true,
 )
 
 data class VocabProgressActions(
@@ -21,4 +24,6 @@ data class VocabProgressActions(
     val onQueryChange: (String) -> Unit,
     val onMasteredChange: (String, Boolean) -> Unit,
     val onItemClick: (String) -> Unit,
+    val onSpeak: (String) -> Unit,
+    val onToggleBars: () -> Unit,
 )

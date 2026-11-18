@@ -10,4 +10,5 @@ data class VocabEntry(
     val definition: String,
     val example: String,
     val exampleZh: String = "",
+    val toeic: Boolean = false,
 )
