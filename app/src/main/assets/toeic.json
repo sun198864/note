@@ -343,8 +343,8 @@
     "word": "appraisal",
     "pos": "n.",
     "meaning": "評估；考績",
-    "phonetic": "/əˈpreɪzl/",
-    "definition": "a judgment of value or job performance",
+    "phonetic": "/əˈpreizəl/",
+    "definition": "the classification of someone or something with respect to its worth",
     "example": "1. Her annual appraisal is next week.\n2. The bank ordered an appraisal of the building.",
     "exampleZh": "1. 她的年度考績在下週。\n2. 銀行要求對這棟建築進行估價。",
     "id": "d8965da3e343"
@@ -377,8 +377,8 @@
     "word": "argument",
     "pos": "n.",
     "meaning": "論點；爭論",
-    "phonetic": "/ˈɑːrɡjumənt/",
-    "definition": "a reason given for or against something, or a disagreement",
+    "phonetic": "/ˈɑːgjumənt/",
+    "definition": "fact or assertion offered as evidence that something is true",
     "example": "1. He presented a strong argument.\n2. The partners had an argument about the budget.",
     "exampleZh": "1. 他提出了有力的論點。\n2. 合夥人為了預算起了爭執。",
     "id": "a4f46c7bd349"
@@ -471,8 +471,8 @@
     "word": "attendee",
     "pos": "n.",
     "meaning": "出席者",
-    "phonetic": "/əˌtenˈdiː/",
-    "definition": "a person who goes to a meeting or event",
+    "phonetic": "/ætenˈdiː/",
+    "definition": "a person who is present and participates in a meeting",
     "example": "1. Each attendee received a name badge.\n2. Over 200 attendees joined the seminar.",
     "exampleZh": "1. 每位出席者都拿到名牌。\n2. 超過 200 位出席者參加了研討會。",
     "id": "1c07a73e7451"
@@ -508,8 +508,8 @@
     "word": "auditor",
     "pos": "n.",
     "meaning": "查帳員",
-    "phonetic": "/ˈɔːdɪtər/",
-    "definition": "a person who officially examines financial records",
+    "phonetic": "/ˈɒːditə/",
+    "definition": "student who attends a course but does not take it for credit",
     "example": "1. An auditor reviewed the accounts.\n2. The auditor found a small error.",
     "exampleZh": "1. 查帳員複核了帳目。\n2. 查帳員發現一個小錯誤。",
     "id": "70b87cc2effc"
@@ -653,8 +653,8 @@
     "word": "billboard",
     "pos": "n.",
     "meaning": "廣告看板",
-    "phonetic": "/ˈbɪlbɔːrd/",
-    "definition": "a large outdoor board used for advertising",
+    "phonetic": "/ˈbilbɒːd/",
+    "definition": "large outdoor signboard",
     "example": "1. A billboard advertised the new phone.\n2. The billboard is beside the highway.",
     "exampleZh": "1. 一塊廣告看板在宣傳新手機。\n2. 廣告看板在高速公路旁。",
     "id": "66cd8d3f56c7"
@@ -719,8 +719,8 @@
     "word": "briefing",
     "pos": "n.",
     "meaning": "簡報",
-    "phonetic": "/ˈbriːfɪŋ/",
-    "definition": "a short meeting that gives necessary information",
+    "phonetic": "/ˈbriːfiŋ/",
+    "definition": "detailed instructions, as for a military operation",
     "example": "1. The morning briefing starts at nine.\n2. Managers attended a budget briefing.",
     "exampleZh": "1. 早上的簡報九點開始。\n2. 經理們參加了預算簡報。",
     "id": "d239be31dc93"
@@ -756,8 +756,8 @@
     "word": "buyer",
     "pos": "n.",
     "meaning": "買方",
-    "phonetic": "/ˈbaɪər/",
-    "definition": "a person or company that purchases something",
+    "phonetic": "/ˈbaiə/",
+    "definition": "person who buys",
     "example": "1. The buyer asked for a discount.\n2. Our biggest buyer is in Osaka.",
     "exampleZh": "1. 買方要求折扣。\n2. 我們最大的買方在大阪。",
     "id": "ada2300b81c8"
@@ -781,8 +781,8 @@
     "word": "cancellation",
     "pos": "n.",
     "meaning": "取消",
-    "phonetic": "/ˌkænsəˈleɪʃn/",
-    "definition": "a decision to stop a planned event or booking",
+    "phonetic": "/kænsəˈleiʃən/",
+    "definition": "the act of cancelling",
     "example": "1. The flight cancellation surprised everyone.\n2. Cancellations must be made one day ahead.",
     "exampleZh": "1. 班機取消讓大家都很意外。\n2. 取消必須提前一天辦理。",
     "id": "79a6b33ab337"
@@ -821,8 +821,8 @@
     "word": "catalog",
     "pos": "n.",
     "meaning": "型錄；目錄",
-    "phonetic": "/ˈkætəlɔːɡ/",
-    "definition": "a list or book showing products for sale",
+    "phonetic": "/ˈkætəlɒg/",
+    "definition": "book or pamphlet containing an enumeration of things",
     "example": "1. The new catalog arrives in March.\n2. Prices are listed in the catalog.",
     "exampleZh": "1. 新型錄三月會到。\n2. 價格列在型錄裡。",
     "id": "e18c1615cd07"
@@ -1113,8 +1113,8 @@
     "word": "confirmation",
     "pos": "n.",
     "meaning": "確認",
-    "phonetic": "/ˌkɑːnfərˈmeɪʃn/",
-    "definition": "a statement that something is definite",
+    "phonetic": "/.kɒnfəˈmeiʃən/",
+    "definition": "additional proof that something that was believed (some fact or hypothesis or theory) is correct",
     "example": "1. We received confirmation of the reservation.\n2. Please send written confirmation.",
     "exampleZh": "1. 我們收到預訂確認。\n2. 請寄出書面確認。",
     "id": "c9a54f06fe0b"
@@ -1243,8 +1243,8 @@
     "word": "coordinator",
     "pos": "n.",
     "meaning": "協調人",
-    "phonetic": "/koʊˈɔːrdɪneɪtər/",
-    "definition": "a person who organizes people or activities",
+    "phonetic": "/kəuˈɒːdineitə/",
+    "definition": "someone whose task is to see that work goes harmoniously",
     "example": "1. The event coordinator checked the schedule.\n2. Ask the coordinator for a visitor badge.",
     "exampleZh": "1. 活動協調人核對了時程。\n2. 向協調人索取訪客證。",
     "id": "47c2341d653d"
@@ -1289,8 +1289,8 @@
     "word": "courier",
     "pos": "n.",
     "meaning": "快遞",
-    "phonetic": "/ˈkʊriər/",
-    "definition": "a person or company that delivers documents or parcels",
+    "phonetic": "/ˈkuriə/",
+    "definition": "a person who carries a message",
     "example": "1. A courier will pick up the contract.\n2. Send the samples by courier.",
     "exampleZh": "1. 快遞會來取合約。\n2. 用快遞寄出樣品。",
     "id": "539c83858094"
@@ -1623,8 +1623,8 @@
     "word": "distributor",
     "pos": "n.",
     "meaning": "經銷商",
-    "phonetic": "/dɪˈstrɪbjətər/",
-    "definition": "a company that supplies goods to stores",
+    "phonetic": "/disˈtribjutə/",
+    "definition": "someone who markets merchandise",
     "example": "1. Our distributor covers southern Taiwan.\n2. The distributor shipped the parts today.",
     "exampleZh": "1. 我們的經銷商負責台灣南部。\n2. 經銷商今天運出零件。",
     "id": "927e6f38d8bd"
@@ -2778,8 +2778,8 @@
     "word": "investor",
     "pos": "n.",
     "meaning": "投資人",
-    "phonetic": "/ɪnˈvestər/",
-    "definition": "a person who puts money into a business",
+    "phonetic": "/inˈvestə/",
+    "definition": "someone who commits capital in order to gain financial returns",
     "example": "1. The investor asked for a progress report.\n2. Foreign investors visited the plant.",
     "exampleZh": "1. 投資人要求進度報告。\n2. 外國投資人參觀了工廠。",
     "id": "54d7ca5c988c"
@@ -2791,7 +2791,7 @@
     "word": "invoice",
     "pos": "n.",
     "meaning": "發票；請款單",
-    "phonetic": "/ˈɪnvɔɪs/",
+    "phonetic": "/ˈinvɒis/",
     "definition": "a document that lists goods or services and the amount due",
     "example": "1. Please pay the invoice within thirty days.\n2. The invoice includes shipping charges.",
     "exampleZh": "1. 請在三十天內支付這張請款單。\n2. 請款單包含運費。",
@@ -2810,8 +2810,8 @@
     "word": "itinerary",
     "pos": "n.",
     "meaning": "行程表",
-    "phonetic": "/aɪˈtɪnəreri/",
-    "definition": "a plan of a trip, including times and places",
+    "phonetic": "/aiˈtinərəri/",
+    "definition": "an established line of travel or access",
     "example": "1. The itinerary lists three factory visits.\n2. I emailed you the updated itinerary.",
     "exampleZh": "1. 行程表列了三場工廠參訪。\n2. 我把更新後的行程表寄給你了。",
     "id": "c859a68732a7"
@@ -2920,8 +2920,8 @@
     "word": "leaflet",
     "pos": "n.",
     "meaning": "傳單",
-    "phonetic": "/ˈliːflət/",
-    "definition": "a printed sheet that gives information",
+    "phonetic": "/ˈliːflit/",
+    "definition": "part of a compound leaf",
     "example": "1. They handed out leaflets at the fair.\n2. The leaflet explains the warranty.",
     "exampleZh": "1. 他們在展場發送傳單。\n2. 傳單說明了保固內容。",
     "id": "93ffe0331d52"
@@ -3079,7 +3079,7 @@
     "pos": "n.",
     "meaning": "午宴",
     "phonetic": "/ˈlʌntʃən/",
-    "definition": "a formal lunch, often for business",
+    "definition": "a midday meal",
     "example": "1. The awards luncheon starts at noon.\n2. Clients were invited to a luncheon.",
     "exampleZh": "1. 頒獎午宴中午開始。\n2. 客戶受邀參加午宴。",
     "id": "6cac92711611"
@@ -3235,8 +3235,8 @@
     "word": "memo",
     "pos": "n.",
     "meaning": "備忘錄",
-    "phonetic": "/ˈmemoʊ/",
-    "definition": "a short official note sent inside a company",
+    "phonetic": "/ˈmeməu/",
+    "definition": "written proposal or reminder",
     "example": "1. The memo explains the new hours.\n2. Please read the memo from accounting.",
     "exampleZh": "1. 備忘錄說明了新的上班時間。\n2. 請閱讀會計部門的備忘錄。",
     "id": "fe1db4996dd2"
@@ -3245,8 +3245,8 @@
     "word": "memorandum",
     "pos": "n.",
     "meaning": "正式備忘錄",
-    "phonetic": "/ˌmeməˈrændəm/",
-    "definition": "a formal written note inside an organization",
+    "phonetic": "/.meməˈrændəm/",
+    "definition": "a written proposal or reminder",
     "example": "1. A memorandum was sent to all managers.\n2. The memorandum outlines the agreement.",
     "exampleZh": "1. 正式備忘錄已發給所有經理。\n2. 這份備忘錄概述了協議內容。",
     "id": "975bcd8aef63"
@@ -3459,8 +3459,8 @@
     "word": "newsletter",
     "pos": "n.",
     "meaning": "通訊；電子報",
-    "phonetic": "/ˈnuːzletər/",
-    "definition": "a short regular report sent to members or customers",
+    "phonetic": "/ˈnjuːz.letə/",
+    "definition": "report or open letter giving informal or confidential news of interest to a special group",
     "example": "1. The monthly newsletter comes out on Friday.\n2. Subscribe to our newsletter for updates.",
     "exampleZh": "1. 每月通訊星期五發行。\n2. 訂閱電子報以取得最新消息。",
     "id": "42118f0ead21"
@@ -3565,8 +3565,8 @@
     "word": "opening",
     "pos": "n.",
     "meaning": "職缺；開幕",
-    "phonetic": "/ˈoʊpənɪŋ/",
-    "definition": "a job that is available, or the start of an event",
+    "phonetic": "/ˈəupəniŋ/",
+    "definition": "an open or empty space in or between things",
     "example": "1. There is an opening in the sales department.\n2. The store opening drew a large crowd.",
     "exampleZh": "1. 業務部有一個職缺。\n2. 商店開幕吸引了很多人。",
     "id": "5fb7957e1770"
@@ -3726,8 +3726,8 @@
     "word": "pamphlet",
     "pos": "n.",
     "meaning": "小冊子",
-    "phonetic": "/ˈpæmflət/",
-    "definition": "a thin book with information about a product or service",
+    "phonetic": "/ˈpæmflit/",
+    "definition": "a small book usually having a paper cover",
     "example": "1. The pamphlet describes the tour.\n2. Pick up a pamphlet at the front desk.",
     "exampleZh": "1. 小冊子介紹了這趟行程。\n2. 請在櫃台拿一本小冊子。",
     "id": "26be94696ecf"
@@ -3897,8 +3897,8 @@
     "word": "photocopy",
     "pos": "n.",
     "meaning": "影印本",
-    "phonetic": "/ˈfoʊtoʊkɑːpi/",
-    "definition": "a paper copy made by a photocopier",
+    "phonetic": "/ˈfəutəu.kɒpi/",
+    "definition": "photographic copy of written or printed or graphic work",
     "example": "1. Attach a photocopy of your license.\n2. I made a photocopy of the receipt.",
     "exampleZh": "1. 請附上執照的影印本。\n2. 我影印了收據。",
     "id": "8377ada44436"
@@ -4206,8 +4206,8 @@
     "word": "provider",
     "pos": "n.",
     "meaning": "供應者；業者",
-    "phonetic": "/prəˈvaɪdər/",
-    "definition": "a company that supplies a service",
+    "phonetic": "/prəˈvaidə/",
+    "definition": "someone who provides the means for subsistence",
     "example": "1. We changed our internet provider.\n2. The training provider sent the materials.",
     "exampleZh": "1. 我們換了網路業者。\n2. 訓練機構寄來了教材。",
     "id": "31c8cecfe178"
@@ -4395,8 +4395,8 @@
     "word": "receptionist",
     "pos": "n.",
     "meaning": "接待員",
-    "phonetic": "/rɪˈsepʃənɪst/",
-    "definition": "a person who greets visitors and answers calls",
+    "phonetic": "/riˈsepʃənist/",
+    "definition": "secretary whose main duty is to answer the telephone and receive visitors",
     "example": "1. The receptionist will give you a badge.\n2. Ask the receptionist for directions.",
     "exampleZh": "1. 接待員會給你識別證。\n2. 請接待員指路。",
     "id": "939911934bef"
@@ -4429,8 +4429,8 @@
     "word": "recruiter",
     "pos": "n.",
     "meaning": "招募人員",
-    "phonetic": "/rɪˈkruːtər/",
-    "definition": "a person whose job is to find new employees",
+    "phonetic": "/riˈkruːtə/",
+    "definition": "someone who supplies members or employees",
     "example": "1. The recruiter called me yesterday.\n2. A recruiter reviewed her resume.",
     "exampleZh": "1. 招募人員昨天打電話給我。\n2. 招募人員看了她的履歷。",
     "id": "b22d32e8dcf1"
@@ -4696,8 +4696,8 @@
     "word": "retailer",
     "pos": "n.",
     "meaning": "零售商",
-    "phonetic": "/ˈriːteɪlər/",
-    "definition": "a business that sells goods to the public",
+    "phonetic": "/ˈriːteilə/",
+    "definition": "merchant who sells goods at retail",
     "example": "1. The retailer ordered more stock.\n2. Small retailers joined the promotion.",
     "exampleZh": "1. 零售商追加了庫存。\n2. 小型零售商參加了這次促銷。",
     "id": "ecda80e5e7a2"
@@ -4815,8 +4815,8 @@
     "word": "scanner",
     "pos": "n.",
     "meaning": "掃描器",
-    "phonetic": "/ˈskænər/",
-    "definition": "a machine that copies a document into a computer",
+    "phonetic": "/ˈskænə/",
+    "definition": "someone who scans verse to determine the number and prosodic value of the syllables",
     "example": "1. The scanner is next to the printer.\n2. Use the scanner to send the form.",
     "exampleZh": "1. 掃描器在印表機旁邊。\n2. 用掃描器把表格送出。",
     "id": "a044c0e17382"
@@ -4961,8 +4961,8 @@
     "word": "shipment",
     "pos": "n.",
     "meaning": "一批貨物；出貨",
-    "phonetic": "/ˈʃɪpmənt/",
-    "definition": "a load of goods sent together",
+    "phonetic": "/ˈʃipmənt/",
+    "definition": "goods carried by a large vehicle",
     "example": "1. The shipment left the warehouse yesterday.\n2. We are waiting for a shipment of parts.",
     "exampleZh": "1. 這批貨昨天離開倉庫。\n2. 我們在等一批零件到貨。",
     "id": "cfbc3b500833"
@@ -5102,8 +5102,8 @@
     "word": "specification",
     "pos": "n.",
     "meaning": "規格",
-    "phonetic": "/ˌspesɪfɪˈkeɪʃn/",
-    "definition": "a detailed description of what is required",
+    "phonetic": "/.spesifiˈkeiʃən/",
+    "definition": "detailed description of design criteria for a piece of work",
     "example": "1. The product meets the specification.\n2. Please check the specification before ordering.",
     "exampleZh": "1. 這項產品符合規格。\n2. 下單前請先看規格。",
     "id": "2b93cefe6757"
@@ -5220,8 +5220,8 @@
     "word": "subsidiary",
     "pos": "n.",
     "meaning": "子公司",
-    "phonetic": "/səbˈsɪdieri/",
-    "definition": "a company controlled by a larger company",
+    "phonetic": "/səbˈsidiəri/",
+    "definition": "an assistant subject to the authority or control of another",
     "example": "1. The firm has a subsidiary in Korea.\n2. The subsidiary handles local sales.",
     "exampleZh": "1. 這家公司在韓國有子公司。\n2. 子公司負責當地銷售。",
     "id": "40d5d2140ea6"
@@ -5284,8 +5284,8 @@
     "word": "supplier",
     "pos": "n.",
     "meaning": "供應商",
-    "phonetic": "/səˈplaɪər/",
-    "definition": "a company that provides goods or materials",
+    "phonetic": "/səˈplaiə/",
+    "definition": "someone whose business is to supply a particular service or commodity",
     "example": "1. Our supplier raised its prices.\n2. We need a backup supplier.",
     "exampleZh": "1. 供應商調高了價格。\n2. 我們需要備用的供應商。",
     "id": "ab56da2f872b"
@@ -5339,7 +5339,7 @@
     "word": "tariff",
     "pos": "n.",
     "meaning": "關稅",
-    "phonetic": "/ˈtærɪf/",
+    "phonetic": "/ˈtærif/",
     "definition": "a tax on goods coming into a country",
     "example": "1. The new tariff increased import costs.\n2. Tariffs apply to these parts.",
     "exampleZh": "1. 新關稅提高了進口成本。\n2. 這些零件要課關稅。",
@@ -5517,8 +5517,8 @@
     "word": "trainee",
     "pos": "n.",
     "meaning": "受訓人員",
-    "phonetic": "/ˌtreɪˈniː/",
-    "definition": "a person who is learning a job",
+    "phonetic": "/treiˈniː/",
+    "definition": "someone who is being trained",
     "example": "1. Each trainee has a mentor.\n2. The trainee started on Monday.",
     "exampleZh": "1. 每位受訓人員都有一位導師。\n2. 受訓人員星期一開始上班。",
     "id": "c4269b692af8"
@@ -5858,8 +5858,8 @@
     "word": "warning",
     "pos": "n.",
     "meaning": "警告",
-    "phonetic": "/ˈwɔːrnɪŋ/",
-    "definition": "a statement that something bad may happen",
+    "phonetic": "/ˈwɒːniŋ/",
+    "definition": "message informing of danger",
     "example": "1. The machine gave a warning sound.\n2. He received a written warning.",
     "exampleZh": "1. 機器發出了警告聲。\n2. 他收到書面警告。",
     "id": "cb5ffec2e558"
@@ -6017,8 +6017,8 @@
     "word": "amenity",
     "pos": "n.",
     "meaning": "便利設施",
-    "phonetic": "/əˈmenəti/",
-    "definition": "a feature that makes a place more comfortable",
+    "phonetic": "/əˈmiːniti/",
+    "definition": "pleasantness resulting from agreeable conditions",
     "example": "1. The hotel amenity guests like most is the pool.\n2. Free parking is a useful amenity.",
     "exampleZh": "1. 旅客最喜歡的旅館設施是泳池。\n2. 免費停車是一項實用的便利設施。",
     "id": "6b70f99b5953"
@@ -6047,8 +6047,8 @@
     "word": "cubicle",
     "pos": "n.",
     "meaning": "辦公隔間",
-    "phonetic": "/ˈkjuːbɪkl/",
-    "definition": "a small partly enclosed office space",
+    "phonetic": "/ˈkjuːbikl/",
+    "definition": "small room in which a monk or nun lives",
     "example": "1. His cubicle is near the window.\n2. The new office has fewer cubicles.",
     "exampleZh": "1. 他的隔間靠近窗戶。\n2. 新辦公室的隔間比較少。",
     "id": "059b2f96de4c"
@@ -6087,8 +6087,8 @@
     "word": "consignment",
     "pos": "n.",
     "meaning": "託運貨物",
-    "phonetic": "/kənˈsaɪnmənt/",
-    "definition": "a quantity of goods sent to someone",
+    "phonetic": "/kənˈsainmənt/",
+    "definition": "the delivery of goods for sale or disposal",
     "example": "1. The consignment arrived this morning.\n2. A consignment of books was delayed.",
     "exampleZh": "1. 這批託運貨物今天早上到了。\n2. 一批書的貨運延誤了。",
     "id": "65238b39cc1a"
@@ -6097,8 +6097,8 @@
     "word": "carousel",
     "pos": "n.",
     "meaning": "行李轉盤",
-    "phonetic": "/ˈkærəsel/",
-    "definition": "a moving belt where passengers collect luggage",
+    "phonetic": "/kəˈrauzəl/",
+    "definition": "conveyer belt that carries luggage to be claimed by air travelers",
     "example": "1. Our bags are on carousel three.\n2. Wait by the carousel after you land.",
     "exampleZh": "1. 我們的行李在三號轉盤。\n2. 降落後在行李轉盤旁等候。",
     "id": "97c2ab5bd4a8"
@@ -6107,8 +6107,8 @@
     "word": "appetizer",
     "pos": "n.",
     "meaning": "開胃菜",
-    "phonetic": "/ˈæpɪtaɪzər/",
-    "definition": "a small dish served before the main course",
+    "phonetic": "/ˈæpitaizə/",
+    "definition": "food or drink to stimulate the appetite (usually served before a meal or as the first course)",
     "example": "1. We ordered soup as an appetizer.\n2. The appetizer came with the set lunch.",
     "exampleZh": "1. 我們點了湯當開胃菜。\n2. 套餐附了一道開胃菜。",
     "id": "d39642645f0e"
@@ -6147,8 +6147,8 @@
     "word": "liaison",
     "pos": "n.",
     "meaning": "聯絡人",
-    "phonetic": "/liˈeɪzɑːn/",
-    "definition": "a person who keeps two groups in contact",
+    "phonetic": "/liːˈeizɒn/",
+    "definition": "channel for communication between groups",
     "example": "1. She is the liaison between the two offices.\n2. Please speak to our liaison in Tokyo.",
     "exampleZh": "1. 她是兩邊辦公室的聯絡人。\n2. 請跟我們在東京的聯絡人說。",
     "id": "c8f076f557f9"
@@ -6177,10 +6177,2091 @@
     "word": "realtor",
     "pos": "n.",
     "meaning": "房屋仲介",
-    "phonetic": "/ˈriːəltər/",
-    "definition": "a person who helps people buy and sell property",
+    "phonetic": "/ˈriəltə/",
+    "definition": "real estate agent who is a member of the National Association of Realtors",
     "example": "1. The realtor showed us three apartments.\n2. Ask a realtor about the local market.",
     "exampleZh": "1. 房屋仲介帶我們看了三間公寓。\n2. 可以向房屋仲介詢問當地行情。",
     "id": "fbe20e5e9b7a"
+  },
+  {
+    "word": "cashier"
+  },
+  {
+    "word": "clinic"
+  },
+  {
+    "word": "lobby"
+  },
+  {
+    "word": "pharmacy"
+  },
+  {
+    "word": "author"
+  },
+  {
+    "word": "occupation"
+  },
+  {
+    "word": "fuel"
+  },
+  {
+    "word": "pollution"
+  },
+  {
+    "word": "theme"
+  },
+  {
+    "word": "emergency"
+  },
+  {
+    "word": "confidence"
+  },
+  {
+    "word": "district"
+  },
+  {
+    "word": "charity"
+  },
+  {
+    "word": "admission"
+  },
+  {
+    "word": "anniversary"
+  },
+  {
+    "word": "spreadsheet",
+    "pos": "n.",
+    "meaning": "試算表",
+    "phonetic": "/ˈspredʃiːt/",
+    "definition": "a computer program used to organize and calculate data in rows and columns",
+    "example": "1. The accountant updated the financial data in the spreadsheet.",
+    "exampleZh": "1. 會計師在試算表中更新了財務數據。",
+    "id": "91cb74109d91"
+  },
+  {
+    "word": "venue"
+  },
+  {
+    "word": "aid"
+  },
+  {
+    "word": "physical"
+  },
+  {
+    "word": "traditional"
+  },
+  {
+    "word": "portable"
+  },
+  {
+    "word": "harmful"
+  },
+  {
+    "word": "optimistic"
+  },
+  {
+    "word": "unlikely",
+    "pos": "adj.",
+    "meaning": "不太可能的",
+    "phonetic": "/.ʌnˈlaikli/",
+    "definition": "has little chance of being the case or coming about",
+    "example": "1. Let’s face it. The team is most unlikely to win.",
+    "exampleZh": "1. 面對現實吧，這隻球隊不太可能贏的。",
+    "id": "3b4fa60f2d4a"
+  },
+  {
+    "word": "spare"
+  },
+  {
+    "word": "download"
+  },
+  {
+    "word": "apologize"
+  },
+  {
+    "word": "upload"
+  },
+  {
+    "word": "subscribe"
+  },
+  {
+    "word": "depart"
+  },
+  {
+    "word": "disturb"
+  },
+  {
+    "word": "appliance"
+  },
+  {
+    "word": "subscription"
+  },
+  {
+    "word": "ingredient"
+  },
+  {
+    "word": "briefcase"
+  },
+  {
+    "word": "identification"
+  },
+  {
+    "word": "ceremony"
+  },
+  {
+    "word": "photocopier",
+    "pos": "n.",
+    "meaning": "影印機",
+    "phonetic": "/ˈfoʊtoʊkɑːpiər/",
+    "definition": "a machine that makes paper copies of documents",
+    "example": "1. The photocopier in the office needs more paper.",
+    "exampleZh": "1. 辦公室的影印機需要補充紙張。",
+    "id": "65b366dc02a9"
+  },
+  {
+    "word": "degree"
+  },
+  {
+    "word": "outlet"
+  },
+  {
+    "word": "duration"
+  },
+  {
+    "word": "database"
+  },
+  {
+    "word": "literacy"
+  },
+  {
+    "word": "superior"
+  },
+  {
+    "word": "dashboard",
+    "pos": "n.",
+    "meaning": "儀錶板",
+    "phonetic": "/ˈdæʃbɒːd/",
+    "definition": "instrument panel on an automobile or airplane containing dials and controls",
+    "example": "1. The sales dashboard displays real-time data for executives.",
+    "exampleZh": "1. 這個銷售儀錶板為主管們顯示即時數據。",
+    "id": "fe03c400e6a8"
+  },
+  {
+    "word": "principle"
+  },
+  {
+    "word": "excursion",
+    "pos": "n.",
+    "meaning": "短程旅行",
+    "phonetic": "/ikˈskəːʒən/",
+    "definition": "journey taken for pleasure",
+    "example": "1. We went on an excursion to the nearby waterfall.",
+    "exampleZh": "1. 我們去附近的瀑布郊遊。",
+    "id": "eff1ed55479e"
+  },
+  {
+    "word": "appreciation"
+  },
+  {
+    "word": "technician"
+  },
+  {
+    "word": "layout"
+  },
+  {
+    "word": "commuter"
+  },
+  {
+    "word": "utilities",
+    "pos": "n.",
+    "meaning": "公共事業費用（如水電費）；公共事業",
+    "phonetic": "/juːˈtɪlətiz/",
+    "definition": "public services such as electricity, water, or gas, or the bills for them",
+    "example": "1. The rent is $1500, not including utilities.",
+    "exampleZh": "1. 租金為 1500 美元，不包括水電費。",
+    "id": "25447504f0ba"
+  },
+  {
+    "word": "layover",
+    "pos": "n.",
+    "meaning": "轉機停留；短暫停留",
+    "phonetic": "/ˈleɪoʊvər/",
+    "definition": "a short stop during a journey",
+    "example": "1. During his layover in Dubai, he checked business emails.",
+    "exampleZh": "1. 在杜拜轉機停留期間，他查看了工作郵件。",
+    "id": "8e4c35895f48"
+  },
+  {
+    "word": "transcript"
+  },
+  {
+    "word": "milestone"
+  },
+  {
+    "word": "interface",
+    "pos": "n.",
+    "meaning": "介面",
+    "phonetic": "/ˈɪntərfeɪs/",
+    "definition": "a point where two systems meet, or how a user works with a program",
+    "example": "1. The new software interface streamlines our customer service operations.",
+    "exampleZh": "1. 新的軟體介面簡化了我們的客戶服務操作流程。",
+    "id": "970846696f5c"
+  },
+  {
+    "word": "certification",
+    "pos": "n.",
+    "meaning": "認證；證書",
+    "phonetic": "/.səːtifiˈkeiʃən/",
+    "definition": "the act of certifying or bestowing a franchise on",
+    "example": "1. The company requires certification for all safety inspectors.",
+    "exampleZh": "1. 公司要求所有安全檢查員都必須具備認證資格。",
+    "id": "9d82edaafaf5"
+  },
+  {
+    "word": "statistic(s)"
+  },
+  {
+    "word": "broadcast"
+  },
+  {
+    "word": "debate"
+  },
+  {
+    "word": "punctual"
+  },
+  {
+    "word": "incredible"
+  },
+  {
+    "word": "inexperienced",
+    "pos": "adj.",
+    "meaning": "無經驗的",
+    "phonetic": "/.inikˈspiəriənst/",
+    "definition": "lacking practical experience or training",
+    "example": "1. The company hired inexperienced interns for the summer.",
+    "exampleZh": "1. 公司在暑假期間僱用了沒有經驗的實習生。",
+    "id": "0f464132131c"
+  },
+  {
+    "word": "adjacent",
+    "pos": "adj.",
+    "meaning": "鄰近的",
+    "phonetic": "/əˈdʒeisənt/",
+    "definition": "nearest in space or position",
+    "example": "1. The new office is adjacent to the shopping mall.",
+    "exampleZh": "1. 新辦公室與購物中心相鄰。",
+    "id": "d8e8c1420cc2"
+  },
+  {
+    "word": "complimentary",
+    "pos": "adj.",
+    "meaning": "免費贈送的",
+    "phonetic": "/.kɒmpliˈmentəri/",
+    "definition": "conveying or resembling a compliment",
+    "example": "1. The hotel provides complimentary breakfast.",
+    "exampleZh": "1. 那間飯店提供免費早餐。",
+    "id": "fc44632ada3c"
+  },
+  {
+    "word": "spacious"
+  },
+  {
+    "word": "cautious"
+  },
+  {
+    "word": "abundant"
+  },
+  {
+    "word": "anonymous"
+  },
+  {
+    "word": "approximately",
+    "pos": "adv.",
+    "meaning": "大約；大概",
+    "phonetic": "/əˈprɒksimətli/",
+    "definition": "(of quantities) imprecise but fairly close to correct",
+    "example": "1. The journey will take approximately three hours by car.",
+    "exampleZh": "1. 車程大約需要三個小時。",
+    "id": "a21af75bdd3d"
+  },
+  {
+    "word": "reschedule",
+    "pos": "v.",
+    "meaning": "改期",
+    "phonetic": "/riːʃedjuːl/",
+    "definition": "assign a new time and place for an event",
+    "example": "1. We had to reschedule the meeting due to a conflict.",
+    "exampleZh": "1. 由於時間衝突，我們不得不重新安排會議。",
+    "id": "aea3e6775b54"
+  },
+  {
+    "word": "enroll(ment)"
+  },
+  {
+    "word": "interact"
+  },
+  {
+    "word": "declare"
+  },
+  {
+    "word": "activate",
+    "pos": "v.",
+    "meaning": "啟動",
+    "phonetic": "/ˈæktiveit/",
+    "definition": "make active or more active",
+    "example": "1. Don’t forget to activate the alarm system when you leave.",
+    "exampleZh": "1. 離開時不要忘記啟動警報系統。",
+    "id": "2b06e8163088"
+  },
+  {
+    "word": "demote",
+    "pos": "v.",
+    "meaning": "降職；降級",
+    "phonetic": "/.diːˈməut/",
+    "definition": "assign to a lower position",
+    "example": "1. The company decided to demote him to assistant manager.",
+    "exampleZh": "1. 公司決定把他降職為副經理。",
+    "id": "ee3ca79a4e89"
+  },
+  {
+    "word": "dominate"
+  },
+  {
+    "word": "elaborate"
+  },
+  {
+    "word": "customize",
+    "pos": "v.",
+    "meaning": "客製化",
+    "phonetic": "/kʌstəmaiz/",
+    "definition": "make according to requirements",
+    "example": "1. Our team can customize the software to meet your company’s specific needs.",
+    "exampleZh": "1. 我們團隊可以依照貴公司的特定需求客製化這套軟體。",
+    "id": "661013ce1d85"
+  },
+  {
+    "word": "distinguish"
+  },
+  {
+    "word": "malfunction",
+    "pos": "v./n.",
+    "meaning": "故障；失靈 ",
+    "phonetic": "/.mælˈfʌŋʃən/",
+    "definition": "fail to function or function improperly",
+    "example": "1. The printer began to malfunction during the meeting.",
+    "exampleZh": "1. 印表機在會議期間開始故障。",
+    "id": "50f0cbd7c26a"
+  },
+  {
+    "word": "exposure"
+  },
+  {
+    "word": "segment"
+  },
+  {
+    "word": "freelancer",
+    "pos": "n.",
+    "meaning": "自由工作者",
+    "phonetic": "/ˈfriːlænsər/",
+    "definition": "a person who works independently for different clients",
+    "example": "1. The freelancer submitted her invoice to the company.",
+    "exampleZh": "1. 那位自由工作者向公司提交她的帳單。",
+    "id": "c7a3a3e96a9c"
+  },
+  {
+    "word": "resolution"
+  },
+  {
+    "word": "controversy"
+  },
+  {
+    "word": "precaution"
+  },
+  {
+    "word": "consumption"
+  },
+  {
+    "word": "amenities",
+    "pos": "n.",
+    "meaning": "便利設施",
+    "phonetic": "/əˈmenətiz/",
+    "definition": "features that make a place comfortable or pleasant",
+    "example": "1. You’ll have access to all the amenities in the building.",
+    "exampleZh": "1. 您將可以使用大樓內的所有便利設施。",
+    "id": "165bf8829250"
+  },
+  {
+    "word": "transition"
+  },
+  {
+    "word": "circumstance"
+  },
+  {
+    "word": "distinction"
+  },
+  {
+    "word": "webinar",
+    "pos": "n.",
+    "meaning": "線上研討會",
+    "phonetic": "/ˈwebɪnɑːr/",
+    "definition": "an online seminar or presentation",
+    "example": "1. The marketing team hosted a webinar about new product features.",
+    "exampleZh": "1. 行銷團隊舉辦了一場關於新產品功能的線上研討會。",
+    "id": "4625d69c372e"
+  },
+  {
+    "word": "intake"
+  },
+  {
+    "word": "founder"
+  },
+  {
+    "word": "overview",
+    "pos": "n.",
+    "meaning": "概述",
+    "phonetic": "/ˈəuvəvjuː/",
+    "definition": "general summary of a subject",
+    "example": "1. The professor gave an overview of the research findings.",
+    "exampleZh": "1. 教授概述了研究結果。",
+    "id": "6c886ae68e38"
+  },
+  {
+    "word": "headcount",
+    "pos": "n.",
+    "meaning": "人數；編制員額",
+    "phonetic": "/ˈhedkaʊnt/",
+    "definition": "number of people in a particular group",
+    "example": "1. The company reduced its headcount to cut operating costs.",
+    "exampleZh": "1. 公司為了削減營運成本而裁減人力。",
+    "id": "2bc260289f3a"
+  },
+  {
+    "word": "chemical"
+  },
+  {
+    "word": "inconvenience",
+    "pos": "n.",
+    "meaning": "不便；麻煩",
+    "phonetic": "/ˌɪnkənˈviːniəns/",
+    "definition": "trouble or difficulty caused to someone",
+    "example": "1. We apologize for any inconvenience caused by the repairs.",
+    "exampleZh": "1. 對於維修造成的任何不便，我們深表歉意。",
+    "id": "337fb84132b6"
+  },
+  {
+    "word": "timeline",
+    "pos": "n.",
+    "meaning": "時程表；時間軸",
+    "phonetic": "/ˈtaɪmlaɪn/",
+    "definition": "sequence of related events arranged in chronological order and displayed along a line (usually drawn left",
+    "example": "1. The project manager adjusted the timeline for completion.",
+    "exampleZh": "1. 專案經理調整了完工時程表。",
+    "id": "a63c23c625c1"
+  },
+  {
+    "word": "downtime",
+    "pos": "n.",
+    "meaning": "停機時間；休息時間",
+    "phonetic": "/ˈdauntaim/",
+    "definition": "period of time when something (as a machine or factory) is not operating (especially as a result of",
+    "example": "1. The factory’s downtime resulted in decreased production levels.",
+    "exampleZh": "1. 工廠的停機時間導致產量下降。",
+    "id": "11d5664a22fb"
+  },
+  {
+    "word": "stance"
+  },
+  {
+    "word": "amendment",
+    "pos": "n.",
+    "meaning": "修訂；修正案",
+    "phonetic": "/əˈmendmənt/",
+    "definition": "the act of amending or correcting",
+    "example": "1. A major amendment was introduced to the legislation.",
+    "exampleZh": "1. 對該立法引入了一項重大修訂。",
+    "id": "d9a9be05992e"
+  },
+  {
+    "word": "characteristic"
+  },
+  {
+    "word": "hurdle"
+  },
+  {
+    "word": "broker",
+    "pos": "n./v.",
+    "meaning": "經紀人；仲介 （v.）安排；斡旋",
+    "phonetic": "/ˈbrəukə/",
+    "definition": "act as a broker",
+    "example": "1. The broker negotiated the sale of company stocks.",
+    "exampleZh": "1. 經紀人協商了公司股票的銷售。",
+    "id": "2eec483c214c"
+  },
+  {
+    "word": "span"
+  },
+  {
+    "word": "remarkable"
+  },
+  {
+    "word": "artificial"
+  },
+  {
+    "word": "intensive"
+  },
+  {
+    "word": "compatible"
+  },
+  {
+    "word": "ambitious"
+  },
+  {
+    "word": "consecutive"
+  },
+  {
+    "word": "blue-collar",
+    "pos": "adj.",
+    "meaning": "藍領的",
+    "phonetic": "/ˌbluːˈkɑːlər/",
+    "definition": "relating to manual or industrial work",
+    "example": "1. The factory’s blue-collar workers went on strike today.",
+    "exampleZh": "1. 工廠的藍領工人今天舉行罷工。",
+    "id": "96bcfb7991c7"
+  },
+  {
+    "word": "intense"
+  },
+  {
+    "word": "controversial"
+  },
+  {
+    "word": "economical"
+  },
+  {
+    "word": "beneficial"
+  },
+  {
+    "word": "dedicated",
+    "pos": "adj.",
+    "meaning": "盡心盡力的；專用的",
+    "phonetic": "/ˈdedikeitid/",
+    "definition": "devoted to a cause or ideal or purpose",
+    "example": "1. The team members are dedicated and hardworking.",
+    "exampleZh": "1. 團隊成員盡心盡力且工作勤奮。",
+    "id": "c461404029ce"
+  },
+  {
+    "word": "insufficient",
+    "pos": "adj.",
+    "meaning": "不足的",
+    "phonetic": "/.insəˈfiʃənt/",
+    "definition": "of a quantity not able to fulfill a need or requirement",
+    "example": "1. There was insufficient evidence to support the claim.",
+    "exampleZh": "1. 沒有足夠的證據支持該主張。",
+    "id": "b761ba0fcca9"
+  },
+  {
+    "word": "understaffed",
+    "pos": "adj.",
+    "meaning": "人力不足的",
+    "phonetic": "/.ʌndəˈstæft/",
+    "definition": "inadequate in number of workers or assistants etc.",
+    "example": "1. The hospital was severely understaffed during flu season.",
+    "exampleZh": "1. 在流感季期間，醫院人力嚴重不足。",
+    "id": "3b088d2ab95f"
+  },
+  {
+    "word": "authentic"
+  },
+  {
+    "word": "concrete"
+  },
+  {
+    "word": "durable"
+  },
+  {
+    "word": "tremendous"
+  },
+  {
+    "word": "apprehensive",
+    "pos": "adj.",
+    "meaning": "憂慮的；不安的",
+    "phonetic": "/.æpriˈhensiv/",
+    "definition": "quick to understand",
+    "example": "1. The manager was apprehensive about the merger proposal.",
+    "exampleZh": "1. 經理對合併提案感到憂慮。",
+    "id": "9a8d0c6333c7"
+  },
+  {
+    "word": "primarily",
+    "pos": "adv.",
+    "meaning": "主要地",
+    "phonetic": "/ˈpraimərili/",
+    "definition": "of primary import",
+    "example": "1. I moved primarily because I wanted to be closer to family.",
+    "exampleZh": "1. 我搬家主要是因為我想離家人更近。",
+    "id": "2fb93d09fa41"
+  },
+  {
+    "word": "onsite",
+    "pos": "adv./adj.",
+    "meaning": "在現場；就地（adj.）現場的；就地的",
+    "phonetic": "/ˈɑːnsaɪt/",
+    "definition": "at the place where work or an activity is done",
+    "example": "1. The training program will be conducted onsite tomorrow.",
+    "exampleZh": "1. 訓練課程明天將在現場進行。",
+    "id": "17e726377494"
+  },
+  {
+    "word": "explore"
+  },
+  {
+    "word": "convey"
+  },
+  {
+    "word": "reinforce"
+  },
+  {
+    "word": "dismiss"
+  },
+  {
+    "word": "collaborate",
+    "pos": "v.",
+    "meaning": "合作",
+    "phonetic": "/kəˈlæbəreit/",
+    "definition": "work together on a common enterprise of project",
+    "example": "1. We collaborate with our partners to develop new products.",
+    "exampleZh": "1. 我們與合作夥伴共同開發新產品。",
+    "id": "2860269198fa"
+  },
+  {
+    "word": "redeem",
+    "pos": "v.",
+    "meaning": "兌換；贖回",
+    "phonetic": "/riˈdiːm/",
+    "definition": "restore the honor or worth of",
+    "example": "1. Customers can redeem their points for store merchandise.",
+    "exampleZh": "1. 顧客可以用點數兌換商店商品。",
+    "id": "a0aaf79ae77e"
+  },
+  {
+    "word": "validate",
+    "pos": "v.",
+    "meaning": "驗證；使……生效",
+    "phonetic": "/ˈvælideit/",
+    "definition": "declare or make legally valid",
+    "example": "1. The manager validated the expense report before approval.",
+    "exampleZh": "1. 經理在核准前先驗證了費用報告。",
+    "id": "1dac6867f43e"
+  },
+  {
+    "word": "discard"
+  },
+  {
+    "word": "adopt"
+  },
+  {
+    "word": "prioritize",
+    "pos": "v.",
+    "meaning": "排定優先順序",
+    "phonetic": "/ˈpraiəritaiz/",
+    "definition": "assign a priority to",
+    "example": "1. The manager must prioritize tasks for the team.",
+    "exampleZh": "1. 經理必須為團隊安排任務的優先順序。",
+    "id": "a693de68222b"
+  },
+  {
+    "word": "evolve"
+  },
+  {
+    "word": "relocate",
+    "pos": "v.",
+    "meaning": "搬遷",
+    "phonetic": "/riːˈləukeit/",
+    "definition": "become established in a new location",
+    "example": "1. The firm was forced to relocate from New York to Boston.",
+    "exampleZh": "1. 那家公司被迫從紐約搬遷至波士頓。",
+    "id": "9a8fc7bac7eb"
+  },
+  {
+    "word": "relieve"
+  },
+  {
+    "word": "renew"
+  },
+  {
+    "word": "prescribe"
+  },
+  {
+    "word": "thrive"
+  },
+  {
+    "word": "streamline",
+    "pos": "v.",
+    "meaning": "簡化；精簡流程",
+    "phonetic": "/ˈstriːmlain/",
+    "definition": "contour economically or efficiently",
+    "example": "1. We need to streamline the process to improve efficiency.",
+    "exampleZh": "1. 我們需要簡化流程以提高效率。",
+    "id": "da74e29a6eeb"
+  },
+  {
+    "word": "broaden"
+  },
+  {
+    "word": "underperform",
+    "pos": "v.",
+    "meaning": "表現不佳；表現差於預期",
+    "phonetic": "/,ʌndəpəˈfɔːm/",
+    "definition": "perform less well or with less success than expected",
+    "example": "1. The new product line continues to underperform expectations.",
+    "exampleZh": "1. 新產品線的表現持續低於預期。",
+    "id": "6c2e677e1fe9"
+  },
+  {
+    "word": "retrieve"
+  },
+  {
+    "word": "benchmark",
+    "pos": "n.",
+    "meaning": "基準",
+    "phonetic": "/ˈbentʃmɑːrk/",
+    "definition": "a standard used for comparison",
+    "example": "1. This company is the benchmark for quality in the industry.",
+    "exampleZh": "1. 這家公司是業界品質的標竿。",
+    "id": "3ebc62363b29"
+  },
+  {
+    "word": "workflow",
+    "pos": "n.",
+    "meaning": "工作流程；作業流程",
+    "phonetic": "/ˈwɜːkfləʊ/",
+    "definition": "progress (or rate of progress) in work being done",
+    "example": "1. The new software improved our company’s workflow significantly.",
+    "exampleZh": "1. 新的軟體大幅改善了我們公司的工作流程。",
+    "id": "cff5b7e92244"
+  },
+  {
+    "word": "workstation",
+    "pos": "n.",
+    "meaning": "工作站",
+    "phonetic": "/ˈwəːk.steiʃən/",
+    "definition": "desktop digital computer that is conventionally considered to be more powerful than a microcomputer",
+    "example": "1. The manager organized files at her new workstation.",
+    "exampleZh": "1. 經理在她的新工作站整理檔案。",
+    "id": "13549a160137"
+  },
+  {
+    "word": "premises",
+    "pos": "n.",
+    "meaning": "場所；場地",
+    "phonetic": "/ˈpremɪsɪz/",
+    "definition": "the buildings and land used by a business",
+    "example": "1. The company is relocating to new premises next month.",
+    "exampleZh": "1. 公司下個月將搬遷到新址。",
+    "id": "482d88a24383"
+  },
+  {
+    "word": "chairperson/chair/chairman/chairwoman"
+  },
+  {
+    "word": "emission"
+  },
+  {
+    "word": "attire",
+    "pos": "n.",
+    "meaning": "服裝",
+    "phonetic": "/əˈtaiə/",
+    "definition": "clothing of a distinctive style or for a particular occasion",
+    "example": "1. The employees should dress in formal attire.",
+    "exampleZh": "1. 員工應該穿著正式服裝。",
+    "id": "5fd33697a9b0"
+  },
+  {
+    "word": "recognition"
+  },
+  {
+    "word": "conjunction",
+    "pos": "n.",
+    "meaning": "結合；連接詞；交會處",
+    "phonetic": "/kənˈdʒʌŋkʃən/",
+    "definition": "an uninflected function word that serves to conjoin words or phrases or clauses or sentences",
+    "example": "1. The meeting was postponed in conjunction with the budget review.",
+    "exampleZh": "1. 會議與預算審查一併延期。",
+    "id": "7da468faf539"
+  },
+  {
+    "word": "commodity"
+  },
+  {
+    "word": "compliance"
+  },
+  {
+    "word": "connectivity",
+    "pos": "n.",
+    "meaning": "連線；連接",
+    "phonetic": "/kənekˈtiviti/",
+    "definition": "the property of being connected or the degree to which something has connections",
+    "example": "1. Poor connectivity disrupted the international video conference call.",
+    "exampleZh": "1. 網路連線不良導致國際視訊會議中斷。",
+    "id": "7000afc2d937"
+  },
+  {
+    "word": "blueprint",
+    "pos": "n.",
+    "meaning": "藍圖",
+    "phonetic": "/ˈbluːˈprint/",
+    "definition": "something intended as a guide for making something else",
+    "example": "1. The architect submitted the final blueprint for approval.",
+    "exampleZh": "1. 建築師提交了最終的藍圖以供審批。",
+    "id": "c1fd0bf4bd65"
+  },
+  {
+    "word": "profitability",
+    "pos": "n.",
+    "meaning": "獲利能力",
+    "phonetic": "/.prɒfitəˈbiliti/",
+    "definition": "the quality of affording gain or benefit or profit",
+    "example": "1. The company’s profitability increased by twenty percent annually.",
+    "exampleZh": "1. 該公司的獲利能力每年增長百分之二十。",
+    "id": "d0fc344931c5"
+  },
+  {
+    "word": "credentials",
+    "pos": "n.",
+    "meaning": "資歷；資格證明",
+    "phonetic": "/krəˈdenʃlz/",
+    "definition": "documents or qualities that prove someone is suitable",
+    "example": "1. The applicant’s impressive credentials made her the ideal candidate.",
+    "exampleZh": "1. 申請人令人印象深刻的資歷讓她成為理想人選。",
+    "id": "8a632e62209b"
+  },
+  {
+    "word": "cofounder",
+    "pos": "n.",
+    "meaning": "共同創辦人",
+    "phonetic": "/kəuˈfaundə/",
+    "definition": "one of a group of founders",
+    "example": "1. The cofounder resigned from his position last month.",
+    "exampleZh": "1. 這位共同創辦人上個月辭去了他的職位。",
+    "id": "2217ed024959"
+  },
+  {
+    "word": "boardroom",
+    "pos": "n.",
+    "meaning": "董事會會議室",
+    "phonetic": "/ˈbɒːdrum/",
+    "definition": "room where a committee meets (such as the board of directors of a company)",
+    "example": "1. Please prepare the boardroom for the upcoming meeting.",
+    "exampleZh": "1. 請為接下來的會議準備會議室。",
+    "id": "c64dfd272fa8"
+  },
+  {
+    "word": "stakeholder",
+    "pos": "n.",
+    "meaning": "利害關係人",
+    "phonetic": "/ˈsteikhəuldə/",
+    "definition": "someone entrusted to hold the stakes for two or more persons betting against one another",
+    "example": "1. The stakeholders met to discuss the merger proposal.",
+    "exampleZh": "1. 利害關係人召開會議討論合併提案。",
+    "id": "f1732163f1fc"
+  },
+  {
+    "word": "rollout",
+    "pos": "n.",
+    "meaning": "推出；舖展",
+    "phonetic": "/ˈroʊlaʊt/",
+    "definition": "the introduction of a new product or service",
+    "example": "1. The company is planning a nationwide rollout of its services.",
+    "exampleZh": "1. 該公司正計劃在全國範圍內推出其服務。",
+    "id": "dbc3e8215616"
+  },
+  {
+    "word": "portfolio"
+  },
+  {
+    "word": "justification",
+    "pos": "n.",
+    "meaning": "正當理由",
+    "phonetic": "/.dʒʌstifiˈkeiʃən/",
+    "definition": "something (such as a fact or circumstance) that shows an action to be reasonable or necessary",
+    "example": "1. He provided justification for his actions.",
+    "exampleZh": "1. 他為自己的行為提出了正當的理由。",
+    "id": "62ef5c1d2657"
+  },
+  {
+    "word": "hierarchy"
+  },
+  {
+    "word": "integrity"
+  },
+  {
+    "word": "misconception",
+    "pos": "n.",
+    "meaning": "誤解；錯誤觀念",
+    "phonetic": "/.miskənˈsepʃən/",
+    "definition": "an incorrect conception",
+    "example": "1. It’sa common misconception that remote work reduces productivity.",
+    "exampleZh": "1. 遠距工作會降低生產力，這是個常見的誤解。",
+    "id": "2ad48e9a61d9"
+  },
+  {
+    "word": "ecosystem"
+  },
+  {
+    "word": "affiliation",
+    "pos": "n.",
+    "meaning": "隸屬；從屬關係；聯繫",
+    "phonetic": "/ə.filiˈeiʃən/",
+    "definition": "social or business relationship",
+    "example": "1. The company’s affiliation with Microsoft boosted its credibility.",
+    "exampleZh": "1. 該公司與微軟的合作關係提升了其信譽。",
+    "id": "858bb227b731"
+  },
+  {
+    "word": "vision"
+  },
+  {
+    "word": "credibility"
+  },
+  {
+    "word": "constraint"
+  },
+  {
+    "word": "logistics",
+    "pos": "n.",
+    "meaning": "物流；後勤",
+    "phonetic": "/ləuˈdʒistiks/",
+    "definition": "handling an operation that involves providing labor and materials be supplied as needed",
+    "example": "1. The logistics department coordinates all delivery operations.",
+    "exampleZh": "1. 物流部門負責協調所有配送作業。",
+    "id": "20c616c70d29"
+  },
+  {
+    "word": "analytics",
+    "pos": "n.",
+    "meaning": "分析；分析方法",
+    "phonetic": "/.ænəˈlitiks/",
+    "definition": "The science of analysis.",
+    "example": "1. The marketing team relies heavily on customer analytics data.",
+    "exampleZh": "1. 行銷團隊高度依賴客戶分析數據。",
+    "id": "452f1a3798cf"
+  },
+  {
+    "word": "discretion",
+    "pos": "n.",
+    "meaning": "決定權；慎重",
+    "phonetic": "/disˈkreʃən/",
+    "definition": "freedom to act or judge on one's own",
+    "example": "1. The manager used her discretion in approving overtime.",
+    "exampleZh": "1. 經理運用她的決定權來批准加班。",
+    "id": "a2e6d6201c73"
+  },
+  {
+    "word": "allegation",
+    "pos": "n.",
+    "meaning": "指控；指稱",
+    "phonetic": "/.æliˈgeiʃən/",
+    "definition": "(law) a formal accusation against somebody (often in a court of law)",
+    "example": "1. They denied all allegations of financial misconduct.",
+    "exampleZh": "1. 他們否認所有關於財務不當行為的指控。",
+    "id": "5e746b1092df"
+  },
+  {
+    "word": "accumulation"
+  },
+  {
+    "word": "retention",
+    "pos": "n.",
+    "meaning": "留任；保持；保留",
+    "phonetic": "/riˈtenʃən/",
+    "definition": "the act of retaining something",
+    "example": "1. The company improved employee retention through competitive benefits packages.",
+    "exampleZh": "1. 公司透過具競爭力的福利方案提高了員工留任率。",
+    "id": "28e0e855e2d0"
+  },
+  {
+    "word": "clientele",
+    "pos": "n.",
+    "meaning": "顧客群",
+    "phonetic": "/.kliːɒnˈtel/",
+    "definition": "customers collectively",
+    "example": "1. The restaurant’s clientele consists mainly of business professionals.",
+    "exampleZh": "1. 這家餐廳的顧客群主要是商務上的專業人士。",
+    "id": "80fdc314aabc"
+  },
+  {
+    "word": "dividend"
+  },
+  {
+    "word": "discrepancy",
+    "pos": "n.",
+    "meaning": "差異；不一致",
+    "phonetic": "/disˈkrepənsi/",
+    "definition": "difference between conflicting facts or claims or opinions",
+    "example": "1. There was a discrepancy in the quarterly financial reports.",
+    "exampleZh": "1. 季度財務報告中出現了差異。",
+    "id": "3f05df947ace"
+  },
+  {
+    "word": "equity"
+  },
+  {
+    "word": "proceeds",
+    "pos": "n.",
+    "meaning": "(特定活動的)收益",
+    "phonetic": "/ˈprəusiːdz/",
+    "definition": "the income or profit arising from such transactions as the sale of land or other property",
+    "example": "1. The proceeds from the charity event will go to a good cause.",
+    "exampleZh": "1. 慈善活動的收益將用於一項公益事業。",
+    "id": "1571ee80bbfc"
+  },
+  {
+    "word": "onboarding",
+    "pos": "n.",
+    "meaning": "入職培訓",
+    "phonetic": "/ˈɑːnbɔːrdɪŋ/",
+    "definition": "the process of introducing a new employee to a company",
+    "example": "1. The company’s onboarding process takes three full days.",
+    "exampleZh": "1. 公司的入職流程需要整整三天。",
+    "id": "2fdb6d3b9583"
+  },
+  {
+    "word": "recession"
+  },
+  {
+    "word": "provision"
+  },
+  {
+    "word": "expertise"
+  },
+  {
+    "word": "functionality",
+    "pos": "n.",
+    "meaning": "功能；實用性",
+    "phonetic": "/,fʌŋkəʃəˈnæliti/",
+    "definition": "capable of serving a purpose well",
+    "example": "1. The new software greatly improved the company’s operational functionality.",
+    "exampleZh": "1. 這個新軟體大幅改善了公司的營運功能。",
+    "id": "070b5984f9a1"
+  },
+  {
+    "word": "expenditure"
+  },
+  {
+    "word": "globalization",
+    "pos": "n.",
+    "meaning": "全球化",
+    "phonetic": "/,^ləjbəlaiˈzeiʃən;-liˈz-/",
+    "definition": "growth to a global or worldwide scale",
+    "example": "1. Globalization has transformed how companies conduct international business operations.",
+    "exampleZh": "1. 全球化改變了企業進行國際商業營運的方式。",
+    "id": "6564690c8ee0"
+  },
+  {
+    "word": "infrastructure"
+  },
+  {
+    "word": "procurement",
+    "pos": "n.",
+    "meaning": "採購；取得",
+    "phonetic": "/prəˈkjuəmənt/",
+    "definition": "the act of getting possession of something",
+    "example": "1. The procurement department negotiated better prices with suppliers.",
+    "exampleZh": "1. 採購部門與供應商協商取得了更優惠的價格。",
+    "id": "1ffc8c0284e1"
+  },
+  {
+    "word": "legislation"
+  },
+  {
+    "word": "conglomerate",
+    "pos": "n.",
+    "meaning": "企業集團；聯合大型企業",
+    "phonetic": "/kənˈglɒmərit/",
+    "definition": "group of diverse companies under common ownership and run as a single organization",
+    "example": "1. The conglomerate acquired three smaller manufacturing companies.",
+    "exampleZh": "1. 這家企業集團收購了三家較小的製造公司。",
+    "id": "26668066150b"
+  },
+  {
+    "word": "prototype"
+  },
+  {
+    "word": "sustainability",
+    "pos": "n.",
+    "meaning": "永續性",
+    "phonetic": "/sə,stenəˈbɪlɪti/",
+    "definition": "the property of being sustainable",
+    "example": "1. The company prioritizes sustainability in its manufacturing processes.",
+    "exampleZh": "1. 該公司在製造過程中優先考慮永續性。",
+    "id": "0d827dea7eae"
+  },
+  {
+    "word": "oversight",
+    "pos": "n.",
+    "meaning": "疏忽；監督",
+    "phonetic": "/ˈəuvəsait/",
+    "definition": "an unintentional omission resulting from failure to notice something",
+    "example": "1. Due to an oversight, the contract wasn’t properly signed.",
+    "exampleZh": "1. 由於疏忽，合約未被妥善簽署。",
+    "id": "25b42ec54b8c"
+  },
+  {
+    "word": "entitlement",
+    "pos": "n.",
+    "meaning": "應得權利",
+    "phonetic": "/ɪnˈtaɪtlmənt/",
+    "definition": "the right to receive something",
+    "example": "1. Employees have an entitlement to paid leave.",
+    "exampleZh": "1. 員工有權享有有薪休假。",
+    "id": "40514581d465"
+  },
+  {
+    "word": "cybersecurity",
+    "pos": "n.",
+    "meaning": "資訊安全",
+    "phonetic": "/ˌsaɪbərsɪˈkjʊrəti/",
+    "definition": "protection of computer systems and data from attack",
+    "example": "1. The company invested in cybersecurity to protect customer data.",
+    "exampleZh": "1. 該公司投資資訊安全以保護客戶資料。",
+    "id": "e8dc1f768d65"
+  },
+  {
+    "word": "ledger",
+    "pos": "n.",
+    "meaning": "總帳",
+    "phonetic": "/ˈledʒə/",
+    "definition": "record in which commercial accounts are recorded",
+    "example": "1. The accountant updated the company’s financial ledger daily.",
+    "exampleZh": "1. 會計每天更新公司的財務帳簿。",
+    "id": "29c027d14499"
+  },
+  {
+    "word": "jurisdiction",
+    "pos": "n.",
+    "meaning": "管轄權",
+    "phonetic": "/.dʒuərisˈdikʃən/",
+    "definition": "in law; the territory within which power can be exercised",
+    "example": "1. The court lacks jurisdiction over international business matters.",
+    "exampleZh": "1. 法院對國際商業事務沒有管轄權。",
+    "id": "02c009a88d28"
+  },
+  {
+    "word": "insight"
+  },
+  {
+    "word": "synergy",
+    "pos": "n.",
+    "meaning": "協同效應",
+    "phonetic": "/ˈsinədʒi/",
+    "definition": "the working together of two things (muscles or drugs for example) to produce an effect greater than the sum",
+    "example": "1. The merger created powerful synergy between the companies.",
+    "exampleZh": "1. 這次合併為兩家公司創造了強大的協同效應。",
+    "id": "39ddff38f517"
+  },
+  {
+    "word": "proficiency"
+  },
+  {
+    "word": "metric",
+    "pos": "n./adj.",
+    "meaning": "度量標準 （adj.）公制的",
+    "phonetic": "/ˈmetrik/",
+    "definition": "based on the meter as a standard of measurement",
+    "example": "1. The company’s key metric for success is customer satisfaction.",
+    "exampleZh": "1. 公司衡量成功的關鍵指標是顧客滿意度。",
+    "id": "4e0fcc2604ba"
+  },
+  {
+    "word": "demographic",
+    "pos": "n./adj.",
+    "meaning": "群體；人口統計學 （adj.）人口統計的",
+    "phonetic": "/.deməˈgræfik/",
+    "definition": "statistic characterizing human populations (or segments of human populations broken down by age or sex or",
+    "example": "1. The company’s products target the young professional demographic.",
+    "exampleZh": "1. 公司產品鎖定年輕專業人士的這個客群。",
+    "id": "873ffe597a88"
+  },
+  {
+    "word": "collateral",
+    "pos": "n./adj.",
+    "meaning": "抵押品；擔保品 （adj.）附帶的",
+    "phonetic": "/kəˈlætərəl/",
+    "definition": "security pledged for the repayment of a loan",
+    "example": "1. The bank required collateral before approving the loan.",
+    "exampleZh": "1. 銀行在批准貸款前要求提供抵押品。",
+    "id": "3dc37fd574b6"
+  },
+  {
+    "word": "subordinate"
+  },
+  {
+    "word": "outreach",
+    "pos": "n./adj./v.",
+    "meaning": "外展服務 （adj.）外展服務的 （v.）拓展",
+    "phonetic": "/autˈriːtʃ/",
+    "definition": "the act of reaching out",
+    "example": "1. The company’s outreach program helped attract potential new clients.",
+    "exampleZh": "1. 公司的推廣計劃有助於吸引潛在新客戶。",
+    "id": "7057db9321b3"
+  },
+  {
+    "word": "crash"
+  },
+  {
+    "word": "cease"
+  },
+  {
+    "word": "breach",
+    "pos": "n./v.",
+    "meaning": "違反（協議、法律）",
+    "phonetic": "/briːtʃ/",
+    "definition": "failure to perform some promised act or obligation",
+    "example": "1. The employee’s breach of contract resulted in termination.",
+    "exampleZh": "1. 該員工違反合約導致被解僱。",
+    "id": "cd19be77fa4e"
+  },
+  {
+    "word": "syndicate",
+    "pos": "n./v.",
+    "meaning": "聯合組織；企業聯合體（v.）使聯合",
+    "phonetic": "/ˈsɪndɪkət/",
+    "definition": "a group of people or companies that join for a business purpose",
+    "example": "1. The media syndicate distributed content to various news outlets.",
+    "exampleZh": "1. 媒體聯盟將內容分發給各個新聞機構。",
+    "id": "713f1d6f223a"
+  },
+  {
+    "word": "accountable"
+  },
+  {
+    "word": "influential"
+  },
+  {
+    "word": "feasible"
+  },
+  {
+    "word": "plausible",
+    "pos": "adj.",
+    "meaning": "看似合理的",
+    "phonetic": "/ˈplɒːzibl/",
+    "definition": "apparently reasonable and valid, and truthful",
+    "example": "1. He tried to come up with a plausible excuse.",
+    "exampleZh": "1. 他試圖想出一個看似合理的藉口。",
+    "id": "645d659c38c1"
+  },
+  {
+    "word": "white-collar",
+    "pos": "adj.",
+    "meaning": "白領的",
+    "phonetic": "/ˈwaitˈkɔlə/",
+    "definition": "of or designating salaried professional or clerical work or workers",
+    "example": "1. The white-collar employees gathered for their annual meeting.",
+    "exampleZh": "1. 白領員工齊聚一堂參加他們的年度會議。",
+    "id": "9b324424899b"
+  },
+  {
+    "word": "conducive",
+    "pos": "adj.",
+    "meaning": "有助於；有利於",
+    "phonetic": "/kənˈdjuːsiv/",
+    "definition": "tending to bring about",
+    "example": "1. The office environment was conducive to increased productivity.",
+    "exampleZh": "1. 辦公室環境有助於提高生產力。",
+    "id": "1078918131ad"
+  },
+  {
+    "word": "inevitable"
+  },
+  {
+    "word": "viable"
+  },
+  {
+    "word": "foreseeable",
+    "pos": "adj.",
+    "meaning": "可預見的",
+    "phonetic": "/ˈfɒːˈsiːəbl/",
+    "definition": "capable of being anticipated",
+    "example": "1. The company’s profits will increase in the foreseeable future.",
+    "exampleZh": "1. 公司的利潤在可預見的未來將會增加。",
+    "id": "390e882e8826"
+  },
+  {
+    "word": "renowned"
+  },
+  {
+    "word": "drastic"
+  },
+  {
+    "word": "accessibility",
+    "pos": "n.",
+    "meaning": "(交通)可達性；可取得性；無障礙性",
+    "phonetic": "/ək.sesəˈbiliti/",
+    "definition": "the quality of being at hand when needed",
+    "example": "1. The hotel’s accessibility makes it popular among business travelers.",
+    "exampleZh": "1. 這家飯店的交通便利性使它在商務旅客中很受歡迎。",
+    "id": "57efb4b0c059"
+  },
+  {
+    "word": "complementary",
+    "pos": "adj.",
+    "meaning": "互補的",
+    "phonetic": "/.kɒmpliˈmentəri/",
+    "definition": "of words or propositions so related that each is the negation of the other",
+    "example": "1. The two departments serve complementary roles in our organization.",
+    "exampleZh": "1. 這兩個部門在我們組織中扮演互補的角色。",
+    "id": "a9ce4037411d"
+  },
+  {
+    "word": "prevalent",
+    "pos": "adj.",
+    "meaning": "盛行的；普遍的",
+    "phonetic": "/ˈprevələnt/",
+    "definition": "most frequent or common",
+    "example": "1. Remote work is prevalent in modern tech companies.",
+    "exampleZh": "1. 遠距工作在現代科技公司中很普遍。",
+    "id": "2fb5e9be2da0"
+  },
+  {
+    "word": "diversified",
+    "pos": "adj.",
+    "meaning": "多樣化的",
+    "phonetic": "/daiˈvəːsifaid/",
+    "definition": "having variety of character or form or components",
+    "example": "1. A diversified product line helps reduce risk.",
+    "exampleZh": "1. 多樣化的產品線有助於降低風險。",
+    "id": "32d07697be11"
+  },
+  {
+    "word": "intuitive",
+    "pos": "adj.",
+    "meaning": "直覺的；本能的",
+    "phonetic": "/inˈtjuːitiv/",
+    "definition": "spontaneously derived from or prompted by a natural tendency",
+    "example": "1. The software’s intuitive design made employee training unnecessary.",
+    "exampleZh": "1. 這個軟體的直覺式設計讓員工培訓變得不必要。",
+    "id": "0b52bafa3cff"
+  },
+  {
+    "word": "prominent"
+  },
+  {
+    "word": "imperative"
+  },
+  {
+    "word": "dormant",
+    "pos": "adj.",
+    "meaning": "休眠的；暫停活動的",
+    "phonetic": "/ˈdɒːmənt/",
+    "definition": "in a condition of biological rest or suspended animation",
+    "example": "1. The dormant business account has not been used since 2019.",
+    "exampleZh": "1. 這個休眠的商業帳戶自2019年以來就未被使用。",
+    "id": "937c19dc397c"
+  },
+  {
+    "word": "established",
+    "pos": "adj.",
+    "meaning": "有聲望的",
+    "phonetic": "/isˈtæbliʃt/",
+    "definition": "brought about or set up or accepted",
+    "example": "1. She has become an established entrepreneur.",
+    "exampleZh": "1. 她成為了一名頗有聲望的企業家。",
+    "id": "bd775eaa110b"
+  },
+  {
+    "word": "prestigious",
+    "pos": "adj.",
+    "meaning": "具聲望的",
+    "phonetic": "/preˈstidʒiəs/",
+    "definition": "exerting influence by reason of high status or prestige",
+    "example": "1. The university has a prestigious business program.",
+    "exampleZh": "1. 這所大學有聲譽卓著的商管學程。",
+    "id": "2d01e33fd314"
+  },
+  {
+    "word": "sophisticated"
+  },
+  {
+    "word": "exceptional"
+  },
+  {
+    "word": "managerial",
+    "pos": "adj.",
+    "meaning": "管理的",
+    "phonetic": "/.mænəˈdʒiəriəl/",
+    "definition": "of or relating to the function or responsibility or activity of management",
+    "example": "1. She was promoted to a managerial position.",
+    "exampleZh": "1. 她被晉升到管理職位。",
+    "id": "365e524588ff"
+  },
+  {
+    "word": "legitimate"
+  },
+  {
+    "word": "arbitrary",
+    "pos": "adj.",
+    "meaning": "任意的；無根據的；武斷的",
+    "phonetic": "/ˈɑːbitrəri/",
+    "definition": "based on or subject to individual discretion or preference or sometimes impulse or caprice",
+    "example": "1. The company set arbitrary deadlines for the project.",
+    "exampleZh": "1. 公司隨意設定了此專案的截止日期。",
+    "id": "36c610184e11"
+  },
+  {
+    "word": "underlying"
+  },
+  {
+    "word": "definitive"
+  },
+  {
+    "word": "contractual",
+    "pos": "adj.",
+    "meaning": "合約的；契約的",
+    "phonetic": "/kənˈtræktʃuəl/",
+    "definition": "relating to or part of a binding legal agreement",
+    "example": "1. The company failed to meet its contractual obligations.",
+    "exampleZh": "1. 該公司未能履行其合約義務。",
+    "id": "33ee39974039"
+  },
+  {
+    "word": "invaluable"
+  },
+  {
+    "word": "adverse"
+  },
+  {
+    "word": "deficient",
+    "pos": "adj.",
+    "meaning": "缺乏的；有缺陷的",
+    "phonetic": "/diˈfiʃənt/",
+    "definition": "inadequate in amount or degree",
+    "example": "1. The company’s budget was deficient by $50,000.",
+    "exampleZh": "1. 公司的預算短缺了 5 萬美元。",
+    "id": "c9f130307a09"
+  },
+  {
+    "word": "negligent",
+    "pos": "adj.",
+    "meaning": "疏忽的；怠忽職守的",
+    "phonetic": "/ˈneglidʒənt/",
+    "definition": "characterized by neglect and undue lack of concern",
+    "example": "1. The manager was negligent in maintaining safety protocols.",
+    "exampleZh": "1. 該經理疏於維護安全規程。",
+    "id": "3d4dd28e6216"
+  },
+  {
+    "word": "pragmatic",
+    "pos": "adj.",
+    "meaning": "務實的；實際的",
+    "phonetic": "/præ^ˈmætik/",
+    "definition": "of or concerning the theory of pragmatism",
+    "example": "1. She took a pragmatic approach to solving the problem.",
+    "exampleZh": "1. 她以務實的方式解決問題。",
+    "id": "20fce341fb1b"
+  },
+  {
+    "word": "strategic"
+  },
+  {
+    "word": "provisional"
+  },
+  {
+    "word": "insightful",
+    "pos": "adj.",
+    "meaning": "有洞察力的；有深度的",
+    "phonetic": "/ˈin.saitful/",
+    "definition": "exhibiting insight or clear and deep perception",
+    "example": "1. The manager’s insightful analysis improved our marketing strategy.",
+    "exampleZh": "1. 經理富有洞察力的分析改善了我們的行銷策略。",
+    "id": "9b458c7177bb"
+  },
+  {
+    "word": "preemptive",
+    "pos": "adj.",
+    "meaning": "預防性的；先發制人的",
+    "phonetic": "/priːˈemptiv/",
+    "definition": "designed or having the power to deter or prevent an anticipated situation or occurrence",
+    "example": "1. Preemptive action protected the company from security breaches.",
+    "exampleZh": "1. 預防性措施保護了公司免於安全漏洞。",
+    "id": "a784f76e5c49"
+  },
+  {
+    "word": "ergonomic",
+    "pos": "adj.",
+    "meaning": "符合人體工學的",
+    "phonetic": "/,\\\\ː^əjˈnɔmik/",
+    "definition": "of or relating to ergonomics",
+    "example": "1. The new ergonomic office chairs improved employee productivity significantly.",
+    "exampleZh": "1. 新的人體工學辦公椅大幅提升了員工的生產力。",
+    "id": "9c0c26137da8"
+  },
+  {
+    "word": "intermittent",
+    "pos": "adj.",
+    "meaning": "斷斷續續的；間歇性的",
+    "phonetic": "/.intəˈmitənt/",
+    "definition": "stopping and starting at irregular intervals",
+    "example": "1. The factory’s intermittent power outages disrupted production.",
+    "exampleZh": "1. 工廠斷斷續續的停電幹擾了生產。",
+    "id": "e64c908671bf"
+  },
+  {
+    "word": "unprecedented"
+  },
+  {
+    "word": "pharmaceutical",
+    "pos": "adj.",
+    "meaning": "製藥的",
+    "phonetic": "/,fɑːməˈsjuːtikəl/",
+    "definition": "of or relating to pharmacy or pharmacists",
+    "example": "1. The pharmaceutical industry plays a crucial role in healthcare.",
+    "exampleZh": "1. 製藥業在醫療保健中扮演關鍵的角色。",
+    "id": "2547627f8a48"
+  },
+  {
+    "word": "state-of-the-art",
+    "pos": "adj.",
+    "meaning": "最先進的",
+    "phonetic": "/ˌsteɪtəvðiˈɑːrt/",
+    "definition": "using the most modern methods or technology",
+    "example": "1. The new technology is state-of-the-art.",
+    "exampleZh": "1. 這項新技術是最先進的。",
+    "id": "6c0e3c8aec77"
+  },
+  {
+    "word": "foremost",
+    "pos": "adj.",
+    "meaning": "最重要的",
+    "phonetic": "/ˈfəuməust/",
+    "definition": "preceding all others in spatial position",
+    "example": "1. Safety is the foremost concern in this construction project.",
+    "exampleZh": "1. 安全是本建設工程中的首要重點。",
+    "id": "64aa2ce51997"
+  },
+  {
+    "word": "accomplished",
+    "pos": "adj.",
+    "meaning": "造詣高的",
+    "phonetic": "/əˈkʌmpliʃt/",
+    "definition": "highly skilled",
+    "example": "1. Mozart is an accomplished musician.",
+    "exampleZh": "1. 莫扎特是一位造詣極高的音樂家。",
+    "id": "197df7563643"
+  },
+  {
+    "word": "multinational",
+    "pos": "adj./n.",
+    "meaning": "跨國的（n.）跨國公司",
+    "phonetic": "/.mʌltiˈnæʃənl/",
+    "definition": "involving or operating in several nations or nationalities",
+    "example": "1. The multinational corporation opened offices across five countries.",
+    "exampleZh": "1. 這家跨國公司在五個國家設立了辦事處。",
+    "id": "b23527e938eb"
+  },
+  {
+    "word": "offsite",
+    "pos": "adj./adv.",
+    "meaning": "外部的；異地的（adv.）外部地；異地地",
+    "phonetic": "/ˈɔːfsaɪt/",
+    "definition": "away from the main workplace or site",
+    "example": "1. The training seminar will be held at an offsite location.",
+    "exampleZh": "1. 培訓研討會將在外部場地舉行。",
+    "id": "bd99d49ed9a2"
+  },
+  {
+    "word": "accordingly"
+  },
+  {
+    "word": "ultimately",
+    "pos": "adv.",
+    "meaning": "最終",
+    "phonetic": "/ˈʌltimətli/",
+    "definition": "as the end result of a succession or process",
+    "example": "1. Ultimately, it’ll be the CEO’s decision.",
+    "exampleZh": "1. 最終還是要看執行長怎麼決定。",
+    "id": "ed219bab8a6b"
+  },
+  {
+    "word": "respectively",
+    "pos": "adv.",
+    "meaning": "各自地",
+    "phonetic": "/riˈspektivli/",
+    "definition": "in the order given",
+    "example": "1. The cups and plates cost $5 and $8, respectively.",
+    "exampleZh": "1. 杯子和盤子的價格分別為 5 美元和 8 美元。",
+    "id": "b69c9716d2b7"
+  },
+  {
+    "word": "exclusively",
+    "pos": "adv.",
+    "meaning": "專門地；獨家地",
+    "phonetic": "/ikˈskluːsivli/",
+    "definition": "r without any others being included or involved",
+    "example": "1. The event is exclusively for invited guests.",
+    "exampleZh": "1. 本活動僅限受邀來賓參加。",
+    "id": "2fc47fe0c7bd"
+  },
+  {
+    "word": "unanimously",
+    "pos": "adv.",
+    "meaning": "全體一致地",
+    "phonetic": "/juːˈnænɪməsli/",
+    "definition": "with everyone agreeing",
+    "example": "1. The board voted unanimously to terminate his contract.",
+    "exampleZh": "1. 董事會全票通過決定終止他的合約。",
+    "id": "d96cf2c1e64c"
+  },
+  {
+    "word": "fluctuate",
+    "pos": "v.",
+    "meaning": "波動",
+    "phonetic": "/ˈflʌktʃueit/",
+    "definition": "cause to fluctuate or move in a wavelike pattern",
+    "example": "1. The prices of the stock market fluctuate daily.",
+    "exampleZh": "1. 股市價格每日波動。",
+    "id": "4d516737a16b"
+  },
+  {
+    "word": "administer/administrate"
+  },
+  {
+    "word": "disclose"
+  },
+  {
+    "word": "complement"
+  },
+  {
+    "word": "perceive"
+  },
+  {
+    "word": "deter"
+  },
+  {
+    "word": "embrace"
+  },
+  {
+    "word": "expedite",
+    "pos": "v.",
+    "meaning": "加速；促進",
+    "phonetic": "/ˈekspidait/",
+    "definition": "speed up the progress of",
+    "example": "1. The manager will expedite the processing of invoices.",
+    "exampleZh": "1. 經理將加快發票的處理。",
+    "id": "83df0d20561d"
+  },
+  {
+    "word": "solicit",
+    "pos": "v.",
+    "meaning": "請求；徵求",
+    "phonetic": "/səˈlisit/",
+    "definition": "make a solicitation or entreaty for something",
+    "example": "1. They solicit donations for the charity organization.",
+    "exampleZh": "1. 他們為慈善組織募捐。",
+    "id": "95fb72489bae"
+  },
+  {
+    "word": "exploit"
+  },
+  {
+    "word": "withhold"
+  },
+  {
+    "word": "restructure",
+    "pos": "v.",
+    "meaning": "重整",
+    "phonetic": "/riːˈstrʌktʃə/",
+    "definition": "construct or form anew or provide with a new structure",
+    "example": "1. The company will restructure its operations next month.",
+    "exampleZh": "1. 該公司將在下個月重整其營運。",
+    "id": "50a4ec757675"
+  },
+  {
+    "word": "reconcile"
+  },
+  {
+    "word": "foster"
+  },
+  {
+    "word": "consolidate",
+    "pos": "v.",
+    "meaning": "合併；鞏固",
+    "phonetic": "/kənˈsɒlideit/",
+    "definition": "unite into one",
+    "example": "1. The company plans to consolidate its regional offices.",
+    "exampleZh": "1. 該公司計劃合併其區域辦事處。",
+    "id": "e5feff3982e0"
+  },
+  {
+    "word": "troubleshoot",
+    "pos": "v.",
+    "meaning": "疑難排解；排除故障；解決問題",
+    "phonetic": "/ˈtrʌblʃuːt/",
+    "definition": "to find and fix problems",
+    "example": "1. The IT team will troubleshoot the network issues.",
+    "exampleZh": "1. 資訊技術團隊將排除網路問題。",
+    "id": "3581e9d827b4"
+  },
+  {
+    "word": "economize",
+    "pos": "v.",
+    "meaning": "節省；節約",
+    "phonetic": "/iˈkɒnəmaiz/",
+    "definition": "use cautiously and frugally",
+    "example": "1. Companies are trying to economize by not hiring new staff.",
+    "exampleZh": "1. 許多公司正試圖藉由不僱用新員工來節省開銷。",
+    "id": "9550bc310f3b"
+  },
+  {
+    "word": "surpass"
+  },
+  {
+    "word": "mediate"
+  },
+  {
+    "word": "confiscate",
+    "pos": "v.",
+    "meaning": "沒收；充公",
+    "phonetic": "/ˈkɑːnfɪskeɪt/",
+    "definition": "to take something away officially as a punishment or by law",
+    "example": "1. The customs officer confiscated the unauthorized imported goods.",
+    "exampleZh": "1. 海關人員沒收了未經許可的進口商品。",
+    "id": "d0b774fe6be0"
+  },
+  {
+    "word": "disengage",
+    "pos": "v.",
+    "meaning": "退出；脫離；鬆開",
+    "phonetic": "/.disinˈgeidʒ/",
+    "definition": "release from something that holds fast, connects, or entangles",
+    "example": "1. The manager disengaged from the unprofitable business partnership.",
+    "exampleZh": "1. 經理退出了這個無利可圖的商業合作關係。",
+    "id": "bc0c89d6f385"
+  },
+  {
+    "word": "escalate",
+    "pos": "v.",
+    "meaning": "升高；惡化",
+    "phonetic": "/ˈeskəleit/",
+    "definition": "increase in extent or intensity",
+    "example": "1. The issue escalated into a major customer complaint.",
+    "exampleZh": "1. 這個問題上升成一個重大的客訴。",
+    "id": "8f17b32c6abc"
+  },
+  {
+    "word": "illustrate"
+  },
+  {
+    "word": "downsize",
+    "pos": "v.",
+    "meaning": "裁員；縮減規模",
+    "phonetic": "/daunˈsaiz/",
+    "definition": "dismiss from work",
+    "example": "1. The company plans to downsize its workforce significantly.",
+    "exampleZh": "1. 該公司計劃大幅裁減員工人數。",
+    "id": "fa9a0e98952e"
+  },
+  {
+    "word": "reallocate",
+    "pos": "v.",
+    "meaning": "重新分配；重新配置",
+    "phonetic": "/riːˈæləkeit/",
+    "definition": "allocate, distribute, or apportion anew",
+    "example": "1. The company will reallocate resources to its overseas branches.",
+    "exampleZh": "1. 公司將重新分配資源給海外分公司。",
+    "id": "e2fc50ed061a"
+  },
+  {
+    "word": "advocate"
+  },
+  {
+    "word": "convene"
+  },
+  {
+    "word": "encompass",
+    "pos": "v.",
+    "meaning": "涵蓋；包含；圍繞",
+    "phonetic": "/inˈkʌmpəs/",
+    "definition": "include in scope; include as part of something broader; have as one's sphere or territory",
+    "example": "1. The new project will encompass three business divisions.",
+    "exampleZh": "1. 這個新專案將涵蓋三個業務部門。",
+    "id": "5fe3698e1aa5"
+  },
+  {
+    "word": "disseminate",
+    "pos": "v.",
+    "meaning": "散布；傳播",
+    "phonetic": "/diˈsemineit/",
+    "definition": "cause to become widely known",
+    "example": "1. The company will disseminate the quarterly reports next week.",
+    "exampleZh": "1. 公司下週將發布季度報告。",
+    "id": "6adeb7db5822"
+  },
+  {
+    "word": "curtail",
+    "pos": "v.",
+    "meaning": "縮減；削減",
+    "phonetic": "/kəːˈteil/",
+    "definition": "place restrictions on",
+    "example": "1. The company had to curtail expenses immediately.",
+    "exampleZh": "1. 公司必須立即縮減開支。",
+    "id": "af4129fe9de2"
+  },
+  {
+    "word": "exemplify",
+    "pos": "v.",
+    "meaning": "舉例說明；作為典範",
+    "phonetic": "/igˈzemplifai/",
+    "definition": "be characteristic of",
+    "example": "1. She exemplifies strong leadership in times of crisis.",
+    "exampleZh": "1. 她在危機時期展現出卓越的領導力。",
+    "id": "5fbd67f3461a"
+  },
+  {
+    "word": "depreciate",
+    "pos": "v.",
+    "meaning": "折舊；貶值；貶低",
+    "phonetic": "/diˈpriːʃieit/",
+    "definition": "lower the value of something",
+    "example": "1. The company’s equipment will depreciate over time naturally.",
+    "exampleZh": "1. 公司的設備會隨時間自然折舊。",
+    "id": "497f3769522d"
+  },
+  {
+    "word": "accrue",
+    "pos": "v.",
+    "meaning": "累積；產生（利息、費用、債務等）",
+    "phonetic": "/əˈkruː/",
+    "definition": "grow by addition",
+    "example": "1. Interest will accrue on the unpaid balance.",
+    "exampleZh": "1. 未付的餘額將會產生利息。",
+    "id": "b588fc248242"
+  },
+  {
+    "word": "mitigate",
+    "pos": "v.",
+    "meaning": "減輕；減緩",
+    "phonetic": "/ˈmitigeit/",
+    "definition": "make less severe or harsh",
+    "example": "1. The new policy helped mitigate the company’s financial losses.",
+    "exampleZh": "1. 新政策有助於減輕公司的財務損失。",
+    "id": "9080a27c7b0b"
+  },
+  {
+    "word": "deteriorate",
+    "pos": "v.",
+    "meaning": "惡化",
+    "phonetic": "/diˈtiəriəreit/",
+    "definition": "become worse or disintegrate",
+    "example": "1. The company’s profits began to deteriorate last quarter.",
+    "exampleZh": "1. 公司的利潤從上一季度開始惡化。",
+    "id": "a1e3405cb555"
+  },
+  {
+    "word": "facilitate"
+  },
+  {
+    "word": "elicit",
+    "pos": "v.",
+    "meaning": "引出；誘導出",
+    "phonetic": "/iˈlisit/",
+    "definition": "derive by reason",
+    "example": "1. The survey was designed to elicit customer feedback.",
+    "exampleZh": "1. 這項調查的目的在於取得顧客的意見回饋。",
+    "id": "7c348dafab7f"
+  },
+  {
+    "word": "deploy"
+  },
+  {
+    "word": "subsidize"
+  },
+  {
+    "word": "outsource",
+    "pos": "v.",
+    "meaning": "外包；委外",
+    "phonetic": "/autˈsɔːs/",
+    "definition": "obtain goods or services from an outside supplier",
+    "example": "1. The company decided to outsource its customer service operations.",
+    "exampleZh": "1. 公司決定將客服業務外包。",
+    "id": "e1c85f169174"
+  },
+  {
+    "word": "commence",
+    "pos": "v.",
+    "meaning": "開始；著手",
+    "phonetic": "/kəˈmens/",
+    "definition": "take the first step or steps in carrying out an action",
+    "example": "1. The conference will commence at 9:00 AM sharp.",
+    "exampleZh": "1. 會議將於上午九點整開始。",
+    "id": "4e299df937d7"
+  },
+  {
+    "word": "optimize",
+    "pos": "v.",
+    "meaning": "最佳化；優化",
+    "phonetic": "/ˈɒptimaiz/",
+    "definition": "make optimal; get the most out of; use best",
+    "example": "1. The company optimized its supply chain for maximum efficiency.",
+    "exampleZh": "1. 該公司優化了其供應鏈以達到最大效率。",
+    "id": "ef328e06a46c"
+  },
+  {
+    "word": "deviate",
+    "pos": "v.",
+    "meaning": "偏離；違反",
+    "phonetic": "/ˈdiːvieit/",
+    "definition": "turn aside; turn away from",
+    "example": "1. The project manager refused to deviate from protocol.",
+    "exampleZh": "1. 專案經理拒絕偏離既定程序。",
+    "id": "df079b63268b"
+  },
+  {
+    "word": "navigate"
+  },
+  {
+    "word": "impede",
+    "pos": "v.",
+    "meaning": "阻礙",
+    "phonetic": "/imˈpiːd/",
+    "definition": "be a hindrance or obstacle to",
+    "example": "1. Construction delays impeded the completion of the project.",
+    "exampleZh": "1. 工程延誤阻礙了專案的完成。",
+    "id": "dd97e70efbd5"
+  },
+  {
+    "word": "formulate"
+  },
+  {
+    "word": "monetize",
+    "pos": "v.",
+    "meaning": "將…變現",
+    "phonetic": "/ˈmʌnitaiz/",
+    "definition": "give legal value to or establish as the legal tender of a country",
+    "example": "1. The company plans to monetize its popular social media platform.",
+    "exampleZh": "1. 該公司計劃將其受歡迎的社交媒體平臺變現。",
+    "id": "f1eb77f93757"
+  },
+  {
+    "word": "reiterate",
+    "pos": "v.",
+    "meaning": "重申",
+    "phonetic": "/riːˈitəreit/",
+    "definition": "to say, state, or perform again",
+    "example": "1. The manager reiterated the importance of meeting project deadlines.",
+    "exampleZh": "1. 經理重申了按時完成專案的重要性。",
+    "id": "3406b46b3407"
+  },
+  {
+    "word": "alleviate",
+    "pos": "v.",
+    "meaning": "減輕；緩解",
+    "phonetic": "/əˈliːvieit/",
+    "definition": "provide physical relief, as from pain",
+    "example": "1. The new software helped alleviate the department’s workload.",
+    "exampleZh": "1. 新的軟體有助於減輕部門的工作量。",
+    "id": "ef4ff02ed2e5"
+  },
+  {
+    "word": "liquidate",
+    "pos": "v.",
+    "meaning": "清算；變現",
+    "phonetic": "/ˈlikwideit/",
+    "definition": "eliminate by paying off (debts)",
+    "example": "1. The struggling company decided to liquidate its assets.",
+    "exampleZh": "1. 這家陷入困境的公司決定清算其資產。",
+    "id": "ffaa7aa04cad"
+  },
+  {
+    "word": "liaise",
+    "pos": "v.",
+    "meaning": "聯繫協調",
+    "phonetic": "/liˈeiz/",
+    "definition": "act between parties with a view to reconciling differences",
+    "example": "1. The manager will liaise with clients about delivery schedules.",
+    "exampleZh": "1. 經理將與客戶聯繫協調送貨時程。",
+    "id": "c0f526e9f2d7"
+  },
+  {
+    "word": "entail",
+    "pos": "v.",
+    "meaning": "必然要；牽涉",
+    "phonetic": "/inˈteil/",
+    "definition": "have as a logical consequence",
+    "example": "1. The new project will entail significant financial investment.",
+    "exampleZh": "1. 新專案必然會需要大量財務投資。",
+    "id": "e307eb9d4802"
+  },
+  {
+    "word": "shortlist",
+    "pos": "v./n.",
+    "meaning": "將…列入候選名單（n.）候選名單",
+    "phonetic": "/ˈʃɔːtlist/",
+    "definition": "put someone or something on a short list",
+    "example": "1. The committee shortlisted three candidates for the position.",
+    "exampleZh": "1. 委員會將三名候選人列入該職位的候選名單。",
+    "id": "f6de0fdbcf15"
+  },
+  {
+    "word": "offset",
+    "pos": "v./n.",
+    "meaning": "抵消；彌補",
+    "phonetic": "/ˈɒːfset/",
+    "definition": "compensate for or counterbalance",
+    "example": "1. The company’s losses were offset by strong sales.",
+    "exampleZh": "1. 公司的虧損被強勁的銷售額所抵消。",
+    "id": "19e66bd63e49"
+  },
+  {
+    "word": "dispatch",
+    "pos": "v./n.",
+    "meaning": "發送；派遣",
+    "phonetic": "/disˈpætʃ/",
+    "definition": "an official report (usually sent in haste)",
+    "example": "1. The package was dispatched yesterday and should arrive soon.",
+    "exampleZh": "1. 包裹昨天已發送，應該很快就會到達。",
+    "id": "d85d85b00c65"
+  },
+  {
+    "word": "surge"
+  },
+  {
+    "word": "franchise"
+  },
+  {
+    "word": "gauge"
+  },
+  {
+    "word": "leverage",
+    "pos": "v./n.",
+    "meaning": "利用；藉助（n.）影響力；槓桿",
+    "phonetic": "/ˈlevəridʒ/",
+    "definition": "supplement with leverage",
+    "example": "1. The company leveraged its assets to secure funding.",
+    "exampleZh": "1. 該公司利用其資產作為抵押來獲取資金。",
+    "id": "e12c9e0a316b"
+  },
+  {
+    "word": "forfeit",
+    "pos": "v./n.",
+    "meaning": "喪失（n.）喪失物；罰金",
+    "phonetic": "/ˈfɒːfit/",
+    "definition": "lose (s.th.) or lose the right to (s.th.) by some error, offense, or crime",
+    "example": "1. The company will forfeit its deposit if the contract is canceled.",
+    "exampleZh": "1. 如果合約被取消，公司將喪失押金。",
+    "id": "cafe2350a43d"
+  },
+  {
+    "word": "debrief",
+    "pos": "v./n.",
+    "meaning": "匯報；總結檢討",
+    "phonetic": "/diːˈbriːf/",
+    "definition": "put someone through a debriefing and make him report",
+    "example": "1. The manager debriefed his team after the client meeting.",
+    "exampleZh": "1. 經理在客戶會議結束後向團隊進行工作匯報。",
+    "id": "4e29e0d27b3c"
+  },
+  {
+    "word": "compulsory"
   }
 ]

@@ -6,7 +6,7 @@ internal fun pairedExamples(example: String, exampleZh: String): List<Pair<Strin
     val english = example.lines().map { line -> line.trim() }.filter { line -> line.isNotEmpty() }
     val chinese = exampleZh.lines().map { line -> line.trim() }.filter { line -> line.isNotEmpty() }
     return english.mapIndexed { index, line ->
-        line to chinese.getOrElse(index) { "" }.replace(LeadingNumber, "")
+        line.replace(LeadingNumber, "") to chinese.getOrElse(index) { "" }.replace(LeadingNumber, "")
     }
 }
 

@@ -12,10 +12,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -61,6 +61,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -309,24 +310,30 @@ private fun VocabProgressTrack(
                 )
             }
         }
-        val offsetX = with(density) {
-            when {
-                !measured -> 0.dp
-                fitsInFill -> ((fillPx - countWidth) / 2f).toDp()
-                else -> ((barWidth - countWidth) / 2f).toDp()
-            }
-        }
-        Text(
-            text = count,
+        Box(
             modifier = Modifier
-                .align(Alignment.CenterStart)
-                .offset(x = offsetX)
-                .alpha(if (measured) 1f else 0f)
-                .onSizeChanged { countWidth = it.width },
-            maxLines = 1,
-            style = MaterialTheme.typography.labelLarge,
-            color = if (fitsInFill) onFill else onTrack,
-        )
+                .fillMaxHeight()
+                .then(
+                    if (fitsInFill) {
+                        Modifier.width(with(density) { fillPx.toDp() })
+                    } else {
+                        Modifier.fillMaxWidth()
+                    },
+                )
+                .align(Alignment.CenterStart),
+            contentAlignment = Alignment.Center,
+        ) {
+            Text(
+                text = count,
+                modifier = Modifier
+                    .alpha(if (measured) 1f else 0f)
+                    .onSizeChanged { countWidth = it.width },
+                maxLines = 1,
+                textAlign = TextAlign.Center,
+                style = MaterialTheme.typography.labelLarge,
+                color = if (fitsInFill) onFill else onTrack,
+            )
+        }
     }
 }
 

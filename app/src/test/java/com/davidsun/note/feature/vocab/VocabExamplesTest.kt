@@ -13,8 +13,8 @@ class VocabExamplesTest {
 
         assertEquals(
             listOf(
-                "1. Why did he abandon his family?" to "他為什麼離棄家人？",
-                "2. They abandoned the plan." to "他們中止了這個計畫。",
+                "Why did he abandon his family?" to "他為什麼離棄家人？",
+                "They abandoned the plan." to "他們中止了這個計畫。",
             ),
             pairs,
         )
